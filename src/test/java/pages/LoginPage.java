@@ -9,7 +9,7 @@ public class LoginPage extends CommonPage {
     @FindBy(css = "[name='email']")
     private WebElement emailText;
 
-    @FindBy(css = "[name='password']")
+    @FindBy(css = "[name='password']")git
     private WebElement passwordText;
 
     @FindBy(css = "[type='submit']")
