@@ -16,6 +16,7 @@ public class Hooks {
     public static int height;
 
     public void setup() {
+
         driver = Driver.getDriver();
     }
 //
