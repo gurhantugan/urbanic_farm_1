@@ -14,11 +14,14 @@
 #gurhan
   #burak
   #tugan
+  #Ali
+  #ali
   # elif
 # aslan
 #denememe
 #Goksel Bahadir
   #Deneme
+
 
 
 
