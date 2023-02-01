@@ -13,4 +13,7 @@ public class HomePage extends CommonPage {
 
     @FindBy(xpath = "//a[text()='Register']")
     public  WebElement registerButton;
+
+    @FindBy(xpath = "//button[text()='Get fresh produce']")
+    public WebElement getFreshProduceButton;
 }
