@@ -11,12 +11,12 @@ public class US_009_StepDef_SG {
 
     @Then("User checks the Get Fresh Produce button is clickable")
     public void user_checks_the_get_fresh_produce_button_is_clickable() {
-        Assert.assertTrue(homePage.getFreshProduceButton.isEnabled());
+        Assert.assertTrue(homePage.button_getFreshProduce.isEnabled());
         
     }
     @Then("User clicks the Get Fresh Produce button")
     public void user_clicks_the_get_fresh_produce_button() {
-        homePage.getFreshProduceButton.click();
+        homePage.button_getFreshProduce.click();
 
     }
     @Then("User asserts relevant page is open")

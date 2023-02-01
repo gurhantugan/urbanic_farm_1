@@ -22,12 +22,12 @@ public class US_008_StepDef_SG {
 
     @When("User checks the register button is clickable")
     public void user_checks_the_register_button_is_clickable() {
-        homePage.registerButton.isEnabled();
+        homePage.button_register.isEnabled();
     }
 
     @Then("User clicks the register button")
     public void user_clicks_the_register_button() {
-        homePage.registerButton.click();
+        homePage.button_register.click();
         BrowserUtilities.waitFor(3);
     }
 

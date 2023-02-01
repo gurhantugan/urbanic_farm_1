@@ -6,14 +6,14 @@ import org.openqa.selenium.support.FindBy;
 public class HomePage extends CommonPage {
 
     @FindBy(css = "//a[text()='Login']")
-    public WebElement loginButton;
+    public WebElement button_login;
 
     @FindBy(xpath = "(//a[text()='Logout'])[2]")
-    public WebElement logoutButton;
+    public WebElement button_logout;
 
     @FindBy(xpath = "//a[text()='Register']")
-    public  WebElement registerButton;
+    public  WebElement button_register;
 
     @FindBy(xpath = "//button[text()='Get fresh produce']")
-    public WebElement getFreshProduceButton;
+    public WebElement button_getFreshProduce;
 }
