@@ -1,4 +1,5 @@
 #deneme1
+#Hüseyin Günaydin
   #Hüseyin Günaydin
 #mesut was here
 #deneme
@@ -22,7 +23,3 @@
 #Goksel Bahadir
   #Deneme
 #denizli
-
-
-
-
