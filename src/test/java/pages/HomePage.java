@@ -16,4 +16,7 @@ public class HomePage extends CommonPage {
 
     @FindBy(xpath = "//button[text()='Get fresh produce']")
     public WebElement button_getFreshProduce;
+
+    @FindBy(xpath = "//a[text()='Privacy policy']")
+    public WebElement link_privacyPoliciy;
 }
