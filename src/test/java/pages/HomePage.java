@@ -19,4 +19,7 @@ public class HomePage extends CommonPage {
 
     @FindBy(xpath = "//a[text()='Privacy policy']")
     public WebElement link_privacyPoliciy;
+
+    @FindBy(xpath = "//a[@href='https://www.linkedin.com/company/urbanicfarm/']")
+    public WebElement button_linkedin;
 }
