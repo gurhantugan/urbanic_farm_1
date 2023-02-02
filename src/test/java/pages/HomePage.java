@@ -13,4 +13,10 @@ public class HomePage extends CommonPage {
 
     @FindBy(xpath = "//div[@class='Navbar_linkContainer__2jWIM']//a[text()='About Us']")
     public WebElement link_aboutUs;
+
+    @FindBy(xpath = "(//a[@class='Navbar_textLink__f6_Al mr-4'])[4]")
+    public WebElement link_contactUs;
+
+    @FindBy(xpath = "//a[text()='Discover Local Sellers Near You']")
+    public WebElement link_discoverLocalSellers;
 }
