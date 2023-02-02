@@ -5,11 +5,20 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends CommonPage {
 
-    @FindBy(css = "//a[text()='Login']")
+    @FindBy(xpath = "//a[text()='Login']")
     public WebElement button_login;
 
     @FindBy(xpath = "(//a[text()='Logout'])[2]")
     public WebElement button_logout;
+
+    @FindBy(xpath = "//div[@class='Navbar_linkContainer__2jWIM']//a[text()='About Us']")
+    public WebElement link_aboutUs;
+
+    @FindBy(xpath = "(//a[@class='Navbar_textLink__f6_Al mr-4'])[4]")
+    public WebElement link_contactUs;
+
+    @FindBy(xpath = "//a[text()='Discover Local Sellers Near You']")
+    public WebElement link_discoverLocalSellers;
 
     @FindBy(xpath = "//a[text()='Register']")
     public  WebElement button_register;
