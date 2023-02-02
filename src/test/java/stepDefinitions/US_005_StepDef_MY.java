@@ -16,6 +16,7 @@ public class US_005_StepDef_MY {
     public void user_is_on_the_urbanic_farm_page() {
         Driver.getDriver().get(ConfigurationReader.getProperty("baseUrl"));
         Driver.getDriver().manage().window().maximize();
+
     }
     @When("The user clicks on About us")
     public void theUserClicksOnAboutUs() throws InterruptedException {

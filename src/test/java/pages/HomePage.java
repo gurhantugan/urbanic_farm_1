@@ -13,4 +13,6 @@ public class HomePage extends CommonPage {
 
     @FindBy(xpath = "//div[@class='Navbar_linkContainer__2jWIM']//a[text()='About Us']")
     public WebElement link_aboutUs;
+
+
 }
