@@ -15,6 +15,12 @@
 #gurhan
   #burak
   #tugan
+<<<<<<< HEAD
+  # elif
+  #sena
+#abcd
+  #vdd
+=======
   #Ali
   #ali
   # elif
@@ -22,4 +28,8 @@
 #denememe
 #Goksel Bahadir
   #Deneme
+ # elif
+
+
 #denizli
+>>>>>>> main
