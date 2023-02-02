@@ -1,7 +1,6 @@
 #deneme1
   #Hüseyin Günaydin
 #deneme
-
   #deneme
   #deneme2
   #deneme3
@@ -13,8 +12,5 @@
 #gurhan
   #burak
   #tugan
-
   # elif
-
-
-
+  #sena
