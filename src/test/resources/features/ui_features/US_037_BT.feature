@@ -1,4 +1,4 @@
-Feature:
+Feature: Reset Password
 
   Scenario: As a user Forgot your password? and I should be able to check the new password creation process
     Given The user is on the login page

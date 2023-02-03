@@ -8,6 +8,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import pages.HomePage;
 import pages.LoginPage;
 import utilities.BrowserUtilities;
@@ -15,6 +16,7 @@ import utilities.ConfigurationReader;
 import utilities.Driver;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 public class US_037_StepDef_BT {
@@ -79,6 +81,11 @@ public class US_037_StepDef_BT {
         BrowserUtilities.waitFor(3);
         Driver.getDriver().findElement(By.cssSelector(".ycptinput")).sendKeys(email);
         Driver.getDriver().findElement(By.cssSelector("#refreshbut>.md>.material-icons-outlined")).click();
+        Driver.getDriver().switchTo().frame("ifinbox");
+        List<WebElement> listOfMessage = Driver.getDriver().findElements(By.xpath("//*[@class='lmf']"));
+        listOfMessage.get(0).click();
+        BrowserUtilities.waitFor(3);
+        Driver.getDriver().switchTo().defaultContent();
         Driver.getDriver().switchTo().frame("ifmail");
 
     }
@@ -96,7 +103,8 @@ public class US_037_StepDef_BT {
     public void theUserPressesTheResetYourPasswordLink() {
         Driver.getDriver().findElement(By.xpath("//a[text()='Reset Your Password']")).click();
         ArrayList<String> tabs = new ArrayList<String> (Driver.getDriver().getWindowHandles());
-        Driver.getDriver().switchTo().window(tabs.get(1));
+        BrowserUtilities.switchToWindowWithIndex(1);
+        //Driver.getDriver().switchTo().window(tabs.get(1));
 
     }
 
