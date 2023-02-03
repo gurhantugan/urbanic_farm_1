@@ -7,13 +7,19 @@ import org.openqa.selenium.support.FindBy;
 public class LoginPage extends CommonPage {
 
     @FindBy(css = "[name='email']")
-    private WebElement textbox_email;
+    public WebElement textbox_email;
 
     @FindBy(css = "[name='password']")
-    private WebElement textbox_password;
+    public WebElement textbox_password;
+
+    @FindBy(xpath = "//button[text()='Login']")
+    public WebElement button_login;
 
     @FindBy(css = "[type='submit']")
-    private WebElement button_submit;
+    public WebElement button_submit;
+
+    @FindBy(xpath = "//span[text()='Cart']")
+    public WebElement button_cart;
 
     @FindBy(css = ".text-info")
     public WebElement button_forgotPassword;
