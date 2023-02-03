@@ -12,7 +12,7 @@ import utilities.Driver;
 public class US_005_StepDef_MY {
     HomePage homePage= new HomePage();
 
-    @Given("User is on the Urbanic_Farm page")
+    @Given("user is on the Urbanic_Farm page")
     public void user_is_on_the_urbanic_farm_page() {
         Driver.getDriver().get(ConfigurationReader.getProperty("baseUrl"));
         Driver.getDriver().manage().window().maximize();
