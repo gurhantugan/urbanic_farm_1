@@ -1,6 +1,6 @@
-Feature: Reset Password
+Feature: US_037 As a user Forgot your password? and I should be able to check the new password creation process
 
-  Scenario: As a user Forgot your password? and I should be able to check the new password creation process
+  Scenario: TC_001 As a user Forgot your password? and I should be able to check the new password creation process
     Given The user is on the login page
     When Forgot Password button should be clickable and the user presses the Forgot Password button
     Then The "Please verify your email." message should appear
@@ -15,4 +15,4 @@ Feature: Reset Password
     And New Password and Confirm Password textbox should be functional
     When The user enters the new valid password to New Password textbox and Confirm Password textbox
     Then Press the submit button with valid and new credentials and Login Page should be appeared
-    
+  Bbthigghq2234

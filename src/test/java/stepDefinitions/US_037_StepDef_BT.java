@@ -15,22 +15,23 @@ import utilities.BrowserUtilities;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
 public class US_037_StepDef_BT {
-
     HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();
-
+    String oldPassword = "oldPassword001";
     String email = "testurbanicfarm001@yopmail.com";
     FakeValuesService fakeValuesService = new FakeValuesService(
             new Locale("en-GB"), new RandomService());
     String newPassword = fakeValuesService.bothify("B????????####");
+    String password = newPassword;
+
 
     @Given("The user is on the login page")
     public void theUserIsOnTheLoginPage() {
+        System.out.println(password);
         Driver.getDriver().get(ConfigurationReader.getProperty("baseUrl"));
         Driver.getDriver().manage().window().maximize();
         homePage.button_login.click();
@@ -41,6 +42,7 @@ public class US_037_StepDef_BT {
         BrowserUtilities.waitForClickability(loginPage.button_forgotPassword,3);
         BrowserUtilities.verifyElementClickable(loginPage.button_forgotPassword);
         loginPage.button_forgotPassword.click();
+
     }
 
     @Then("The {string} message should appear")
@@ -102,9 +104,7 @@ public class US_037_StepDef_BT {
     @When("The user presses the Reset Your Password link")
     public void theUserPressesTheResetYourPasswordLink() {
         Driver.getDriver().findElement(By.xpath("//a[text()='Reset Your Password']")).click();
-        ArrayList<String> tabs = new ArrayList<String> (Driver.getDriver().getWindowHandles());
         BrowserUtilities.switchToWindowWithIndex(1);
-        //Driver.getDriver().switchTo().window(tabs.get(1));
 
     }
 
