@@ -75,6 +75,8 @@ public class US_037_StepDef_BT {
         Assert.assertEquals(loginPage.message_emailIsSent.getText(), string);
     }
 
+    //All elements of the next three methods are coming from yopmail webpage
+    //That's why I didn't create any page object under page classes
     @When("User comes to the mailbox")
     public void userComesToTheMailbox() {
         Driver.getDriver().get("https://yopmail.com/");
@@ -110,28 +112,27 @@ public class US_037_StepDef_BT {
     @Then("Change Password screen and Confirm Password menus should appear")
     public void changePasswordScreenAndConfirmPasswordMenusShouldAppear() {
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("https://test.urbanicfarm.com/reset-password"));
-        BrowserUtilities.isDisplayedText(Driver.getDriver().findElement(By.xpath("//*[text()='Change Password']")).getText());
+        BrowserUtilities.isDisplayedText(loginPage.message_changePassword.getText());
     }
 
     @And("New Password and Confirm Password textbox should be functional")
     public void newPasswordAndConfirmPasswordTextboxShouldBeFunctional() {
-        BrowserUtilities.waitForClickability(Driver.getDriver().findElement(By.xpath("//*[@name='plainPassword']")), 3);
-        BrowserUtilities.verifyElementClickable(Driver.getDriver().findElement(By.xpath("//*[@name='plainPassword']")));
-        BrowserUtilities.verifyElementClickable(Driver.getDriver().findElement(By.xpath("//*[@name='confirmPassword']")));
+        BrowserUtilities.waitForClickability(loginPage.textbox_newPasswordofResetPage, 3);
+        BrowserUtilities.verifyElementClickable(loginPage.textbox_confirmPasswordofResetPage);
+        BrowserUtilities.verifyElementClickable(loginPage.textbox_newPasswordofResetPage);
     }
 
     @When("User enters the new valid password to New Password textbox and Confirm Password textbox")
     public void userEntersTheNewValidPasswordToNewPasswordTextboxAndConfirmPasswordTextbox() {
-        Driver.getDriver().findElement(By.xpath("//*[@name='plainPassword']")).sendKeys(newPassword);
-        Driver.getDriver().findElement(By.xpath("//*[@name='confirmPassword']")).sendKeys(newPassword);
+        loginPage.textbox_newPasswordofResetPage.sendKeys(newPassword);
+        loginPage.textbox_confirmPasswordofResetPage.sendKeys(newPassword);
     }
 
     @Then("Click on the submit button with valid and new credentials and Login Page should appear")
     public void clickOnTheSubmitButtonWithValidAndNewCredentialsAndLoginPageShouldAppear() {
-        Driver.getDriver().findElement(By.cssSelector(".btn")).click();
+        loginPage.button_submitOfResetPage.click();
         BrowserUtilities.waitFor(3);
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://test.urbanicfarm.com/auth/login");
-        Driver.closeDriver();
     }
 
     @And("verify password is not the old one")

@@ -36,7 +36,15 @@ public class LoginPage extends CommonPage {
     @FindBy(css = ".text-center>.alert")
     public WebElement message_emailIsSent;
 
+    @FindBy(xpath = "//*[@name='plainPassword']")
+    public WebElement textbox_newPasswordofResetPage;
 
+    @FindBy(xpath = "//*[@name='confirmPassword']")
+    public WebElement textbox_confirmPasswordofResetPage;
 
+    @FindBy(css = ".btn")
+    public WebElement button_submitOfResetPage;
 
+    @FindBy(xpath = "//*[text()='Change Password']")
+    public WebElement message_changePassword;
 }
