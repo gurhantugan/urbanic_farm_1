@@ -3,22 +3,63 @@ package stepDefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import pages.HomePage;
+import utilities.BrowserUtilities;
+import utilities.ConfigurationReader;
 import utilities.Driver;
 
+
 public class US_003_StepDef_GB {
+    HomePage homePage= new HomePage();
     @Given("user is on the Urbanic_Farm page")
     public void user_is_on_the_urbanic_farm_page() {
-        Driver.getDriver().get("https://test.urbanicfarm.com/");
-        throw new io.cucumber.java.PendingException();
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+        Driver.getDriver().manage().window().maximize();
     }
     @When("The user clicks on Blog button")
-    public void the_user_clicks_on_blog_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
+    public void the_user_clicks_on_blog_button() throws InterruptedException {
+        BrowserUtilities.waitFor(3);
+        homePage.button_blog.click();
+          }
     @Then("user should go to relevant page with {string}")
-    public void user_should_go_to_relevant_page_with(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
+    public void user_should_go_to_relevant_page_with(String expectedUrl) {
+        String currentUrl = Driver.getDriver().getCurrentUrl();
+        Assert.assertEquals(expectedUrl, currentUrl);
+        }
 }
+/*package stepDefinitions;
+
+        import io.cucumber.java.en.Given;
+        import io.cucumber.java.en.Then;
+        import io.cucumber.java.en.When;
+        import org.junit.Assert;
+        import pages.HomePage;
+        import utilities.BrowserUtilities;
+        import utilities.ConfigurationReader;
+        import utilities.Driver;
+
+public class US_005_StepDef_MY {
+    HomePage homePage= new HomePage();
+
+    @Given("user is on the Urbanic_Farm page")
+    public void user_is_on_the_urbanic_farm_page() {
+        Driver.getDriver().get(ConfigurationReader.getProperty("baseUrl"));
+        Driver.getDriver().manage().window().maximize();
+
+    }
+    @When("The user clicks on About us")
+    public void theUserClicksOnAboutUs() throws InterruptedException {
+        BrowserUtilities.waitFor(3);
+        homePage.link_aboutUs.click();
+
+
+    }
+
+
+    @Then("user should go to relevant page with {string}")
+    public void userShouldGoToRelevantPageWith(String expectedUrl) {
+        String currentUrl = Driver.getDriver().getCurrentUrl();
+        Assert.assertEquals(expectedUrl,currentUrl);
+
+    }*/
