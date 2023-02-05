@@ -1,10 +1,14 @@
 #deneme1
+#Hüseyin Günaydin
   #Hüseyin Günaydin
+<<<<<<< HEAD
 <<<<<<< HEAD
   #abdullah merhaba
 =======
+=======
+#mesut was here
+>>>>>>> main
 #deneme
-
   #deneme
   #deneme2
   #deneme3
@@ -24,8 +28,12 @@
 #denememe
 #Goksel Bahadir
   #Deneme
+<<<<<<< HEAD
 
 
 
 
+>>>>>>> main
+=======
+#denizli
 >>>>>>> main
