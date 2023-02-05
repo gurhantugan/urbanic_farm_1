@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class HomePage extends CommonPage {
 
     @FindBy(xpath = "//a[text()='Login']")
@@ -34,4 +36,7 @@ public class HomePage extends CommonPage {
 
     @FindBy(xpath = "//a[@href='https://www.linkedin.com/company/urbanicfarm/']")
     public WebElement button_linkedin;
+
+    @FindBy(css = ".btn.text-uppercase")
+    public List<WebElement> buttons_sell_share_trade;
 }
