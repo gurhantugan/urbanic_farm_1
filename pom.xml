@@ -41,6 +41,13 @@
             <artifactId>cucumber-junit</artifactId>
             <version>7.3.2</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.cucumber/datatable -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>datatable</artifactId>
+            <version>7.3.2</version>
+        </dependency>
+
 
 
         <dependency>
