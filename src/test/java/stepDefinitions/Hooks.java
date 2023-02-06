@@ -19,6 +19,5 @@ public class Hooks {
 
         driver = Driver.getDriver();
     }
-//
 
 }

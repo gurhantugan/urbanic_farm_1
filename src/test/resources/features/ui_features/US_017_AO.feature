@@ -1,4 +1,3 @@
-
 @US017
 @smoke
 Feature: US_017 User should be able to perform various operations on homepage
