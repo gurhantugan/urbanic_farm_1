@@ -7,14 +7,11 @@ import static stepDefinitions.Hooks.driver;
 
 
 public abstract class CommonPage {
-
-    public CommonPage() {
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
-
+    public getCommonPage() {
+        PageFactory.initElements(driver, this);
 
 }
-
+}
 
 
 
