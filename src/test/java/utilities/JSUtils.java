@@ -49,7 +49,7 @@ public class JSUtils {
             changeColor(bgColor, element);
         }
     }
-    //this willg enerate an alert when needed
+    //this will generate an alert when needed
     public static void generateAlert(String message) throws InterruptedException {
         JavascriptExecutor javascriptExecutor = ((JavascriptExecutor) Driver.getDriver());
         javascriptExecutor.executeScript("alert('" + message + "')");
