@@ -87,4 +87,7 @@ public class HomePage extends CommonPage {
 
     @FindBy(css = ".btn.text-uppercase")
     public List<WebElement> buttons_sell_share_trade;
+
+    @FindBy(css=".Navbar_textLink__f6_Al.mr-2")
+    public WebElement button_Registration;
 }
