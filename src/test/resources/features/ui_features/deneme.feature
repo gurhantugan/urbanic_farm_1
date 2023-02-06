@@ -3,9 +3,14 @@
   #Hüseyin Günaydin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   #abdullah merhaba
 =======
 =======
+#mesut was here
+>>>>>>> main
+=======
+  #abdullah merhaba
 #mesut was here
 >>>>>>> main
 #deneme
@@ -21,6 +26,10 @@
 #gurhan
   #burak
   #tugan
+  # elif
+  #sena
+#abcd
+  #vdd
   #Ali
   #ali
   # elif
@@ -29,11 +38,21 @@
 #Goksel Bahadir
   #Deneme
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+ # elif
+#denizli
+>>>>>>> main
 
+#asdasd
+  #asdwsd
 
+<<<<<<< HEAD
 >>>>>>> main
 =======
 #denizli
+>>>>>>> main
+=======
 >>>>>>> main
