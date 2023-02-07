@@ -128,5 +128,11 @@ public class US_049_StepDef_SG {
 
     }
 
+    @Then("user asserts sales address is visible")
+    public void user_asserts_sales_address_is_visible() {
+
+    }
+
+
 
 }
