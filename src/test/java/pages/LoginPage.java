@@ -21,7 +21,8 @@ public class LoginPage extends CommonPage {
     @FindBy(xpath = "//span[text()='Cart']")
     public WebElement button_cart;
 
-
+    @FindBy(xpath = "//a[@class='Navbar_textLink__f6_Al cursor-pointer ml-4 mr-3 text-capitalize']")
+    public WebElement button_accountHome;
 
 
 }
