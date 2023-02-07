@@ -16,6 +16,7 @@ public class US_005_StepDef_MY {
     public void user_is_on_the_urbanic_farm_page() {
         Driver.getDriver().get(ConfigurationReader.getProperty("baseUrl"));
         Driver.getDriver().manage().window().maximize();
+
     }
     @When("The user clicks on About us")
     public void theUserClicksOnAboutUs() throws InterruptedException {
@@ -26,12 +27,10 @@ public class US_005_StepDef_MY {
     }
 
 
-    @Then("User should go to relevant page")
-    public void user_should_go_to_relevant_page() {
+    @Then("user should go to relevant page with {string}")
+    public void userShouldGoToRelevantPageWith(String expectedUrl) {
         String currentUrl = Driver.getDriver().getCurrentUrl();
-        String expectedUrl = "https://test.urbanicfarm.com/about";
         Assert.assertEquals(expectedUrl,currentUrl);
-
 
     }
 
