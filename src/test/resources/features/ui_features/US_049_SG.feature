@@ -56,7 +56,7 @@ Feature: Address
     Then user clicks submit button
     Then user asserts Your address has been successfully added should appear
     Then user clicks delivery address button
-    Then user asserts address is visible
+    Then user asserts delivery address is visible
 
   @US_049-TC005
   Scenario: The added address should appear in the relevant section according to the selected transaction
@@ -66,7 +66,7 @@ Feature: Address
     Then user clicks submit button
     Then user asserts Your address has been successfully added should appear
     Then user clicks my sales address button
-    Then user asserts address is visible
+    Then user asserts sales address is visible
 
 
 
