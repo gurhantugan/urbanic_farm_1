@@ -103,6 +103,7 @@ public class US_049_StepDef_SG {
 
     @Then("user selects Mark as a delivery address")
     public void user_selects_mark_as_a_delivery_address() {
+        addressPage.checkBox_deliveryAddress.click();
 
     }
 
@@ -111,13 +112,14 @@ public class US_049_StepDef_SG {
 
     }
 
-    @Then("user asserts address is visible")
-    public void user_asserts_address_is_visible() {
+    @Then("user asserts delivery address is visible")
+    public void user_asserts_delivery_address_is_visible() {
 
     }
 
     @Then("user selects Mark as a sales address")
     public void user_selects_mark_as_a_sales_address() {
+        addressPage.checkBox_sellerAddress.click();
 
     }
 
@@ -125,6 +127,12 @@ public class US_049_StepDef_SG {
     public void user_clicks_my_sales_address_button() {
 
     }
+
+    @Then("user asserts sales address is visible")
+    public void user_asserts_sales_address_is_visible() {
+
+    }
+
 
 
 }
