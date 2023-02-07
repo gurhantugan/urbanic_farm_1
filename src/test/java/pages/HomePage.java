@@ -13,9 +13,9 @@ public class HomePage extends CommonPage {
     public WebElement button_login;
 
     //@FindBy(xpath = "//*[local-name()='svg']//*[local-name()='text']/*[local-name()='tspan'][1]")
-   // public WebElement logoutButton;
-    @FindBy(xpath ="//label[@for='allCategories']")
-    public  WebElement hometitle;
+    // public WebElement logoutButton;
+    @FindBy(xpath = "//label[@for='allCategories']")
+    public WebElement hometitle;
 
     @FindBy(xpath = "//body/div/div/div/div/a[@href='/auth/login']")
     public WebElement button_navbarLogin;
@@ -26,7 +26,7 @@ public class HomePage extends CommonPage {
 
     @FindBy(xpath = "//input[@type='password']")
     public WebElement box_password;
-@FindBy(xpath = "//div/div/div/div/div//a[.='get the app']")
+    @FindBy(xpath = "//div/div/div/div/div//a[.='get the app']")
     public WebElement button_getApp;
 
     //div/div/div/ul/li//a[@href='/mobile']
@@ -54,10 +54,6 @@ public class HomePage extends CommonPage {
     public WebElement box_regConfirmPassword;
 
 
-
-
-
-
     @FindBy(xpath = "(//a[text()='Logout'])[2]")
     public WebElement button_logout;
 
@@ -74,7 +70,7 @@ public class HomePage extends CommonPage {
     public WebElement link_discoverLocalSellers;
 
     @FindBy(xpath = "//a[text()='Register']")
-    public  WebElement button_register;
+    public WebElement button_register;
 
     @FindBy(xpath = "//button[text()='Get fresh produce']")
     public WebElement button_getFreshProduce;

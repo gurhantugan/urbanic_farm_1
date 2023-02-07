@@ -32,7 +32,7 @@ public class US_046_StepDef_SG {
     @Then("User clicks the login button")
     public void user_clicks_the_login_button() {
         loginPage.button_login.click();
-        BrowserUtilities.waitFor(5);
+        BrowserUtilities.waitFor(3);
         
     }
 
