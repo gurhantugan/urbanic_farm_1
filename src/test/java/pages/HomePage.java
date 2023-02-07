@@ -82,6 +82,13 @@ public class HomePage extends CommonPage {
     public WebElement button_linkedin;
 
     @FindBy(css = ".btn.text-uppercase")
+    public List<WebElement> links_sell_share_trade;
+
+    @FindBy(xpath = "//a[text()='Sell-Share-Trade']")
+    public WebElement link_sellShareTrade;
+
+    @FindBy(xpath = "//a[text()='contact us']")
+    public WebElement link_contactUsFooter;
     public List<WebElement> buttons_sell_share_trade;
 
     @FindBy(xpath ="(//*[@class=\"Navbar_textLink__f6_Al mr-4\"])[2]")
