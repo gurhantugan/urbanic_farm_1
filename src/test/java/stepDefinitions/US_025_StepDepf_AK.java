@@ -20,8 +20,8 @@ public class US_025_StepDepf_AK {
 
     @Then("user verifies that the f button is visible.")
     public void userVerifiesThatTheFButtonIsVisible() {
-        String expectedPhoneNumber = "+1 (669) 696-5906";
-        String actualPhoneNumber = homePage.phoneNumber.getText();
+        java.lang.String expectedPhoneNumber = "+1 (669) 696-5906";
+        java.lang.String actualPhoneNumber = homePage.phoneNumber.getText();
         System.out.println("actualPhoneNumber = " + actualPhoneNumber + "-------" + expectedPhoneNumber);
         assertEquals(actualPhoneNumber, expectedPhoneNumber);
 

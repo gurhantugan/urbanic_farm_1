@@ -18,7 +18,7 @@ public class US_036_StepDef_AK {
     public void verifiesThatTheUserPasswordTextBoxIsClickable() {
     }
 
-    @Given("User enters values <{string}> in the email text box and <{string}> in the password text box")
+    @Given("User enters values {string} in the email text box and {string} in the password text box")
     public void userEntersValuesInTheEmailTextBoxAndInThePasswordTextBox(String arg0, String arg1) {
     }
 
