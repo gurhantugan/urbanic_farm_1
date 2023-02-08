@@ -7,8 +7,8 @@ import java.util.List;
 
 public class HomePage extends CommonPage {
 
-    @FindBy(xpath = "//a[text()='Login']")
-    public WebElement loginButton;
+//    @FindBy(xpath = "//a[text()='Login']")
+//    public WebElement loginButton;
     @FindBy(xpath = "//a[text()='Login']")
     public WebElement button_login;
 
