@@ -12,8 +12,8 @@ Feature: US034
 
   @US_034
   Scenario: US034_TC001
-   # Given user goes to website
-   # When user clicks on the register button on the navbar
+    Given user is on the Urbanic_Farm page
+    When user clicks on Register
     And user fills out the registration form
     And user clicks on Register button
     Then user verifies following elements are visible
