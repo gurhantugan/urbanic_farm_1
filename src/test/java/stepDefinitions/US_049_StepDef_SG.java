@@ -2,6 +2,8 @@ package stepDefinitions;
 
 import io.cucumber.java.en.*;
 import org.junit.Assert;
+
+
 import pages.AccountPage;
 import pages.AddressPage;
 import pages.HomePage;
@@ -81,17 +83,18 @@ public class US_049_StepDef_SG {
         Assert.assertTrue(addressPage.title_salesAddress.isEnabled());
         Assert.assertTrue(addressPage.textBox_home.isEnabled());
         Assert.assertTrue(addressPage.textBox_address.isEnabled());
-        Assert.assertTrue(addressPage.textBox_states.isEnabled());
-        Assert.assertTrue(addressPage.textBox_city.isEnabled());
         Assert.assertTrue(addressPage.textBox_postal.isEnabled());
         Assert.assertTrue(addressPage.checkBox_deliveryAddress.isEnabled());
         Assert.assertTrue(addressPage.checkBox_sellerAddress.isEnabled());
+        Assert.assertFalse(addressPage.textBox_states.isEnabled());
+        Assert.assertFalse(addressPage.textBox_city.isEnabled());
 
     }
 
     @Then("user clicks submit button")
     public void user_clicks_submit_button() {
         addressPage.button_submit.click();
+        BrowserUtilities.waitFor(1);
 
     }
 
@@ -103,17 +106,22 @@ public class US_049_StepDef_SG {
 
     @Then("user selects Mark as a delivery address")
     public void user_selects_mark_as_a_delivery_address() {
+        BrowserUtilities.waitFor(1);
         addressPage.checkBox_deliveryAddress.click();
+        BrowserUtilities.waitFor(1);
 
     }
 
     @Then("user clicks delivery address button")
     public void user_clicks_delivery_address_button() {
+        addressPage.button_deliveryAddress.click();
 
     }
 
     @Then("user asserts delivery address is visible")
     public void user_asserts_delivery_address_is_visible() {
+        Assert.assertTrue(addressPage.body_AddressCard.isDisplayed());
+
 
     }
 
@@ -125,12 +133,13 @@ public class US_049_StepDef_SG {
 
     @Then("user clicks my sales address button")
     public void user_clicks_my_sales_address_button() {
+        addressPage.button_salesAddress.click();
 
     }
 
     @Then("user asserts sales address is visible")
     public void user_asserts_sales_address_is_visible() {
-
+        Assert.assertTrue(addressPage.body_AddressCard.isDisplayed());
     }
 
 
