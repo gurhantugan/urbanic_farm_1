@@ -31,6 +31,8 @@ public class US_005_StepDef_MY {
     public void userShouldGoToRelevantPageWith(String expectedUrl) {
         String currentUrl = Driver.getDriver().getCurrentUrl();
         Assert.assertEquals(expectedUrl,currentUrl);
+    BrowserUtilities.waitFor(5);
+    Driver.closeDriver();
 
     }
 
