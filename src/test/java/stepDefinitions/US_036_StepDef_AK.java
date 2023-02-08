@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 
 import pages.LoginPage;
 import utilities.BrowserUtilities;
+import utilities.Driver;
 
 public class US_036_StepDef_AK {
     LoginPage loginPage = new LoginPage();
@@ -40,5 +41,7 @@ public class US_036_StepDef_AK {
         loginPage.forgotPasswordText.click();
         BrowserUtilities.waitFor(2);
         assertTrue(loginPage.pleaseText.isDisplayed());
+
+        Driver.closeDriver();
     }
 }
