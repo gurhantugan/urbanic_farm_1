@@ -49,7 +49,7 @@ public class JSUtils {
             changeColor(bgColor, element);
         }
     }
-    //this willg enerate an alert when needed
+    //this will generate an alert when needed
     public static void generateAlert(String message) throws InterruptedException {
         JavascriptExecutor javascriptExecutor = ((JavascriptExecutor) Driver.getDriver());
         javascriptExecutor.executeScript("alert('" + message + "')");
@@ -63,12 +63,14 @@ public class JSUtils {
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         jse.executeScript(command, element);
     }
+
     /*
      * executes the given JavaScript command on given web element
      */
     public static void executeJScommand(String command) {
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         jse.executeScript(command);
+        System.out.println();
     }
 
 }

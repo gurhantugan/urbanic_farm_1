@@ -22,10 +22,7 @@ public class US_005_StepDef_MY {
     public void theUserClicksOnAboutUs() throws InterruptedException {
         BrowserUtilities.waitFor(3);
          homePage.link_aboutUs.click();
-
-
     }
-
 
     @Then("user should go to relevant page with {string}")
     public void userShouldGoToRelevantPageWith(String expectedUrl) {
@@ -33,9 +30,5 @@ public class US_005_StepDef_MY {
         Assert.assertEquals(expectedUrl,currentUrl);
     BrowserUtilities.waitFor(5);
     Driver.closeDriver();
-
     }
-
-
-
 }

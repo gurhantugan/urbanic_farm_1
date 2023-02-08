@@ -13,10 +13,9 @@ import utilities.Driver;
 public class US_003_StepDef_GB {
     HomePage homePage = new HomePage();
 
-    @When("The user clicks on Blog button")
-    public void the_user_clicks_on_blog_button() throws InterruptedException {
+       @When("The user clicks on Blog button")
+    public void theUserClicksOnBlogButton() {
         BrowserUtilities.waitFor(3);
         homePage.button_blog.click();
-
     }
 }
