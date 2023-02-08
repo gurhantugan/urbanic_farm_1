@@ -64,8 +64,8 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "(//button[@class='section-2_shopButton__17T04'])[2]")
     public WebElement button_shellYourProduct;
 
-    @FindBy(xpath = "//a[@class='Navbar_textLink__f6_Al mr-4'][normalize-space()='About Us']")
-    public WebElement link_AboutUs;
+    @FindBy(xpath = "//a[.='about us']")
+    public WebElement link_aboutUs_footer;
 
     @FindBy(xpath = "//a[normalize-space()='Support the local food movement']")
     public WebElement link_support;

@@ -28,4 +28,13 @@ public class US_010_StepDef_ED {
 
 
     }
+
+    @Then("user verifies that relevant page contains {string}")
+    public void userVerifiesThatRelevantPageContains(String expectedUrl) {
+
+        String currentUrl = Driver.getDriver().getCurrentUrl();
+        Assert.assertTrue(currentUrl.contains(expectedUrl));
+        BrowserUtilities.waitFor(5);
+        Driver.closeDriver();
+    }
 }
