@@ -87,4 +87,20 @@ public class HomePage extends CommonPage {
 
     @FindBy(css = ".btn.text-uppercase")
     public List<WebElement> buttons_sell_share_trade;
+
+    @FindBy(xpath = "(//*[@id='Group_3'])[1]")
+    public WebElement logo_urbanicFarm;
+
+    @FindBy(xpath = "//a[.='Support the local food movement']")
+    public WebElement link_SupportTheLocalFoodMovement;
+
+    @FindBy(xpath = "(//a[@class='Navbar_textLink__f6_Al mr-4'])[1]")
+    public WebElement link_blog;
+
+    @FindBy(xpath = "(//a[@class='Navbar_textLink__f6_Al mr-4'])[2]")
+    public WebElement link_explore;
+
+
+
+
 }
