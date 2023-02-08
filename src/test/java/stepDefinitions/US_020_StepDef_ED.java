@@ -4,6 +4,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import pages.HomePage;
+import utilities.BrowserUtilities;
+import utilities.JSUtils;
 
 public class US_020_StepDef_ED {
     HomePage homePage = new HomePage();
@@ -11,12 +13,10 @@ public class US_020_StepDef_ED {
     @And("User clickable the About Us button")
     public void userClickableTheAboutUsButton() {
 
-        homePage.link_AboutUs.click();
+        JSUtils.clickElementByJS(homePage.link_aboutUs_footer);
+        BrowserUtilities.waitFor(3);
     }
 
-    @Then("User should go to the relevant page")
-    public void userShouldGoToTheRelevantPage() {
 
-        Assert.assertTrue(homePage.link_support.isDisplayed());
-    }
+
 }

@@ -4,6 +4,6 @@ Feature: US020
 
     Given User is on the Urbanic_Farm page
     And  User clickable the About Us button
-    Then User should go to the relevant page
+    Then user should go to relevant page with "https://test.urbanicfarm.com/about"
 
 
