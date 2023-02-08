@@ -50,7 +50,7 @@ public class AddressPage extends CommonPage{
     @FindBy(xpath = "//input[@id='postal']")
     public WebElement textBox_postal;
 
-    @FindBy(xpath = "//input[@id='isDefault']")
+    @FindBy(xpath = "//input[@name='isDefault']")
     public WebElement checkBox_deliveryAddress;
 
     @FindBy(xpath = "//input[@id='isSellerAddress']")
@@ -61,4 +61,15 @@ public class AddressPage extends CommonPage{
 
     @FindBy(xpath = "//div[text()='Your Address successfully added']")
     public WebElement message_successful;
+
+    @FindBy(xpath = "//button[@name='delivery']")
+    public WebElement button_deliveryAddress;
+
+    @FindBy(xpath = "//button[@name='sales']")
+    public WebElement button_salesAddress;
+
+    @FindBy(xpath = "//div[@class='card-body']")
+    public WebElement body_AddressCard;
+
+
 }
