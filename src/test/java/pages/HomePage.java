@@ -99,10 +99,18 @@ public class HomePage extends CommonPage {
     @FindBy(xpath ="(//*[@class=\"Navbar_textLink__f6_Al mr-4\"])[2]")
     public WebElement button_explore;
 
+    @FindBy(xpath ="(//*[@class=\"Footer_footer-col__2BbbT\"]//a)[3]")
+    public WebElement buttonFooterBlog;
+
+    @FindBy(xpath ="//*[text()='+1 (669) 696-5906']")
+    public WebElement phoneNumber;
+
+
     @FindBy(xpath = "//*[text()='Register Now']")
     public WebElement button_registerNow;
 
     @FindBy(xpath = "//button[@class='section-9_gofunderButton__32gaj']")
     public WebElement button_wefunder;
+
 }
 
