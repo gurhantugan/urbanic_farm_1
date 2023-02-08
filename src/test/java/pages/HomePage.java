@@ -1,7 +1,7 @@
 package pages;
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+        import org.openqa.selenium.WebElement;
+        import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
@@ -81,6 +81,11 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//a[@href='https://www.linkedin.com/company/urbanicfarm/']")
     public WebElement button_linkedin;
 
+
+    @FindBy(xpath = "(//a[text()='Blog'])[1]")
+    public WebElement button_blog;
+
+
     @FindBy(css = ".btn.text-uppercase")
     public List<WebElement> links_sell_share_trade;
 
@@ -97,7 +102,7 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//*[text()='Register Now']")
     public WebElement button_registerNow;
 
-
-
-
+    @FindBy(xpath = "//button[@class='section-9_gofunderButton__32gaj']")
+    public WebElement button_wefunder;
 }
+
