@@ -83,11 +83,11 @@ public class US_049_StepDef_SG {
         Assert.assertTrue(addressPage.title_salesAddress.isEnabled());
         Assert.assertTrue(addressPage.textBox_home.isEnabled());
         Assert.assertTrue(addressPage.textBox_address.isEnabled());
-        Assert.assertFalse(addressPage.textBox_states.isEnabled());
-        Assert.assertFalse(addressPage.textBox_city.isEnabled());
         Assert.assertTrue(addressPage.textBox_postal.isEnabled());
         Assert.assertTrue(addressPage.checkBox_deliveryAddress.isEnabled());
         Assert.assertTrue(addressPage.checkBox_sellerAddress.isEnabled());
+        Assert.assertFalse(addressPage.textBox_states.isEnabled());
+        Assert.assertFalse(addressPage.textBox_city.isEnabled());
 
     }
 
