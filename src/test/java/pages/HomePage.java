@@ -52,12 +52,6 @@ public class HomePage extends CommonPage {
 
     @FindBy(id = "registration_form_confirmPassword")
     public WebElement box_regConfirmPassword;
-
-
-
-
-
-
     @FindBy(xpath = "(//a[text()='Logout'])[2]")
     public WebElement button_logout;
 
@@ -91,7 +85,11 @@ public class HomePage extends CommonPage {
     @FindBy(xpath ="(//*[@class=\"Navbar_textLink__f6_Al mr-4\"])[2]")
     public WebElement button_explore;
 
+    @FindBy(xpath ="(//*[@class=\"Footer_footer-col__2BbbT\"]//a)[3]")
+    public WebElement buttonFooterBlog;
 
+    @FindBy(xpath ="//*[text()='+1 (669) 696-5906']")
+    public WebElement phoneNumber;
 
 
 }
