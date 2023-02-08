@@ -13,7 +13,7 @@ Feature:US_036
 
   Scenario Outline:
     Given User enters values "<invalidMail>" in the email text box and "<invalidPassword>" in the password text box
-    Then  User verifies unable to login with invalid values
+    Then  User verifies unable to login with "invalid values"
     Examples:
       | invalidMail  | invalidPassword |
       | a.gmail      | xs              |
