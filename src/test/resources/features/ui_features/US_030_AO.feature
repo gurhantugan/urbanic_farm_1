@@ -7,10 +7,7 @@ Background: User should be on the Urbanic_Farm page
 Given user on the Urbanic_Farm page "https://test.urbanicfarm.com/explore"
 When user click on register button
 Then user should see First name
-#  When user enters "<First name>" in First name field
-#  And user enters "<Last name>" in Last name field
-#  And user enters "<Email>" in Email field
-#  And user enters "<Password>" in Password field
+
 @US_030-TC001
 Scenario: Name, Surname, Email, Password fields must be functional
 
@@ -26,7 +23,7 @@ Scenario Outline: First name, Last name, Email and Password should not be able t
   And user enters "<Last name>" in Last name field
   And user enters "<Email>" in Email field
   And user enters "<Password>" in Password field
-  And user clicks on register button
+  And user clicks on registertwo button
 Then user gets "Please fill in this field." warning message
   Examples:
     | First name | Last name | Email                    | Password        |
@@ -39,6 +36,11 @@ Then user gets "Please fill in this field." warning message
     |            |           |                          | VHt*zzt*wQNu6XS |
     | Test       |           | seller_urban@mailsac.com |                 |
     |            | Urban     |                          |                 |
+
+  #  When user enters "<First name>" in First name field
+#  And user enters "<Last name>" in Last name field
+#  And user enters "<Email>" in Email field
+#  And user enters "<Password>" in Password field
 
 
 

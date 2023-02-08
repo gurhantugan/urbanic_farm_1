@@ -7,6 +7,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.HomePage;
 import pages.RegisterPage;
+import utilities.BrowserUtilities;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
@@ -60,6 +61,7 @@ public class US_030_StepDef_AO {
 
     @Then("assert First name field is enabled")
     public void assertFirstNameFieldIsEnabled() {
+
         Assert.assertTrue(registerPage.button_FirstName.isEnabled());
     }
 
@@ -90,11 +92,11 @@ public class US_030_StepDef_AO {
     @Then("user gets {string} warning message")
     public void userGetsWarningMessage(String warning) {
         //String expectedWarningMessage = "Please fill in this field.";
-
-        String firstNameActualWarning = registerPage.button_FirstName.getDomProperty("actualWarningMessage");
-        String lastNameActualWarning = registerPage.button_LastName.getDomProperty("actualWarningMessage");
-        String emailActualWarning = registerPage.button_Email.getDomProperty("actualWarningMessage");
-        String passwordActualWarning = registerPage.button_Password.getDomProperty("actualWarningMessage");
+        BrowserUtilities.waitFor(2);
+        String firstNameActualWarning = registerPage.button_FirstName.getDomProperty("validationMessage");
+        String lastNameActualWarning = registerPage.button_LastName.getDomProperty("validationMessage");
+        String emailActualWarning = registerPage.button_Email.getDomProperty("validationMessage");
+        String passwordActualWarning = registerPage.button_Password.getDomProperty("validationMessage");
         ArrayList<String> warningArray = new ArrayList<>();
         warningArray.add(firstNameActualWarning);
         warningArray.add(lastNameActualWarning);
@@ -108,10 +110,15 @@ public class US_030_StepDef_AO {
 
         Assert.assertTrue(warningArray.contains(warning));
 
-
     }
 
+    @And("user clicks on registertwo button")
+    public void userClicksOnRegistertwoButton() {
+        BrowserUtilities.waitFor(2);
+        BrowserUtilities.clickWithJS(registerPage.button_register2);
 
+        //registerPage.button_register2.click();
+    }
 }
 
 

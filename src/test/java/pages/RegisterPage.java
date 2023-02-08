@@ -39,4 +39,9 @@ public class RegisterPage extends CommonPage {
 @FindBy(xpath = "//input[@name='zipCode']")
     public WebElement zipCodeBox;
 
+@FindBy(css = ".btn")
+    public WebElement button_register2;
+
+
+
 }
