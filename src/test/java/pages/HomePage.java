@@ -60,6 +60,16 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//div[@class='Navbar_linkContainer__2jWIM']//a[text()='About Us']")
     public WebElement link_aboutUs;
 
+
+    @FindBy(xpath = "(//button[@class='section-2_shopButton__17T04'])[2]")
+    public WebElement button_shellYourProduct;
+
+    @FindBy(xpath = "//a[@class='Navbar_textLink__f6_Al mr-4'][normalize-space()='About Us']")
+    public WebElement link_AboutUs;
+
+    @FindBy(xpath = "//a[normalize-space()='Support the local food movement']")
+    public WebElement link_support;
+
     @FindBy(xpath = "//a[text()='Terms of service']")
     public WebElement termsOfServiceLink;
 
@@ -111,6 +121,7 @@ public class HomePage extends CommonPage {
 
     @FindBy(xpath = "//button[@class='section-9_gofunderButton__32gaj']")
     public WebElement button_wefunder;
+
 
 }
 
