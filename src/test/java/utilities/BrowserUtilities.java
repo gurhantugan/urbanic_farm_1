@@ -441,18 +441,12 @@ public class BrowserUtilities {
         return simpleformat.format(cal.getTime());
     }
 
-    public static void acceptAlert() {
-        try {
-            Alert alert = driver.switchTo().alert();
-            alert.accept();
-        } catch (NoAlertPresentException e) {
-            e.printStackTrace();
-        }
-    }
-
-
 
 }
+
+
+
+
 
 
 

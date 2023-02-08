@@ -53,7 +53,6 @@ public class HomePage extends CommonPage {
     @FindBy(id = "registration_form_confirmPassword")
     public WebElement box_regConfirmPassword;
 
-
     @FindBy(xpath = "(//a[text()='Logout'])[2]")
     public WebElement button_logout;
 
