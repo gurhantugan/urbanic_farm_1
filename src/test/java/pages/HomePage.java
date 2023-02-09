@@ -7,8 +7,14 @@ import java.util.List;
 
 public class HomePage extends CommonPage {
 
+
+    @FindBy(xpath = "//a[text()='Login']")
+    public WebElement loginButton;
+
+
 //    @FindBy(xpath = "//a[text()='Login']")
 //    public WebElement loginButton;
+
     @FindBy(xpath = "//a[text()='Login']")
     public WebElement button_login;
 
@@ -26,6 +32,7 @@ public class HomePage extends CommonPage {
 
     @FindBy(xpath = "//input[@type='password']")
     public WebElement box_password;
+
     @FindBy(xpath = "//div/div/div/div/div//a[.='get the app']")
     public WebElement button_getApp;
 
@@ -105,17 +112,33 @@ public class HomePage extends CommonPage {
     public WebElement link_contactUsFooter;
     public List<WebElement> buttons_sell_share_trade;
 
+
+    @FindBy(xpath = "(//*[@id='Group_3'])[1]")
+    public WebElement logo_urbanicFarm;
+
+    @FindBy(xpath = "//a[.='Support the local food movement']")
+    public WebElement link_SupportTheLocalFoodMovement;
+
+    @FindBy(xpath = "(//a[@class='Navbar_textLink__f6_Al mr-4'])[1]")
+    public WebElement link_blog;
+
+    @FindBy(xpath = "(//a[@class='Navbar_textLink__f6_Al mr-4'])[2]")
+    public WebElement link_explore;
+
+    @FindBy(css = ".section-7_btn1__YvVpM")
+    public WebElement link_whatsNearYou;
+
+    @FindBy(css = ".section-7_btn2__2lv_r")
+    public WebElement link_postYourGoods;
+
     @FindBy(xpath ="(//*[@class=\"Navbar_textLink__f6_Al mr-4\"])[2]")
     public WebElement button_explore;
-  
 
     @FindBy(xpath ="(//*[@class=\"Footer_footer-col__2BbbT\"]//a)[3]")
     public WebElement buttonFooterBlog;
 
     @FindBy(xpath ="//*[text()='+1 (669) 696-5906']")
     public WebElement phoneNumber;
-
-
 
     @FindBy(xpath = "//*[text()='Register Now']")
     public WebElement button_registerNow;
@@ -128,6 +151,7 @@ public class HomePage extends CommonPage {
 
     @FindBy(linkText = "here")
     public WebElement linkAdress;
+
 
 }
 
