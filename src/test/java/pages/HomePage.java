@@ -9,6 +9,7 @@ public class HomePage extends CommonPage {
 
     @FindBy(xpath = "//a[text()='Login']")
     public WebElement loginButton;
+
     @FindBy(xpath = "//a[text()='Login']")
     public WebElement button_login;
 
@@ -26,7 +27,8 @@ public class HomePage extends CommonPage {
 
     @FindBy(xpath = "//input[@type='password']")
     public WebElement box_password;
-@FindBy(xpath = "//div/div/div/div/div//a[.='get the app']")
+
+    @FindBy(xpath = "//div/div/div/div/div//a[.='get the app']")
     public WebElement button_getApp;
 
     //div/div/div/ul/li//a[@href='/mobile']
@@ -52,11 +54,6 @@ public class HomePage extends CommonPage {
 
     @FindBy(id = "registration_form_confirmPassword")
     public WebElement box_regConfirmPassword;
-
-
-
-
-
 
     @FindBy(xpath = "(//a[text()='Logout'])[2]")
     public WebElement button_logout;
