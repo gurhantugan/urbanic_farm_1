@@ -9,7 +9,7 @@ public class HomePage extends CommonPage {
 
     @FindBy(xpath = "//a[text()='Login']")
     public WebElement loginButton;
-    @FindBy(xpath = "//a[text()='Login']")
+    @FindBy(xpath = "//button[@type='submit']")
     public WebElement button_login;
 
     //@FindBy(xpath = "//*[local-name()='svg']//*[local-name()='text']/*[local-name()='tspan'][1]")
@@ -68,4 +68,6 @@ public class HomePage extends CommonPage {
 
     @FindBy(css=".Navbar_textLink__f6_Al.mr-2")
     public WebElement button_Registration;
+    @FindBy(xpath = "//a[@class=\"Navbar_textLink__f6_Al mr-4 ml-1\"][2]")
+    public WebElement button_ContactUs;
 }
