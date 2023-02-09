@@ -101,4 +101,11 @@ public class RegisterPage extends CommonPage {
     @FindBy(xpath = "//button[text()='Register']")
     public WebElement button_eventRegister;
 
+    @FindBy(xpath = "//a[@class='Navbar_textLink__f6_Al cursor-pointer ml-4 mr-3 text-capitalize']")
+    public WebElement text_userName;
+
+
+
+
+
 }
