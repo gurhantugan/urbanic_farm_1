@@ -97,6 +97,17 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "(//a[@class='Navbar_textLink__f6_Al mr-4'])[2]")
     public WebElement link_explore;
 
+    @FindBy(css = ".section-7_btn1__YvVpM")
+    public WebElement link_whatsNearYou;
+
+    @FindBy(css = ".section-7_btn2__2lv_r")
+    public WebElement link_postYourGoods;
+
+
+
+
+
+
 
 
 
