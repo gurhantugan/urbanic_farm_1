@@ -16,6 +16,8 @@ public class US_040_StepDef_SK extends HomePage {
         loginButton.click();
         box_email.sendKeys(ConfigurationReader.getProperty("Email"));
         box_password.sendKeys(ConfigurationReader.getProperty("password"));
+
+
         button_login.click();
 
         //  https://test.urbanicfarm.com/contact-us
