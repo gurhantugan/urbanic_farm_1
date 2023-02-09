@@ -116,7 +116,6 @@ public class HomePage extends CommonPage {
     public WebElement phoneNumber;
 
 
-
     @FindBy(xpath = "//*[text()='Register Now']")
     public WebElement button_registerNow;
 
@@ -126,7 +125,7 @@ public class HomePage extends CommonPage {
   @FindBy(xpath = "//div[@class='alert alert-warning ']/span")
     public WebElement adressMessageText;
 
-<<<<<<< HEAD
+
     @FindBy (xpath = "//button[@class='Section11_shopButton__WbZY9']")
     public WebElement buttonRegisterNow;
 
@@ -134,10 +133,9 @@ public class HomePage extends CommonPage {
     public WebElement buttonAddress;
 
 
-=======
     @FindBy(linkText = "here")
     public WebElement linkAdress;
->>>>>>> main
+
 
 }
 
