@@ -68,7 +68,7 @@ public class BrowserUtilities {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
-       public static void waitForPageToLoad(long timeOutInSeconds) {
+    public static void waitForPageToLoad(long timeOutInSeconds) {
         ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver driver) {
                 return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
@@ -278,10 +278,10 @@ public class BrowserUtilities {
         JSUtils.clickElementByJS(element);
     }
 
-      public static void masterClick(WebElement element){
+    public static void masterClick(WebElement element) {
         BrowserUtilities.scrollToElement(element);
-        BrowserUtilities.waitForVisibility(element,2);
-        BrowserUtilities.waitForClickability(element,2);
+        BrowserUtilities.waitForVisibility(element, 2);
+        BrowserUtilities.waitForClickability(element, 2);
 
         element.click();
 
@@ -356,7 +356,7 @@ public class BrowserUtilities {
 
     }
 
-     
+
     public static void handlingNotification() throws AWTException, InterruptedException {
 
         Robot robot = new Robot();
@@ -432,7 +432,7 @@ public class BrowserUtilities {
         return driver.manage().getCookieNamed("PHPSESSID").toString().split(";")[0];
     }
 
-    public static String createDate2(int month,int day,int year) {
+    public static String createDate2(int month, int day, int year) {
         Calendar cal = Calendar.getInstance();
         cal.add(Calendar.MONTH, month);
         cal.add(Calendar.DAY_OF_MONTH, day);
@@ -441,7 +441,12 @@ public class BrowserUtilities {
         return simpleformat.format(cal.getTime());
     }
 
-    }
+
+}
+
+
+
+
 
 
 
