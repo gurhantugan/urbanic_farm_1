@@ -70,4 +70,9 @@ public class LoginPage extends CommonPage {
     @FindBy(xpath = "//*[text()='Please verify your email.']")
     public WebElement pleaseText;
 
+    @FindBy(xpath = "//a[@class='Navbar_textLink__f6_Al mr-4']")
+    public WebElement linkScheduledDelivery;
+
+
+
 }
