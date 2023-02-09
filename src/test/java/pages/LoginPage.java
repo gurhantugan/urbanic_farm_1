@@ -47,4 +47,15 @@ public class LoginPage extends CommonPage {
 
     @FindBy(xpath = "//*[text()='Change Password']")
     public WebElement message_changePassword;
+
+    @FindBy(xpath = "(//a[@class='Navbar_textLink__f6_Al mr-4 ml-1'])[1]")
+    public WebElement loginAbout;
+
+
+
+
+
+
+
+
 }
