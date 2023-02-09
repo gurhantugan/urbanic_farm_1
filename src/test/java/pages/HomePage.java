@@ -106,7 +106,7 @@ public class HomePage extends CommonPage {
     public List<WebElement> buttons_sell_share_trade;
 
     @FindBy(xpath ="(//*[@class=\"Navbar_textLink__f6_Al mr-4\"])[2]")
-    public WebElement button_explor
+    public WebElement button_explore;
   
 
     @FindBy(xpath ="(//*[@class=\"Footer_footer-col__2BbbT\"]//a)[3]")

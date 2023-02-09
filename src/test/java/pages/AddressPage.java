@@ -62,7 +62,7 @@ public class AddressPage extends CommonPage{
     public WebElement button_submit;
 
     @FindBy(xpath = "//div[text()='Your Address successfully added']")
-    public WebElement messag
+    public WebElement message_successful;
 
 
   
