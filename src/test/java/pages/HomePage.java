@@ -53,12 +53,21 @@ public class HomePage extends CommonPage {
     @FindBy(id = "registration_form_confirmPassword")
     public WebElement box_regConfirmPassword;
 
-
     @FindBy(xpath = "(//a[text()='Logout'])[2]")
     public WebElement button_logout;
 
     @FindBy(xpath = "//div[@class='Navbar_linkContainer__2jWIM']//a[text()='About Us']")
     public WebElement link_aboutUs;
+
+
+    @FindBy(xpath = "(//button[@class='section-2_shopButton__17T04'])[2]")
+    public WebElement button_shellYourProduct;
+
+    @FindBy(xpath = "//a[.='about us']")
+    public WebElement link_aboutUs_footer;
+
+    @FindBy(xpath = "//a[normalize-space()='Support the local food movement']")
+    public WebElement link_support;
 
     @FindBy(xpath = "//a[text()='Terms of service']")
     public WebElement termsOfServiceLink;
@@ -98,11 +107,27 @@ public class HomePage extends CommonPage {
 
     @FindBy(xpath ="(//*[@class=\"Navbar_textLink__f6_Al mr-4\"])[2]")
     public WebElement button_explore;
+  
+
+    @FindBy(xpath ="(//*[@class=\"Footer_footer-col__2BbbT\"]//a)[3]")
+    public WebElement buttonFooterBlog;
+
+    @FindBy(xpath ="//*[text()='+1 (669) 696-5906']")
+    public WebElement phoneNumber;
+
+
 
     @FindBy(xpath = "//*[text()='Register Now']")
     public WebElement button_registerNow;
 
     @FindBy(xpath = "//button[@class='section-9_gofunderButton__32gaj']")
     public WebElement button_wefunder;
+    
+  @FindBy(xpath = "//div[@class='alert alert-warning ']/span")
+    public WebElement adressMessageText;
+
+    @FindBy(linkText = "here")
+    public WebElement linkAdress;
+
 }
 
