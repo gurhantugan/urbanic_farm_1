@@ -1,6 +1,6 @@
 @US012
 @smoke
-Feature: US_017 User should be able to perform various operations on homepage
+Feature: US_012 User should be able to perform various operations on homepage
   Scenario: TC_001 Discover Local Sellers Near You should be clickable and relevant page should be visible
     Given user is on the Urbanic_Farm page
     Then user verifies that SELL, SHARE, TRADE buttons are clickable in the Sell Your Products area

@@ -63,12 +63,14 @@ public class JSUtils {
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         jse.executeScript(command, element);
     }
+
     /*
      * executes the given JavaScript command on given web element
      */
     public static void executeJScommand(String command) {
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         jse.executeScript(command);
+        System.out.println();
     }
 
 }
