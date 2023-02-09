@@ -31,8 +31,8 @@ Feature: Address
     Then user selects the address from opened menu
 
   @US_049-TC001
-  Scenario: "Address Title, Address, State,City, Post/Zip and Mark as delivery address,
-  Mark as sales address options should appear"
+  Scenario: Address Title, Address, State,City, Post/Zip and Mark as delivery address,
+  Mark as sales address options should appear
 
     Then user asserts variable titles are visible
 

@@ -18,8 +18,6 @@ public class LoginPage extends CommonPage {
     @FindBy(css = "[type='submit']")
     public WebElement button_submit;
 
-    @FindBy(xpath = "//span[text()='Cart']")
-    public WebElement button_cart;
 
     @FindBy(xpath = "//a[@class='Navbar_textLink__f6_Al cursor-pointer ml-4 mr-3 text-capitalize']")
     public WebElement button_accountHome;
@@ -50,4 +48,29 @@ public class LoginPage extends CommonPage {
 
     @FindBy(xpath = "//*[text()='Change Password']")
     public WebElement message_changePassword;
+
+    @FindBy(xpath = "//input[@name='email']")
+    public WebElement button_emailOnLoginPage;
+
+    @FindBy(xpath = "//input[@name='password']")
+    public WebElement button_passwordOnLoginPage;
+
+    @FindBy(xpath = "(//a[text()='Login'])[1]")
+    public WebElement buttonLogin;
+
+    @FindBy(xpath = "//*[@name=\"email\"]")
+    public WebElement emailBox;
+
+    @FindBy(xpath = "//*[@name=\"password\"]")
+    public WebElement passwordBox;
+
+    @FindBy(xpath = "//*[text()='Forgot Password']")
+    public WebElement forgotPasswordText;
+
+    @FindBy(xpath = "//*[text()='Please verify your email.']")
+    public WebElement pleaseText;
+
+
+
+
 }
