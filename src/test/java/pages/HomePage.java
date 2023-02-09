@@ -35,28 +35,6 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//div/div//a[@href='https://apps.apple.com/tr/app/urbanicfarm/id1581829783']")
     public WebElement link_Apple;
 
-    @FindBy(id = "registration_form_firstname")
-    public WebElement box_regFirstname;
-
-    @FindBy(id = "registration_form_middlename")
-    public WebElement box_regMidname;
-
-    @FindBy(id = "registration_form_lastname")
-    public WebElement box_regLasttname;
-
-    @FindBy(xpath = "//input[@name='email']")
-    public WebElement box_regEmail;
-
-    @FindBy(id = "registration_form_plainPassword")
-    public WebElement box_regPassword;
-
-    @FindBy(id = "registration_form_confirmPassword")
-    public WebElement box_regConfirmPassword;
-
-
-
-
-
 
     @FindBy(xpath = "(//a[text()='Logout'])[2]")
     public WebElement button_logout;

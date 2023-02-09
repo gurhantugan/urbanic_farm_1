@@ -3,13 +3,15 @@ package stepDefinitions;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
-import pages.HomePage;
+import org.openqa.selenium.WebElement;
+import pages.RegistrationPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
+import static utilities.BrowserUtilities.clickWithJS;
 
 
-public class US_032_StepDef_SK extends HomePage {
+public class US_032_StepDef_SK extends RegistrationPage {
     String red="rgba(245, 110, 105, 1)";
 
     @Given("user is on the Registration Page")
@@ -21,8 +23,6 @@ public class US_032_StepDef_SK extends HomePage {
     @When("user enter the left blank in password")
     public void user_enter_the_left_blank_in_password(DataTable dataTable) {
         box_regPassword.sendKeys(dataTable.cell(0,0));
-
-
 
 
         Assert.assertEquals("red","red");
@@ -54,9 +54,22 @@ public class US_032_StepDef_SK extends HomePage {
     }
     @When("user enter unmatched passwords")
     public void user_enter_unmatched_passwords(DataTable dataTable) {
+        box_regFirstname.sendKeys("sekocan");
+        box_regLasttname.sendKeys("Hero");
+        box_regMidname.sendKeys("Super");
+        box_regEmail.sendKeys("klmn@gmail.com");
         box_regPassword.sendKeys(dataTable.cell(0,0));
         box_regConfirmPassword.sendKeys(dataTable.cell(1,0));
-        Assert.assertEquals("red","red");
+        clickWithJS(button_Submit) ;
+       // box_regConfirmPassword.getDomProperty("validationMessage");
+
+        //Validation message pop alert olarak gorunup kayboluyordu.Locate etmek icin ortaya ciktigi alani inspect ettik.
+        //Element kismi yukarida acikken asagida Propertisden #validation yani key valuesunu aldik.
+        //ValidationMessage="Passwords Dont match" idi mesaj.
+        //Sonra getDomProperty methodu ile disappear olan pop upa ulastik
+
+        System.out.println(box_regConfirmPassword.getDomProperty("validationMessage"));
+
 
 
 
