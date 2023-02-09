@@ -18,16 +18,12 @@ public class US_007_StepDef_SK extends HomePage {
         button_navbarLogin.click();
 
 
-}
+    }
     @Then("user should able to see relevant email and password page")
     public void user_should_able_to_see_relevant_email_and_password_page() {
         box_email.getText();
 
        // Driver.getDriver().close();
-
-
-
-
     }
 
 }

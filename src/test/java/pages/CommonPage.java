@@ -11,6 +11,9 @@ public abstract class CommonPage {
         PageFactory.initElements(Driver.getDriver(), this);
 
 }
+
+    }
+
 }
 
 
