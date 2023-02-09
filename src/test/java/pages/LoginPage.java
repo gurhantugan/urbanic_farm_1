@@ -53,6 +53,4 @@ public class LoginPage extends CommonPage {
     @FindBy(xpath = "//input[@name='password']")
     public WebElement button_passwordOnLoginPage;
 
-
-
 }
