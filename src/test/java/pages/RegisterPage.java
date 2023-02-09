@@ -101,6 +101,4 @@ public class RegisterPage extends CommonPage {
     @FindBy(xpath = "//button[text()='Register']")
     public WebElement button_eventRegister;
 
-
-
-
+}
