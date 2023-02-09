@@ -48,8 +48,10 @@ public class LoginPage extends CommonPage {
 
     @FindBy(xpath = "//*[text()='Change Password']")
     public WebElement message_changePassword;
+
     @FindBy(xpath = "//input[@name='email']")
     public WebElement button_emailOnLoginPage;
+
     @FindBy(xpath = "//input[@name='password']")
     public WebElement button_passwordOnLoginPage;
 
