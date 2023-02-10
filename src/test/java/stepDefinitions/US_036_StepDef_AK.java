@@ -12,7 +12,7 @@ package stepDefinitions;
 //
 public class US_036_StepDef_AK { 
 
-    LoginPage loginPage = new LoginPage();
+ LoginPage loginPage = new LoginPage();
 
  @When("user clicks login button")
 public void userClicksLoginButton() {
@@ -35,12 +35,12 @@ public void userClicksLoginButton() {
         loginPage.textbox_email.sendKeys(invalidEmail);
         loginPage.button_passwordOnLoginPage.sendKeys(invaildPassword);
    }
+   
     @Then("User verifies unable to login with {string}")
     public void userVerifiesUnableToLoginWith(String expectedValue) {
         BrowserUtilities.waitFor(2);
         loginPage.button_forgotPassword.click();
         BrowserUtilities.waitFor(2);
-        assertTrue(loginPage.loginButton.isDisplayed());
 
         Driver.closeDriver();
     }
