@@ -1,11 +1,7 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import utilities.Driver;
-
-import static utilities.Driver.getDriver;
 
 public class RegisterPage extends CommonPage {
 
@@ -100,6 +96,8 @@ public class RegisterPage extends CommonPage {
 
     @FindBy(xpath = "//button[text()='Register']")
     public WebElement button_eventRegister;
+
+}
 
 
 

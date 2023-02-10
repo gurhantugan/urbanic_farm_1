@@ -104,7 +104,6 @@ public class HomePage extends CommonPage {
 
     @FindBy(xpath = "//a[text()='contact us']")
     public WebElement link_contactUsFooter;
-    public List<WebElement> buttons_sell_share_trade;
 
     @FindBy(xpath ="(//*[@class=\"Navbar_textLink__f6_Al mr-4\"])[2]")
     public WebElement button_explore;
@@ -121,6 +120,12 @@ public class HomePage extends CommonPage {
 
     @FindBy(xpath = "//button[@class='section-9_gofunderButton__32gaj']")
     public WebElement button_wefunder;
+
+    @FindBy(css = ".h4")
+    public WebElement sign_cancel;
+
+    @FindBy(css = "nav>a.Navbar_textLink__f6_Al[href^='/account/home']")
+    public WebElement button_account;
 
 
 }
