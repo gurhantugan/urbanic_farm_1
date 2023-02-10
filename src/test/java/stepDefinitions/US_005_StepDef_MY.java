@@ -26,7 +26,8 @@ public class US_005_StepDef_MY {
 
     @Then("user should go to relevant page with {string}")
     public void userShouldGoToRelevantPageWith(String expectedUrl) {
-        String currentUrl = Driver.getDriver().getCurrentUrl();
+        java.lang.String currentUrl;
+        currentUrl = Driver.getDriver().getCurrentUrl();
         Assert.assertEquals(expectedUrl,currentUrl);
     BrowserUtilities.waitFor(5);
     Driver.closeDriver();

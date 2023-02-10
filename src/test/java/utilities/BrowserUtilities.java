@@ -1,8 +1,6 @@
 package utilities;
 
-import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.*;
 import org.openqa.selenium.html5.LocalStorage;
 import org.openqa.selenium.html5.SessionStorage;
@@ -11,22 +9,20 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import ru.yandex.qatools.ashot.comparison.ImageDiff;
-import ru.yandex.qatools.ashot.comparison.ImageDiffer;
 
 import javax.annotation.Nullable;
-import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
-import java.awt.image.BufferedImage;
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
-import java.util.*;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import static stepDefinitions.Hooks.driver;
