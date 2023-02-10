@@ -1,3 +1,4 @@
+@US_047
 Feature: Account
 
   Scenario:  As a user, after entering valid information, I should be able to perform various actions in the Account section.	Left Column-Account
