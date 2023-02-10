@@ -53,6 +53,7 @@ public class HomePage extends CommonPage {
     @FindBy(id = "registration_form_confirmPassword")
     public WebElement box_regConfirmPassword;
 
+
     @FindBy(xpath = "(//a[text()='Logout'])[2]")
     public WebElement button_logout;
 
@@ -107,7 +108,6 @@ public class HomePage extends CommonPage {
 
     @FindBy(xpath ="(//*[@class=\"Navbar_textLink__f6_Al mr-4\"])[2]")
     public WebElement button_explore;
-  
 
     @FindBy(xpath ="(//*[@class=\"Footer_footer-col__2BbbT\"]//a)[3]")
     public WebElement buttonFooterBlog;
@@ -116,18 +116,23 @@ public class HomePage extends CommonPage {
     public WebElement phoneNumber;
 
 
-
     @FindBy(xpath = "//*[text()='Register Now']")
     public WebElement button_registerNow;
 
     @FindBy(xpath = "//button[@class='section-9_gofunderButton__32gaj']")
     public WebElement button_wefunder;
-    
+
   @FindBy(xpath = "//div[@class='alert alert-warning ']/span")
     public WebElement adressMessageText;
 
     @FindBy(linkText = "here")
     public WebElement linkAdress;
+    @FindBy(css = ".h4")
+    public WebElement sign_cancel;
+
+    @FindBy(css = "nav>a.Navbar_textLink__f6_Al[href^='/account/home']")
+    public WebElement button_account;
+
 
     @FindBy(xpath = "//a[@class=\"Navbar_textLink__f6_Al mr-4 ml-1\"][2]")
     public WebElement button_ContactUs;
