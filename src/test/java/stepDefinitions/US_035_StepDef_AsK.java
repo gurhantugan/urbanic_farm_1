@@ -4,6 +4,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.LoginPage;
+import utilities.BrowserUtilities;
+import utilities.ConfigurationReader;
 
 public class US_035_StepDef_AsK {
 
@@ -24,8 +26,9 @@ public class US_035_StepDef_AsK {
     @When("user enter valid email and password")
     public void userEnterValidEmailAndPassword() {
 
-        loginPage.textbox_email.sendKeys("kancaserkan@gmail.com" );
-        loginPage.textbox_password.sendKeys( "Seko2023" );
+        loginPage.textbox_email.sendKeys( "yusufberber@gmail.com");
+        loginPage.textbox_password.sendKeys( "1619Yusufberber" );
+        BrowserUtilities.waitFor( 5 );
     }
 
 
@@ -33,10 +36,14 @@ public class US_035_StepDef_AsK {
     public void userClicksLoginButton() {
 
         loginPage.loginButton.click();
+
+        BrowserUtilities.waitFor( 10);
     }
 
     @And("user should be able to verify to login successfully")
     public void userShouldBeAbleToVerifyToLoginSuccessfully() {
+
+        loginPage.button_beFirst.isDisplayed();
 
 
     }

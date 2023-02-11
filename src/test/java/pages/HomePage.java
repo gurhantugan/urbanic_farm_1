@@ -11,10 +11,6 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//a[text()='Login']")
     public WebElement loginButton;
 
-
-//    @FindBy(xpath = "//a[text()='Login']")
-//    public WebElement loginButton;
-
     @FindBy(xpath = "//a[text()='Login']")
     public WebElement button_login;
 
@@ -141,10 +137,7 @@ public class HomePage extends CommonPage {
     @FindBy(xpath ="//*[text()='+1 (669) 696-5906']")
     public WebElement phoneNumber;
 
-
-=======
-
-    @FindBy(xpath = "//*[text()='Register Now']")
+    @FindBy(xpath = "//*[@id=\"__next\"]/div[4]/div[3]/section[3]/div[2]/div/button")
     public WebElement button_registerNow;
 
     @FindBy(xpath = "//button[@class='section-9_gofunderButton__32gaj']")
@@ -165,13 +158,12 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//a[@class=\"Navbar_textLink__f6_Al mr-4 ml-1\"][2]")
     public WebElement button_ContactUs;
 
-    @FindBy(xpath = "//a[text()='Login']")
-    public WebElement loginButton;
-
-    @FindBy(xpath = "//button[@type='submit']")
-    public WebElement buttonn_login;
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement button_Submit;
+
+    @FindBy(xpath ="//*[@id=\"__next\"]/div[4]/div[3]/section[3]/div[2]" )
+    public WebElement link_of_BackyardGardenersAndFarmersJoinTheMovementForFree;
+
 
 
 }
