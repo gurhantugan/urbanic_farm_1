@@ -1,4 +1,4 @@
-
+@regression @UI @US_031
 Feature: Check valid and invalid name, surname, email.
 Background:
   Given user is on the Urbanic_Farm page
@@ -30,7 +30,7 @@ Background:
       |mesu698         |
       |12klm           |
       |yavuz@t3        |
-@mes
+
   Scenario: As a user,I should be able to  enter a valid email with the extensions "@", ".<something>"
     And the user hover over the email box
     Then the user writes a valid email with a black background color
