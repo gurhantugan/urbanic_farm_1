@@ -8,8 +8,26 @@ public class SelfShareTradePage extends CommonPage{
     @FindBy(xpath = "//span[text()='Cart']")
     public WebElement button_cart;
 
+   @FindBy(xpath = "//span[text()='Sell-Share-Trade']")
+   public WebElement button_Sell_Share_Trade;
 
+   @FindBy(linkText = "About us")
+    public WebElement link_About_us;
 
+    @FindBy(linkText = "Contact us")
+    public WebElement link_Contact_us;
+
+    @FindBy(linkText = "Scheduled delivery")
+    public WebElement link_Scheduled_delivery;
+
+    @FindBy(xpath = "//span[text()='Events']")
+    public WebElement link_Events;
+
+    @FindBy(linkText = "Logout")
+    public WebElement link_Logout;
+
+    @FindBy(xpath = "//span[text()='Cart']")
+    public WebElement link_Cart;
 
 
 }

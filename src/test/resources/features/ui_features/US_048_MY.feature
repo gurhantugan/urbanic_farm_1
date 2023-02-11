@@ -7,13 +7,13 @@
 #Place should be able to be selected from the Search Places dropdown menu
 # button should be functional
 #When user Click to Cancel button should return to the previous page.
-
+@regression @UI
 Feature: Various actions in adress
 
   Scenario: As a user, after entering valid information, I should be able to perform various actions in the Address section
     Given user is on the Urbanic_Farm page
     When user enter the Login button
-    And user enter "mesut34@gmail.com" and "Fatrah0305*" as login credentials and clicks login
+    And user enter "mesut3@gmail.com" and "Fatrah0305" as login credentials and clicks login
     Then user logged in and sees "You haven't set your current address yet. Please click here to set your delivery address."
     And the user clicks here to go adress
     And the user is on the Adress page
