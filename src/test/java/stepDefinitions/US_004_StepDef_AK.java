@@ -24,11 +24,12 @@ public class US_004_StepDef_AK {
     public void userClicksTheDiscoverButton() {
         homePage.button_explore.click();
     }
-
-    @Then("user verifies that the {string} is visible")
-    public void userVerifiesThatTheIsVisible(String arg0) {
+    @Then("user verifies that the urbanicfarm.com explore is visible")
+    public void userVerifiesThatTheUrbanicfarmComExploreIsVisible() {
         BrowserUtilities.waitFor(3);
-        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(arg0));
+        System.out.println(Driver.getDriver().getCurrentUrl());
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("explore"));
+
         Driver.closeDriver();
 
     }

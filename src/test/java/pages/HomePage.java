@@ -1,14 +1,20 @@
 package pages;
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+        import org.openqa.selenium.WebElement;
+        import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
 public class HomePage extends CommonPage {
 
+
     @FindBy(xpath = "//a[text()='Login']")
     public WebElement loginButton;
+
+
+//    @FindBy(xpath = "//a[text()='Login']")
+//    public WebElement loginButton;
+
     @FindBy(xpath = "//a[text()='Login']")
     public WebElement button_login;
 
@@ -26,6 +32,7 @@ public class HomePage extends CommonPage {
 
     @FindBy(xpath = "//input[@type='password']")
     public WebElement box_password;
+
     @FindBy(xpath = "//div/div/div/div/div//a[.='get the app']")
     public WebElement button_getApp;
 
@@ -60,6 +67,16 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//div[@class='Navbar_linkContainer__2jWIM']//a[text()='About Us']")
     public WebElement link_aboutUs;
 
+
+    @FindBy(xpath = "(//button[@class='section-2_shopButton__17T04'])[2]")
+    public WebElement button_shellYourProduct;
+
+    @FindBy(xpath = "//a[.='about us']")
+    public WebElement link_aboutUs_footer;
+
+    @FindBy(xpath = "//a[normalize-space()='Support the local food movement']")
+    public WebElement link_support;
+
     @FindBy(xpath = "//a[text()='Terms of service']")
     public WebElement termsOfServiceLink;
 
@@ -81,6 +98,11 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//a[@href='https://www.linkedin.com/company/urbanicfarm/']")
     public WebElement button_linkedin;
 
+
+    @FindBy(xpath = "(//a[text()='Blog'])[1]")
+    public WebElement button_blog;
+
+
     @FindBy(css = ".btn.text-uppercase")
     public List<WebElement> links_sell_share_trade;
 
@@ -91,10 +113,66 @@ public class HomePage extends CommonPage {
     public WebElement link_contactUsFooter;
     public List<WebElement> buttons_sell_share_trade;
 
+
+    @FindBy(xpath = "(//*[@id='Group_3'])[1]")
+    public WebElement logo_urbanicFarm;
+
+    @FindBy(xpath = "//a[.='Support the local food movement']")
+    public WebElement link_SupportTheLocalFoodMovement;
+
+    @FindBy(xpath = "(//a[@class='Navbar_textLink__f6_Al mr-4'])[1]")
+    public WebElement link_blog;
+
+    @FindBy(xpath = "(//a[@class='Navbar_textLink__f6_Al mr-4'])[2]")
+    public WebElement link_explore;
+
+    @FindBy(css = ".section-7_btn1__YvVpM")
+    public WebElement link_whatsNearYou;
+
+    @FindBy(css = ".section-7_btn2__2lv_r")
+    public WebElement link_postYourGoods;
+
     @FindBy(xpath ="(//*[@class=\"Navbar_textLink__f6_Al mr-4\"])[2]")
     public WebElement button_explore;
 
+    @FindBy(xpath ="(//*[@class=\"Footer_footer-col__2BbbT\"]//a)[3]")
+    public WebElement buttonFooterBlog;
 
+    @FindBy(xpath ="//*[text()='+1 (669) 696-5906']")
+    public WebElement phoneNumber;
+
+
+=======
+
+    @FindBy(xpath = "//*[text()='Register Now']")
+    public WebElement button_registerNow;
+
+    @FindBy(xpath = "//button[@class='section-9_gofunderButton__32gaj']")
+    public WebElement button_wefunder;
+
+  @FindBy(xpath = "//div[@class='alert alert-warning ']/span")
+    public WebElement adressMessageText;
+
+    @FindBy(linkText = "here")
+    public WebElement linkAdress;
+    @FindBy(css = ".h4")
+    public WebElement sign_cancel;
+
+    @FindBy(css = "nav>a.Navbar_textLink__f6_Al[href^='/account/home']")
+    public WebElement button_account;
+
+
+    @FindBy(xpath = "//a[@class=\"Navbar_textLink__f6_Al mr-4 ml-1\"][2]")
+    public WebElement button_ContactUs;
+
+    @FindBy(xpath = "//a[text()='Login']")
+    public WebElement loginButton;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement buttonn_login;
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement button_Submit;
 
 
 }
+

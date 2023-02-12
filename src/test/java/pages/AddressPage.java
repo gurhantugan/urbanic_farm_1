@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class AddressPage extends CommonPage{
 
     @FindBy(xpath = "//button[text()='Add New Address']")
@@ -50,7 +52,7 @@ public class AddressPage extends CommonPage{
     @FindBy(xpath = "//input[@id='postal']")
     public WebElement textBox_postal;
 
-    @FindBy(xpath = "//input[@id='isDefault']")
+    @FindBy(xpath = "//input[@name='isDefault']")
     public WebElement checkBox_deliveryAddress;
 
     @FindBy(xpath = "//input[@id='isSellerAddress']")
@@ -61,4 +63,30 @@ public class AddressPage extends CommonPage{
 
     @FindBy(xpath = "//div[text()='Your Address successfully added']")
     public WebElement message_successful;
+
+
+  
+    @FindBy(xpath = "//button[@name='delivery']")
+    public WebElement button_deliveryAddress;
+
+    @FindBy(xpath = "//button[@name='sales']")
+    public WebElement button_salesAddress;
+
+    @FindBy(xpath = "//div[@class='card-body']")
+    public WebElement body_AddressCard;
+    
+ @FindBy(xpath = "//span[@class='h6 ml-2']")
+    public List<WebElement> adresses_dropdown;
+
+
+
+   @FindBy(xpath = "//input[@id='address']")
+   public WebElement address_Bar;
+
+    @FindBy(xpath = "//button[text()='Cancel']")
+    public WebElement button_cancel;
+
+    @FindBy(linkText = "Logout")
+    public WebElement logout_button;
+
 }
