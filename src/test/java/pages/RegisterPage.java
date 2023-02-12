@@ -102,5 +102,8 @@ public class RegisterPage extends CommonPage {
     public WebElement button_eventRegister;
 
 
+}
+
+
 
 
