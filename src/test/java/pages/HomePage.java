@@ -142,7 +142,6 @@ public class HomePage extends CommonPage {
     public WebElement phoneNumber;
 
 
-=======
 
     @FindBy(xpath = "//*[text()='Register Now']")
     public WebElement button_registerNow;
