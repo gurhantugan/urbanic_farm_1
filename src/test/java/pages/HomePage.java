@@ -54,7 +54,7 @@ public class HomePage extends CommonPage {
     public WebElement box_regConfirmPassword;
 
 
-    @FindBy(xpath = "(//a[text()='Logout'])[2]")
+    @FindBy(xpath = "(//a[text()='Logout'])[1]")
     public WebElement button_logout;
 
     @FindBy(xpath = "//div[@class='Navbar_linkContainer__2jWIM']//a[text()='About Us']")
@@ -87,7 +87,11 @@ public class HomePage extends CommonPage {
     @FindBy(xpath ="(//*[@class=\"Navbar_textLink__f6_Al mr-4\"])[2]")
     public WebElement button_explore;
 
+    @FindBy(xpath ="//a[text()='Login']")
+    public WebElement loginButton_header;
 
+    @FindBy(xpath ="//a[@title='click to change your delivery address']")
+    public WebElement deliveryAddress_button;
 
 
 }

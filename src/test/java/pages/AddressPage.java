@@ -61,4 +61,58 @@ public class AddressPage extends CommonPage{
 
     @FindBy(xpath = "//div[text()='Your Address successfully added']")
     public WebElement message_successful;
+
+    @FindBy(css = "button[class='btn btn-outline-success']")
+    public WebElement addNewAddress_button;
+
+    @FindBy(xpath = "//input[@placeholder='Search Places ...']")
+    public WebElement searchPlace;
+
+    @FindBy(xpath = "//li[@role='option'][1]")
+    public WebElement dropDownMenu;
+
+    @FindBy(xpath = "//div[text()='Your Address successfully added']")
+    public WebElement warningMessage_successfullyAdded;
+
+    @FindBy(xpath = "//button[text()='Remove']")
+    public WebElement button_remove;
+
+    @FindBy(xpath = "//button[contains(text(),'My Sales Address')]")
+    public WebElement button_MySalesAddress;
+
+    @FindBy(xpath = "//span[contains(text(),'My delivery address')]")
+    public WebElement text_Mydeliveryaddress;
+
+    @FindBy(xpath = "//button[contains(text(),'Non Selected Address')]")
+    public WebElement button_NonSelectedAddress;
+
+    @FindBy(xpath = "//button[contains(text(),'Edit')]")
+    public WebElement button_Edit;
+
+    @FindBy(xpath = "//input[@id='address']")
+    public WebElement box_address;
+
+    @FindBy(xpath = "//button[text()='Submit']")
+    public WebElement button_submit2;
+
+    @FindBy(xpath = "//div[contains(text(),'Your Address successfully updated')]")
+    public WebElement warningMessage_yourAddressSuccessfullyUpdated;
+
+    @FindBy(xpath = "//button[contains(text(),'Remove')]")
+    public WebElement button_remove2;
+
+    @FindBy(xpath = "(//h5[@class='text-center mb-4'][contains(text(),'Are you sure to delete')])[1]")
+    public WebElement box_textDelete;
+
+//    @FindBy(xpath = "(//button[contains(text(),'No')])[2]")
+//    public WebElement button_No;
+//
+//    @FindBy(xpath = "(//button[contains(text(),'Yes')])[1]")
+//    public WebElement button_Yes;
+
+    @FindBy(xpath = "//div[contains(text(),'Address deleted')]")
+    public WebElement getWarningMessage_addressDeleted;
+
+
+
 }
