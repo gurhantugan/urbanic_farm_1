@@ -5,7 +5,7 @@ import org.junit.Assert;
 import pages.LoginPage;
 import utilities.Driver;
 
-public class US_39_StepDef_MO {
+public class US_039_StepDef_MO {
 
     LoginPage lp=new LoginPage();
 
