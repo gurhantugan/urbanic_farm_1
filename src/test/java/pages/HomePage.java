@@ -7,7 +7,7 @@ import java.util.List;
 
 public class HomePage extends CommonPage {
 
-//    @FindBy(xpath = "//a[text()='Login']")
+    //    @FindBy(xpath = "//a[text()='Login']")
 //    public WebElement loginButton;
     @FindBy(xpath = "//a[text()='Login']")
     public WebElement button_login;
@@ -105,14 +105,14 @@ public class HomePage extends CommonPage {
     public WebElement link_contactUsFooter;
     public List<WebElement> buttons_sell_share_trade;
 
-    @FindBy(xpath ="(//*[@class=\"Navbar_textLink__f6_Al mr-4\"])[2]")
+    @FindBy(xpath = "(//*[@class=\"Navbar_textLink__f6_Al mr-4\"])[2]")
     public WebElement button_explore;
-  
 
-    @FindBy(xpath ="(//*[@class=\"Footer_footer-col__2BbbT\"]//a)[3]")
+
+    @FindBy(xpath = "(//*[@class=\"Footer_footer-col__2BbbT\"]//a)[3]")
     public WebElement buttonFooterBlog;
 
-    @FindBy(xpath ="//*[text()='+1 (669) 696-5906']")
+    @FindBy(xpath = "//*[text()='+1 (669) 696-5906']")
     public WebElement phoneNumber;
 
 
@@ -121,20 +121,20 @@ public class HomePage extends CommonPage {
 
     @FindBy(xpath = "//button[@class='section-9_gofunderButton__32gaj']")
     public WebElement button_wefunder;
-    
-  @FindBy(xpath = "//div[@class='alert alert-warning ']/span")
+
+    @FindBy(xpath = "//div[@class='alert alert-warning ']/span")
     public WebElement adressMessageText;
 
 
-    @FindBy (xpath = "//button[@class='Section11_shopButton__WbZY9']")
+    @FindBy(xpath = "//button[@class='Section11_shopButton__WbZY9']")
     public WebElement buttonRegisterNow;
 
-    @FindBy (xpath = "//address[contains(text(),'UrbanicFarm Inc., 1159 Kelez Dr San Jose, Californ')]")
+    @FindBy(xpath = "//address[contains(text(),'UrbanicFarm Inc., 1159 Kelez Dr San Jose, Californ')]")
     public WebElement buttonAddress;
-
 
     @FindBy(linkText = "here")
     public WebElement linkAdress;
+
 
 
 }
