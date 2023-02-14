@@ -1,6 +1,8 @@
 package utilities;
 
+import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.*;
 import org.openqa.selenium.html5.LocalStorage;
 import org.openqa.selenium.html5.SessionStorage;
@@ -9,20 +11,22 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import ru.yandex.qatools.ashot.comparison.ImageDiff;
+import ru.yandex.qatools.ashot.comparison.ImageDiffer;
 
 import javax.annotation.Nullable;
+import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
-import java.util.Properties;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 import static stepDefinitions.Hooks.driver;
@@ -441,12 +445,82 @@ public class BrowserUtilities {
         return simpleformat.format(cal.getTime());
     }
 
+    public static void acceptAlert() {
+        try {
+            Alert alert = driver.switchTo().alert();
+            alert.accept();
+        } catch (NoAlertPresentException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    public static boolean fileIsExist(String filePath, String fileName){
+        File file = new File(filePath);
+
+        File[] listFiles = file.listFiles();
+
+        for (File w:listFiles) {
+            if(w.getName().equals(fileName)){
+                return w.exists();
+            }
+        }
+        return false;
+    }
+    public static boolean deleteFile(String filePath, String fileName){
+        File file = new File(filePath);
+
+        File[] listFiles = file.listFiles();
+
+        for (File w:listFiles) {
+            if(w.getName().equals(fileName)){
+                w.delete();
+                break;
+            }
+        }
+        return false;
+    }
+
+    public static String giveMeRandomPic(List<String> pics){
+        Random random = new Random();
+        int randomPic = random.nextInt(pics.size());
+        return pics.get(randomPic);
+
+    }
+    public static String giveMeRandomPic(List<String> pics, String pic){
+        pics.remove(pic);
+        Random random = new Random();
+        int randomPic = random.nextInt(pics.size());
+        return pics.get(randomPic);
+    }
+
+    public static void screenShotWebElement(WebElement webElement, String filepath){
+        File screenShoot = webElement.getScreenshotAs(OutputType.FILE);
+
+        try {
+            FileUtils.copyFile(screenShoot,new File(filepath));
+        }catch (IOException e){
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static boolean assertImageAreDifferent(String image1Path,String image2Path){
+        BufferedImage image1, image2;
+        try{
+            image1 = ImageIO.read(new File(image1Path));
+            image2 = ImageIO.read(new File(image2Path));
+        }catch (IOException e){
+            throw new RuntimeException(e);
+        }
+        ImageDiffer imageDiffer = new ImageDiffer();
+        ImageDiff diff = imageDiffer.makeDiff(image1,image2);
+
+        return diff.hasDiff();
+    }
+
 
 }
-
-
-
-
 
 
 
