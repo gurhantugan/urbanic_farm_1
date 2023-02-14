@@ -137,7 +137,14 @@ public class HomePage extends CommonPage {
     @FindBy(xpath ="//*[text()='+1 (669) 696-5906']")
     public WebElement phoneNumber;
 
+<<<<<<< HEAD
+
+=======
+
+    @FindBy(xpath = "//*[text()='Register Now']")
+=======
     @FindBy(xpath = "//*[@id=\"__next\"]/div[4]/div[3]/section[3]/div[2]/div/button")
+>>>>>>> e107a3cadca10180d28ba5a3531c729b1620f2a7
     public WebElement button_registerNow;
 
     @FindBy(xpath = "//button[@class='section-9_gofunderButton__32gaj']")
