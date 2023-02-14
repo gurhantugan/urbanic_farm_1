@@ -6,7 +6,7 @@ Feature:US_035 As a user I should be able to login with my account
   Successful login after valid information is entered
 
   Given user is on homepage
-  When user is on login page
+  When user enter the Login button
   Then user verifies email address button is visible
   And user verifies password button is visible
   When user enter valid email and password
