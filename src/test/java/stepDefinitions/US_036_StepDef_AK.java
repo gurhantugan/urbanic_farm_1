@@ -1,4 +1,14 @@
 package stepDefinitions;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import pages.LoginPage;
+import utilities.BrowserUtilities;
+import utilities.Driver;
+
+import static org.junit.Assert.assertTrue;
+
 //
 //import io.cucumber.java.en.Given;
 //import io.cucumber.java.en.Then;
@@ -10,15 +20,15 @@ package stepDefinitions;
 //import utilities.BrowserUtilities;
 //import utilities.Driver;
 //
-public class US_036_StepDef_AK { 
+public class US_036_StepDef_AK {
 
  LoginPage loginPage = new LoginPage();
 
- @When("user clicks login button")
-public void userClicksLoginButton() {
- BrowserUtilities.waitForVisibility(loginPage.button_login,20);
-  BrowserUtilities.clickWithJS(loginPage.button_login);
- }
+// @When("user clicks login button")
+//public void userClicksLoginButton() {
+// BrowserUtilities.waitForVisibility(loginPage.button_login,20);
+//  BrowserUtilities.clickWithJS(loginPage.button_login);
+// }
 
     @Then("User verifies that the mail text box is clickable")
     public void userVerifiesThatTheMailTextBoxIsClickable() {
