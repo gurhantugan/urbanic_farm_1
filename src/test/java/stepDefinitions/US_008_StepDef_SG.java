@@ -22,6 +22,7 @@ public class US_008_StepDef_SG {
 
     @When("User checks the register button is clickable")
     public void user_checks_the_register_button_is_clickable() {
+
         homePage.button_register.isEnabled();
     }
 
