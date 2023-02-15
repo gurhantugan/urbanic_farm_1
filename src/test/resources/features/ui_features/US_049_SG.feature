@@ -31,15 +31,29 @@ Feature: Address
     Then user selects the address from opened menu
 
   @US_049-TC001
-  Scenario: "Address Title, Address, State,City, Post/Zip and Mark as delivery address,
-  Mark as sales address options should appear"
+  Scenario: Address Title, Address, State,City, Post/Zip and Mark as delivery address,
+  Mark as sales address options should appear
 
     Then user asserts variable titles are visible
+      | Address Title*   |
+      | Address*         |
+      | State*           |
+      | City*            |
+      | Postal/Zip*      |
+      | delivery address |
+      | sales address    |
 
   @US_049-TC002
   Scenario: All titles and menus must be functional and additable
 
     Then user asserts all titles and menus must be functional and additable
+      | addressTitle           |
+      | address                |
+      | states                 |
+      | citiesDataIdAddAddress |
+      | postal                 |
+      | isDefault              |
+      | isSellerAddress        |
 
   @US_049-TC003
   Scenario: After click the submit button, the warning Your address has been successfully added should appear.
