@@ -78,8 +78,17 @@ public class LoginPage extends CommonPage {
 
     @FindBy(xpath = "(//a[@class='Navbar_textLink__f6_Al mr-4 ml-1'])[1]")
     public WebElement loginAboutLink;
-    
+
     @FindBy(xpath = "//a[@class='Navbar_textLink__f6_Al mr-4']")
     public WebElement linkScheduledDelivery;
 
+
+    @FindBy(xpath = "//input[@name='email']")
+    public WebElement box_email;
+
+    @FindBy(xpath = "//input[@type='password']")
+    public WebElement box_password;
+
+    @FindBy(xpath ="//button[text()='Login']")
+    public WebElement loginButton_footer;
 }
