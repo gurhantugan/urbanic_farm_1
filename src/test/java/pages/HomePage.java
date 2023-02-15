@@ -7,10 +7,11 @@ import java.util.List;
 
 public class HomePage extends CommonPage {
 
-
     @FindBy(xpath = "//a[text()='Login']")
     public WebElement loginButton;
 
+    // @FindBy(xpath = "//a[text()='Login']")
+    // public WebElement loginButton;
 
 //    @FindBy(xpath = "//a[text()='Login']")
 //    public WebElement loginButton;
@@ -20,6 +21,7 @@ public class HomePage extends CommonPage {
 
     //@FindBy(xpath = "//*[local-name()='svg']//*[local-name()='text']/*[local-name()='tspan'][1]")
     // public WebElement logoutButton;
+
     @FindBy(xpath = "//label[@for='allCategories']")
     public WebElement hometitle;
 
@@ -141,9 +143,6 @@ public class HomePage extends CommonPage {
     @FindBy(xpath ="//*[text()='+1 (669) 696-5906']")
     public WebElement phoneNumber;
 
-
-=======
-
     @FindBy(xpath = "//*[text()='Register Now']")
     public WebElement button_registerNow;
 
@@ -161,15 +160,15 @@ public class HomePage extends CommonPage {
     @FindBy(css = "nav>a.Navbar_textLink__f6_Al[href^='/account/home']")
     public WebElement button_account;
 
-
     @FindBy(xpath = "//a[@class=\"Navbar_textLink__f6_Al mr-4 ml-1\"][2]")
     public WebElement button_ContactUs;
 
-    @FindBy(xpath = "//a[text()='Login']")
-    public WebElement loginButton;
+   // @FindBy(xpath = "//a[text()='Login']")
+   // public WebElement loginButton;
 
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement buttonn_login;
+
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement button_Submit;
 
