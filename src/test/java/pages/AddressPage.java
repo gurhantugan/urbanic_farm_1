@@ -52,7 +52,7 @@ public class AddressPage extends CommonPage{
     @FindBy(xpath = "//input[@id='postal']")
     public WebElement textBox_postal;
 
-    @FindBy(xpath = "//input[@name='isDefault']")
+    @FindBy(xpath = "//input[@id='isDefault']")
     public WebElement checkBox_deliveryAddress;
 
     @FindBy(xpath = "//input[@id='isSellerAddress']")
