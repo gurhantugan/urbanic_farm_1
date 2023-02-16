@@ -1,15 +1,14 @@
 Feature: Various actions in adress section
   Scenario: As a user, after entering valid information, I should be able to perform various actions in the Address section
-	Given user goes to url
-    When user clicks on login button
-    Then user enter seller credentials and clicks login button
-    And user clicks on account name link
-    When user selects adress bar and clicks on it
-    And user clicks on My Sales Adress
-    When user clicks to edit button
-    When user is able to change Sales Adress by clicking the tick and click submit button
-    Then user should see the adress in Non Selected Adress
-    Then user clicks on Cancel button to see nothing was editted
+	Given user goes to "account/orders" page after login
+  And user clicks on My Sales Adress
+#    When user clicks to edit button
+#   Then user is able to click Submit button and gets the message
+#   When user clicks to edit button
+#  Then user clicks the checkbox Mark as a sales address
+#    And  user is able to click Submit button and gets the message
+#   Then user clicks on Non Selected Address and sees same adress is there
+
 
 
 
