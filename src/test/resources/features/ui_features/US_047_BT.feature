@@ -7,7 +7,7 @@ Feature: Account
     When Account is clicked, Qr code, Full name, Email, Phone should be seen.
     * Copy button should be functional
     * Download button should be functional
-    * Edit button should be clickable
+    * Edit button should be clickablee
     * Choose file button should be functional and The file should be selected when the choose file button is clicked.
     * The account photo should change after selected file
     * After clicking the Edit button, the phone menu should be updated

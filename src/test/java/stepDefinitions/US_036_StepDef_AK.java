@@ -20,15 +20,15 @@ import static org.junit.Assert.assertTrue;
 //import utilities.BrowserUtilities;
 //import utilities.Driver;
 //
-public class US_036_StepDef_AK { 
+public class US_036_StepDef_AK {
 
  LoginPage loginPage = new LoginPage();
 
- @When("user clicks login button")
-public void userClicksLoginButton() {
- BrowserUtilities.waitForVisibility(loginPage.button_login,20);
-  BrowserUtilities.clickWithJS(loginPage.button_login);
- }
+// @When("user clicks login button")
+//public void userClicksLoginButton() {
+// BrowserUtilities.waitForVisibility(loginPage.button_login,20);
+//  BrowserUtilities.clickWithJS(loginPage.button_login);
+// }
 
     @Then("User verifies that the mail text box is clickable")
     public void userVerifiesThatTheMailTextBoxIsClickable() {
