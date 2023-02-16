@@ -1,7 +1,7 @@
 package pages;
 
-        import org.openqa.selenium.WebElement;
-        import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
@@ -122,7 +122,7 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "(//*[@class=\"Footer_footer-col__2BbbT\"]//a)[3]")
     public WebElement buttonFooterBlog;
 
-    @FindBy(xpath ="//*[text()='+1 (669) 696-5906']")
+    @FindBy(xpath = "//*[text()='+1 (669) 696-5906']")
     public WebElement phoneNumber;
 
     @FindBy(xpath = "//*[text()='Register Now']")
@@ -131,7 +131,6 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//button[@class='section-9_gofunderButton__32gaj']")
     public WebElement button_wefunder;
 
-   @FindBy(xpath = "//div[@class='alert alert-warning ']/span")
     @FindBy(xpath = "//div[@class='alert alert-warning ']/span")
     public WebElement adressMessageText;
 
@@ -159,7 +158,7 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement button_Submit;
 
-    @FindBy(xpath ="//*[@id=\"__next\"]/div[4]/div[3]/section[3]/div[2]" )
+    @FindBy(xpath = "//*[@id=\"__next\"]/div[4]/div[3]/section[3]/div[2]")
     public WebElement link_of_BackyardGardenersAndFarmersJoinTheMovementForFree;
 
 }
