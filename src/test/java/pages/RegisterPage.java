@@ -127,19 +127,9 @@ public class RegisterPage extends CommonPage {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement button_Submit;
 
-
-}
-
-
-
-
-
-<<<<<<< HEAD
-=======
-@FindBy(css = ".btn")
+    @FindBy(css = ".btn")
     public WebElement button_register2;
-
-
-
 }
->>>>>>> main
+
+
+

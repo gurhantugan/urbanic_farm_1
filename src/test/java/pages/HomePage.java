@@ -10,7 +10,7 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//a[text()='Login']")
     public WebElement loginButton;
 
-<<<<<<< HEAD
+
     // @FindBy(xpath = "//a[text()='Login']")
     // public WebElement loginButton;
 
@@ -23,11 +23,11 @@ public class HomePage extends CommonPage {
     //@FindBy(xpath = "//*[local-name()='svg']//*[local-name()='text']/*[local-name()='tspan'][1]")
     // public WebElement logoutButton;
 
-=======
+
     @FindBy(xpath = "//a[text()='Login']")
     public WebElement button_login;
 
->>>>>>> main
+
     @FindBy(xpath = "//label[@for='allCategories']")
     public WebElement hometitle;
 
@@ -168,14 +168,14 @@ public class HomePage extends CommonPage {
 
     @FindBy(xpath = "//a[@class=\"Navbar_textLink__f6_Al mr-4 ml-1\"][2]")
     public WebElement button_ContactUs;
-<<<<<<< HEAD
+
 
    // @FindBy(xpath = "//a[text()='Login']")
    // public WebElement loginButton;
 
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement buttonn_login;
-=======
+
     @FindBy(xpath ="//a[text()='Login']")
     public WebElement loginButton_header;
 
@@ -183,7 +183,7 @@ public class HomePage extends CommonPage {
     public WebElement buttonn_login;
     @FindBy(xpath ="//a[@title='click to change your delivery address']")
     public WebElement deliveryAddress_button;
->>>>>>> main
+
 
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement button_Submit;
