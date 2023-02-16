@@ -151,4 +151,12 @@ public class AddressPage extends CommonPage{
 
     @FindBy(id = "isSellerAddress")
     public WebElement checkbox_sales_address;
+
+    @FindBy(xpath = "//div[@role='alert']/span")
+    public WebElement message_address_notset;
+
+    @FindBy(xpath = "//span[text()='My delivery address']")
+    public WebElement title_delivery_address;
+
+
 }
