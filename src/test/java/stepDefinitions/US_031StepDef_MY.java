@@ -5,12 +5,14 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.junit.Test;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import pages.HomePage;
 import pages.RegisterPage;
 import utilities.BrowserUtilities;
 import utilities.Driver;
+import utilities.JSUtils;
 
 import java.util.List;
 
@@ -60,7 +62,11 @@ public class US_031StepDef_MY {
 
                 action.sendKeys(Keys.BACK_SPACE).perform();
             }
+           // BrowserUtilities.clearAndSend(registerPage.firstNameBox,names.get(i));
+            //Burada hazir method varmis,isteyen bunu kullanabilir.
+
         }
+
 
     }
 
@@ -140,6 +146,7 @@ public class US_031StepDef_MY {
 
 
         for (int i = 0; i < 5; i++) {
+
 
            BrowserUtilities.waitFor(2);
             String validEmailpre = faker.internet().emailAddress();
