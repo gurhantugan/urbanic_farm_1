@@ -143,4 +143,12 @@ public class AddressPage extends CommonPage{
     @FindBy(linkText = "Logout")
     public WebElement logout_button;
 
+    @FindBy(xpath = "//button[@class='mr-2 btn btn-outline-warning']")
+    public WebElement button_edit;
+
+    @FindBy(xpath = "//div[@class='Toastify__toast-container Toastify__toast-container--bottom-right']")
+    public WebElement message_update;
+
+    @FindBy(id = "isSellerAddress")
+    public WebElement checkbox_sales_address;
 }
