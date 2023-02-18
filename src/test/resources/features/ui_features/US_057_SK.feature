@@ -13,29 +13,38 @@
 #Time menu should work correctly
 #Your delivery settings have been succesfully updated alert should appear
 @US_57_SK
-  Feature:
-  Background:
+  Feature:US 057
+  Scenario: All menus in the relevant area should be functional and appropriate options should be selected
   Given User Login as Seller
     When user clicks on user name
     And user clicks on delivery and pickup settings
     And user clicks on seller flexible
 
-    Scenario: TC001 - visibility & functionality
       Then user verifies following ids are visible
       |freeFlexibleDeliveryRange|
+      |minFreeFlexibleDeliveryOrder|
       |perMileCostFlex|
-      |minFreeFlexibleDeliveryOrder|
-      |minFreeFlexibleDeliveryOrder|
+      |maxFlexibleDeliveryRange|
       |_deliveryBeginDay|
-      |_deliveryEndDay|
-      |_orderByDay|
       |_deliveryBeginTime|
-      |_deliveryEndTime|
-      |_orderByTime|
       |_deliveryEndDay|
-      |_orderByDay|
-      |_deliveryBeginTime|
       |_deliveryEndTime|
+      |_orderByDay|
       |_orderByTime|
+
+
+
+
+
       Then user verifies following ids are clickable
 
+        |freeFlexibleDeliveryRange|
+        |minFreeFlexibleDeliveryOrder|
+        |perMileCostFlex|
+        |maxFlexibleDeliveryRange|
+        |_deliveryBeginDay|
+        |_deliveryBeginTime|
+        |_deliveryEndDay|
+        |_deliveryEndTime|
+        |_orderByDay|
+        |_orderByTime|

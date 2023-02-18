@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class DeliveryandPickupPage extends CommonPage{
-    @FindBy(css ="input#SELLER_FLEXIBLE")
+    @FindBy(css ="#SELLER_FLEXIBLE")
     public WebElement box_SellerFlexDel;
 
     @FindBy(xpath ="//input[@id='freeFlexibleDeliveryRange']")
@@ -19,13 +19,13 @@ public class DeliveryandPickupPage extends CommonPage{
     @FindBy(xpath ="//input[@id='minFreeFlexibleDeliveryOrder']")
     public WebElement box_maxFlexibleDeliveryRange;
 
-    @FindBy(xpath ="//input[@id='_deliveryBeginDay']")
+    @FindBy(xpath ="//select[@id='_deliveryBeginDay']")
     public WebElement toolbar_deliveryBeginDay;
 
-    @FindBy(xpath ="//input[@id='_deliveryEndDay']")
+    @FindBy(xpath ="//select[@id='_deliveryEndDay']")
     public WebElement toolbar_deliveryEndDay;
 
-    @FindBy(xpath ="//input[@id='_orderByDay']")
+    @FindBy(xpath ="//select[@id='_orderByDay']")
     public WebElement toolbar_orderByDay;
 
     @FindBy(xpath ="//input[@id='_deliveryBeginTime']")
@@ -46,7 +46,7 @@ public class DeliveryandPickupPage extends CommonPage{
     @FindBy(xpath ="//a[@class='Navbar_textLink__f6_Al cursor-pointer ml-4 mr-3 text-capitalize']")
     public WebElement user;
 
-    @FindBy(xpath ="//a[@class='Sidebar_section_btn__1sp6i h6 Sidebar_active__1HCV5']")
+    @FindBy(css ="[href='/account/delivery']")
     public WebElement delivery_section;
 
     //a[@class='Sidebar_section_btn__1sp6i h6 Sidebar_active__1HCV5']

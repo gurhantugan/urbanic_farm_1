@@ -12,9 +12,9 @@ import org.junit.runner.RunWith;
                 "junit:target/reports/xml/xml-report/cucumber.xml",
                 "rerun:target/reports/rerun.txt"
         },
-        features = "src/test/resources/features",
+        features = "src/test/resources/features/ui_features",
         glue = "stepDefinitions",
-        tags = "@US_049-TC003",
+        tags = "@US_57_SK",
         dryRun = false
 )
 public class CukesRunner {
