@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class AddressPage extends CommonPage{
 
     @FindBy(xpath = "//button[text()='Add New Address']")
@@ -113,6 +115,51 @@ public class AddressPage extends CommonPage{
     @FindBy(xpath = "//div[contains(text(),'Address deleted')]")
     public WebElement getWarningMessage_addressDeleted;
 
+
+
+
+
+
+    @FindBy(xpath = "//button[@name='delivery']")
+    public WebElement button_deliveryAddress;
+
+    @FindBy(xpath = "//button[@name='sales']")
+    public WebElement button_salesAddress;
+
+    @FindBy(xpath = "//div[@class='card-body']")
+    public WebElement body_AddressCard;
+
+ @FindBy(xpath = "//span[@class='h6 ml-2']")
+    public List<WebElement> adresses_dropdown;
+
+
+
+   @FindBy(xpath = "//input[@id='address']")
+   public WebElement address_Bar;
+
+    @FindBy(xpath = "//button[text()='Cancel']")
+    public WebElement button_cancel;
+
+    @FindBy(linkText = "Logout")
+    public WebElement logout_button;
+
+    @FindBy(xpath = "//button[@class='mr-2 btn btn-outline-warning']")
+    public WebElement button_edit;
+
+    @FindBy(xpath = "//div[@class='Toastify__toast-container Toastify__toast-container--bottom-right']")
+    public WebElement message_update;
+
+    @FindBy(id = "isSellerAddress")
+    public WebElement checkbox_sales_address;
+
+    @FindBy(xpath = "//div[@role='alert']/span")
+    public WebElement message_address_notset;
+
+    @FindBy(xpath = "//span[text()='My delivery address']")
+    public WebElement title_delivery_address;
+
+    @FindBy(className = "AddAddressModal_inlineErrormsg__2Fw2s")
+    public WebElement message_valid_zipcode;
 
 
 }
