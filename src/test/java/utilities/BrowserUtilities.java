@@ -238,6 +238,16 @@ public class BrowserUtilities {
         element.sendKeys(str);
     }
 
+    public static void clearText(WebElement element) {
+        BrowserUtilities.waitForVisibility(element, 10);
+        String value = element.getAttribute("value");
+        for (int i = 0; i < value.length(); i++) {
+            element.sendKeys(Keys.BACK_SPACE);
+
+        }
+
+    }
+
     public static void clearAndSendAndAssert(WebElement element, String str) {
         BrowserUtilities.waitForVisibility(element, 10);
         String value = element.getAttribute("value");
