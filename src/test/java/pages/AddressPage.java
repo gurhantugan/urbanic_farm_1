@@ -158,5 +158,8 @@ public class AddressPage extends CommonPage{
     @FindBy(xpath = "//span[text()='My delivery address']")
     public WebElement title_delivery_address;
 
+    @FindBy(className = "AddAddressModal_inlineErrormsg__2Fw2s")
+    public WebElement message_valid_zipcode;
+
 
 }

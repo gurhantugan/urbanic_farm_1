@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.interactions.Actions;
 import pages.AddressPage;
 import utilities.BrowserUtilities;
@@ -16,7 +17,7 @@ import utilities.Driver;
 public class US_052_StepDefs_MY {
     AddressPage addressPage= new AddressPage();
     Actions actions=new Actions(Driver.getDriver());
-
+    String ValidCode;
     @Given("user goes to {string} page after login")
     public void userGoesToPageAfterLogin(String endPoint) {
         BrowserUtilities.loginWithTokenSeller(ConfigurationReader.getProperty("tokenSellerUrl"),endPoint);
@@ -60,27 +61,27 @@ BrowserUtilities.waitFor(2);
        Driver.getDriver().navigate().refresh();
 
 
-        //JSUtils.scrollIntoViewJS(addressPage.button_deliveryAddress);
         actions.sendKeys(Keys.PAGE_UP).perform();
         BrowserUtilities.waitFor(3);
         actions.moveToElement(addressPage.button_deliveryAddress).perform();
         addressPage.button_deliveryAddress.click();
         actions.sendKeys(Keys.PAGE_DOWN).perform();
-        if(addressPage.title_delivery_address.isEnabled()){
 
-       //BrowserUtilities.waitFor(2);
-
+       try{
+           addressPage.title_delivery_address.isEnabled();
      BrowserUtilities.waitFor(2);
         actions.moveToElement(addressPage.button_Edit).perform();
        addressPage.button_Edit.click();
        BrowserUtilities.waitFor(2);
        addressPage.checkbox_sales_address.click();
        addressPage.button_submit.click();}
-       else if(addressPage.message_address_notset.isDisplayed()) {
-           actions.sendKeys(Keys.PAGE_UP).perform();
+
+       catch(NoSuchElementException e) //(addressPage.message_address_notset.isDisplayed()) {
+       { actions.sendKeys(Keys.PAGE_UP).perform();
           BrowserUtilities.waitFor(2);
           addressPage.button_NonSelectedAddress.click();
           actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).build().perform();
+          BrowserUtilities.waitFor(3);
          addressPage.button_edit.click();
          addressPage.checkbox_sales_address.click();
          BrowserUtilities.waitFor(3);
@@ -90,13 +91,48 @@ BrowserUtilities.waitFor(2);
 
     }
 
-    @Then("user clicks on Cancel button to see nothing was editted")
-    public void userClicksOnCancelButtonToSeeNothingWasEditted() {
-    }
-
-
-
-
+    @Then("user clicks on Cancel button")
+    public void userClicksOnCancelButton() {
+        addressPage.button_cancel.click();
+        BrowserUtilities.waitFor(2);
 
     }
+
+
+    @And("user sees the editted part has not changed")
+    public void userSeesTheEdittedPartHasNotChanged() {
+       Assert.assertTrue("cancal button is not working",addressPage.checkbox_sales_address.isSelected());
+
+    }
+
+    @And("user clicks on postcode box and clean it")
+    public void userClicksOnPostcodeBoxAndCleanIt() {
+        addressPage.textBox_postal.click();
+         ValidCode = addressPage.textBox_postal.getAttribute("value");
+        System.out.println(ValidCode);
+        BrowserUtilities.cleanTextInBox(addressPage.textBox_postal);
+
+
+    }
+
+    @And("user writes invalid postcode as {string} to box")
+    public void userWritesInvalidPostcodeAsToBox(String invalidCode) {
+        actions.sendKeys(invalidCode).click().perform();
+
+    }
+
+    @Then("user gets the {string} message")
+    public void userGetsTheMessage(String message) {
+        String actualMessage = addressPage.message_valid_zipcode.getText();
+        String expectedMessage = message;
+        Assert.assertEquals("not got message",expectedMessage,actualMessage);
+       addressPage.textBox_postal.click();
+        BrowserUtilities.cleanTextInBox(addressPage.textBox_postal);
+        actions.moveToElement(addressPage.textBox_postal).sendKeys(ValidCode).perform();
+       addressPage.button_submit.click();
+       BrowserUtilities.waitFor(2);
+       addressPage.logout_button.click();
+       Driver.closeDriver();
+    }
+}
 
