@@ -3,19 +3,29 @@ package stepDefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pages.DeliveryPickUpSettingsPage;
+import pages.HomePage;
 
-public class US_054_StepDef_AsK {@When("user clicks slider button")
-public void user_clicks_slider_button() {
+public class US_054_StepDef_AsK{
+    HomePage homePage = new HomePage();
+DeliveryPickUpSettingsPage deliveryPickUpSettingsPage=new DeliveryPickUpSettingsPage();
 
-}
 
-    @When("user picks up on the vine")
-    public void user_picks_up_on_the_vine() {
-
+    @And("user click {string} button and click")
+    public void userClickButtonAndClick(String Mustafa) {
+        homePage.button_account.click();
     }
+
+
+//    @When("user picks up on the vine")
+//    public void user_picks_up_on_the_vine() {
+//       //deliveryPickUpSettingsPage.button_deliveryAndPickUp.submit();
+//
+//    }
 
     @Then("user picks up on the vine checkbox should be clickable")
     public void user_picks_up_on_the_vine_checkbox_should_be_clickable() {
+        deliveryPickUpSettingsPage.button_buyerPickUpOnTheVine.isSelected();
 
     }
 
@@ -34,17 +44,6 @@ public void user_clicks_slider_button() {
 
     }
 
-    @Then("user clicks search button")
-    public void userClicksSearchButton() {
-    }
-
-    @And("user click {string} button and click")
-    public void userClickButtonAndClick(String arg0) {
-    }
-
-    @And("user click delivery and pick up setting")
-    public void userClickDeliveryAndPickUpSetting() {
-    }
 
     @When("user chose same hours and click update button, {string}massage")
     public void userChoseSameHoursAndClickUpdateButtonMassage(String arg0) {
