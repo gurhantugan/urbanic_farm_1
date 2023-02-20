@@ -1,3 +1,4 @@
+@US_037
 Feature: US_037 As a user Forgot your password? and I should be able to check the new password creation process
 
   Scenario: TC_001 As a user Forgot your password? and I should be able to check the new password creation process
