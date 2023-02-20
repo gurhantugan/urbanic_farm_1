@@ -1,3 +1,4 @@
+@regression
 @abd_25
   Feature: User should be able to perform various operations on homepage
     Scenario:Phone should be clickable and relevant page should be visible
