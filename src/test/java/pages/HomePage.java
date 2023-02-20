@@ -10,23 +10,8 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//a[text()='Login']")
     public WebElement loginButton;
 
-
-    // @FindBy(xpath = "//a[text()='Login']")
-    // public WebElement loginButton;
-
-//    @FindBy(xpath = "//a[text()='Login']")
-//    public WebElement loginButton;
-
     @FindBy(xpath = "//a[text()='Login']")
     public WebElement button_login;
-
-    //@FindBy(xpath = "//*[local-name()='svg']//*[local-name()='text']/*[local-name()='tspan'][1]")
-    // public WebElement logoutButton;
-
-
-    //@FindBy(xpath = "//a[text()='Login']")
-    //public WebElement button_login;
-
 
     @FindBy(xpath = "//label[@for='allCategories']")
     public WebElement hometitle;
@@ -43,7 +28,6 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//div/div/div/div/div//a[.='get the app']")
     public WebElement button_getApp;
 
-    //*[contains(text(),'get the app')]
     @FindBy(xpath = "//div/div//a[@href='https://apps.apple.com/tr/app/urbanicfarm/id1581829783']")
     public WebElement link_Apple;
 
@@ -64,8 +48,6 @@ public class HomePage extends CommonPage {
 
     @FindBy(id = "registration_form_confirmPassword")
     public WebElement box_regConfirmPassword;
-
-
 
     @FindBy(xpath = "(//a[text()='Logout'])[2]")
     public WebElement button_logout;
@@ -160,7 +142,6 @@ public class HomePage extends CommonPage {
     @FindBy(linkText = "here")
     public WebElement linkAdress;
 
-
     @FindBy(css = "[href*='facebook']")
     public WebElement btn_facebook;
 
@@ -173,18 +154,11 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//a[@class=\"Navbar_textLink__f6_Al mr-4 ml-1\"][2]")
     public WebElement button_ContactUs;
 
-
-   // @FindBy(xpath = "//a[text()='Login']")
-   // public WebElement loginButton;
-
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement buttonn_login;
 
     @FindBy(xpath ="//a[text()='Login']")
     public WebElement loginButton_header;
-
-    //@FindBy(xpath = "//button[@type='submit']")
-    //public WebElement buttonn_login;
 
     @FindBy(xpath ="//a[@title='click to change your delivery address']")
     public WebElement deliveryAddress_button;
@@ -200,8 +174,6 @@ public class HomePage extends CommonPage {
 
     @FindBy(xpath ="//a[@class='Navbar_textLink__f6_Al cursor-pointer ml-4 mr-3 text-capitalize']")
     public WebElement goBack_button;
-
-      @FindBy(xpath = "//button[@type='submit']")
 
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement button_Submit;
