@@ -129,5 +129,7 @@ public class HomePage extends CommonPage {
     @FindBy(linkText = "here")
     public WebElement linkAdress;
 
+    @FindBy(css = "[href*='facebook']")
+    public WebElement btn_facebook;
 }
 
