@@ -12,4 +12,7 @@ public WebElement button_deliveryAndPickUp;
 @FindBy(name = "deliveryType")
 public WebElement button_buyerPickUpOnTheVine;
 
+@FindBy(xpath = "//*[@class='col-md-2 col-sm-6 col-12']")
+public WebElement button_yourAvailableHours;
+
 }

@@ -153,6 +153,7 @@ public class HomePage extends CommonPage {
 
     @FindBy(xpath = "//a[@class=\"Navbar_textLink__f6_Al mr-4 ml-1\"][2]")
     public WebElement button_ContactUs;
+
     @FindBy(xpath ="//a[text()='Login']")
     public WebElement loginButton_header;
 
