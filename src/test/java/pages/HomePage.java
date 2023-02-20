@@ -145,6 +145,10 @@ public class HomePage extends CommonPage {
     @FindBy(linkText = "here")
     public WebElement linkAdress;
 
+
+    @FindBy(css = "[href*='facebook']")
+    public WebElement btn_facebook;
+
     @FindBy(css = ".h4")
     public WebElement sign_cancel;
 
@@ -184,6 +188,7 @@ public class HomePage extends CommonPage {
 
     @FindBy(css = ".mb-3>ul>li>a")
     public List<WebElement> pageNumber;
+
 
 }
 
