@@ -1,7 +1,7 @@
 package pages;
 
-        import org.openqa.selenium.WebElement;
-        import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
@@ -28,6 +28,7 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//div/div/div/div/div//a[.='get the app']")
     public WebElement button_getApp;
 
+    //*[contains(text(),'get the app')]
     @FindBy(xpath = "//div/div//a[@href='https://apps.apple.com/tr/app/urbanicfarm/id1581829783']")
     public WebElement link_Apple;
 
@@ -56,7 +57,6 @@ public class HomePage extends CommonPage {
 
     @FindBy(xpath = "//div[@class='Navbar_linkContainer__2jWIM']//a[text()='About Us']")
     public WebElement link_aboutUs;
-
 
     @FindBy(xpath = "(//button[@class='section-2_shopButton__17T04'])[2]")
     public WebElement button_shellYourProduct;
@@ -133,7 +133,7 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//button[@class='section-9_gofunderButton__32gaj']")
     public WebElement button_wefunder;
 
-   @FindBy(xpath = "//div[@class='alert alert-warning ']/span")
+    @FindBy(xpath = "//div[@class='alert alert-warning ']/span")
     public WebElement adressMessageText;
 
     @FindBy(xpath = "//button[@class='Section11_shopButton__WbZY9']")
@@ -177,10 +177,10 @@ public class HomePage extends CommonPage {
     @FindBy(xpath ="//a[@class='Navbar_textLink__f6_Al cursor-pointer ml-4 mr-3 text-capitalize']")
     public WebElement goBack_button;
 
-    @FindBy(xpath = "//button[@type='submit']")
+      @FindBy(xpath = "//button[@type='submit']")
     public WebElement button_Submit;
 
-    @FindBy(xpath ="//*[@id=\"__next\"]/div[4]/div[3]/section[3]/div[2]" )
+    @FindBy(xpath = "//*[@id=\"__next\"]/div[4]/div[3]/section[3]/div[2]")
     public WebElement link_of_BackyardGardenersAndFarmersJoinTheMovementForFree;
 
     @FindBy(css = ".row[style^='box-shadow:']")

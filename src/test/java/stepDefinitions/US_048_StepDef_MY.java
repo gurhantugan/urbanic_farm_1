@@ -16,7 +16,7 @@ import utilities.Driver;
 import java.util.List;
 import java.util.Random;
 
-public class US_48_StepDef_MY {
+public class US_048_StepDef_MY {
     Random random=new Random();
     Faker faker=new Faker();
     Actions action=new Actions(Driver.getDriver());

@@ -1,19 +1,15 @@
 package stepDefinitions;
 
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.WebElement;
 import pages.LoginPage;
 import pages.SelfShareTradePage;
-import utilities.BrowserUtilities;
-import utilities.ConfigurationReader;
 import utilities.Driver;
 
 import java.util.List;
 
-public class US_038_StepDefs_MY {
+public class US_038_StepDef_MY {
      SelfShareTradePage selfShareTradePage=new SelfShareTradePage();
     LoginPage loginPage=new LoginPage();
 

@@ -127,6 +127,9 @@ public class RegisterPage extends CommonPage {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement button_Submit;
 
+    @FindBy(xpath = "//*[@class='SocialLogins_login_btn__2b3rz']")
+    public WebElement button_signInWithGoogle;
+
 
 
 
