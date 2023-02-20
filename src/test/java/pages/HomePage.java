@@ -177,10 +177,7 @@ public class HomePage extends CommonPage {
     @FindBy(xpath ="//a[@class='Navbar_textLink__f6_Al cursor-pointer ml-4 mr-3 text-capitalize']")
     public WebElement goBack_button;
 
-    @FindBy(xpath = "//button[@type='submit']")
-    public WebElement buttonn_login;
-
-    @FindBy(xpath = "//button[@type='submit']")
+      @FindBy(xpath = "//button[@type='submit']")
     public WebElement button_Submit;
 
     @FindBy(xpath = "//*[@id=\"__next\"]/div[4]/div[3]/section[3]/div[2]")
