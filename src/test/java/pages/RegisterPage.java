@@ -135,4 +135,9 @@ public class RegisterPage extends CommonPage {
 
 
 
+@FindBy(css = ".btn")
+    public WebElement button_register2;
+
+
+
 }
