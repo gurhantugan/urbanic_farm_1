@@ -33,6 +33,8 @@ import static stepDefinitions.Hooks.driver;
 
 
 public class BrowserUtilities {
+
+
     public static void writeDataToIdsFile(String tip, String id) { // room=123123
 
 
@@ -234,6 +236,16 @@ public class BrowserUtilities {
 
         }
         element.sendKeys(str);
+    }
+
+    public static void clearText(WebElement element) {
+        BrowserUtilities.waitForVisibility(element, 10);
+        String value = element.getAttribute("value");
+        for (int i = 0; i < value.length(); i++) {
+            element.sendKeys(Keys.BACK_SPACE);
+
+        }
+
     }
 
     public static void clearAndSendAndAssert(WebElement element, String str) {
@@ -518,7 +530,52 @@ public class BrowserUtilities {
 
         return diff.hasDiff();
     }
+    /**
+     * method token kullanarak local storage i doldurup, login sayfasina gitmeden login yapmamizi sagliyor
+     *
+     * @param token kullanicinin token i
+     * @param web   site icerisinde gitmek istedigimiz url note: urbanicfarm.com/  den sonrasi girilmesi lazim
+     * @author omeryttnc
+     * @since 11.02.2023
+     */
+    public static void loginWithTokenSeller(String token, String web) {
+        LocalStorage localStorage = ((WebStorage) Driver.getDriver()).getLocalStorage();
+        String key1 = "a27c6fac85ae1295535e42c9d3e3f305";
+        String key2 = "e3e1601fca9c429344c15527cd542142";
 
+        String url = "https://test.urbanicfarm.com/";
+
+        String value2 = token;
+        String value1 = token.split("\\.")[1];
+        Driver.getDriver().get(url);
+        localStorage.setItem(key1, value1);
+        localStorage.setItem(key2, value2);
+
+        Driver.getDriver().get(url + web);
+
+        waitForPageToLoad(10);
+
+
+    }
+    public static void loginWithTokenBuyer(String token, String web) {
+        LocalStorage localStorage = ((WebStorage) Driver.getDriver()).getLocalStorage();
+        String key1 = "a27c6fac85ae1295535e42c9d3e3f305";
+        String key2 = "e3e1601fca9c429344c15527cd542142";
+
+        String url = "https://test.urbanicfarm.com/";
+
+        String value2 = token;
+        String value1 = token.split("\\.")[1];
+        Driver.getDriver().get(url);
+        localStorage.setItem(key1, value1);
+        localStorage.setItem(key2, value2);
+
+        Driver.getDriver().get(url + web);
+
+        waitForPageToLoad(10);
+
+
+    }
 
 }
 

@@ -69,8 +69,8 @@ public class US_047_StepDef_BT {
         BrowserUtilities.waitFor(3);
         Assert.assertTrue(BrowserUtilities.fileIsExist(System.getProperty("user.home")+"/Downloads","QRCode.png"));
     }
-    @When("Edit button should be clickable")
-    public void edit_button_should_be_clickable() {
+    @When("Edit button should be clickablee")
+    public void edit_button_should_be_clickablee() {
 
         accountPage.button_edit.click();
         BrowserUtilities.waitFor(2);
