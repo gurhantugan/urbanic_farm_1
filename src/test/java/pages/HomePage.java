@@ -167,5 +167,11 @@ public class HomePage extends CommonPage {
     @FindBy(xpath ="//*[@id=\"__next\"]/div[4]/div[3]/section[3]/div[2]" )
     public WebElement link_of_BackyardGardenersAndFarmersJoinTheMovementForFree;
 
+    @FindBy(css = ".row[style^='box-shadow:']")
+    public List<WebElement> products;
+
+    @FindBy(css = ".mb-3>ul>li>a")
+    public List<WebElement> pageNumber;
+
 }
 
