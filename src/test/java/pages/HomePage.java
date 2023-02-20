@@ -24,8 +24,8 @@ public class HomePage extends CommonPage {
     // public WebElement logoutButton;
 
 
-    @FindBy(xpath = "//a[text()='Login']")
-    public WebElement button_login;
+    //@FindBy(xpath = "//a[text()='Login']")
+    //public WebElement button_login;
 
 
     @FindBy(xpath = "//label[@for='allCategories']")
@@ -179,8 +179,9 @@ public class HomePage extends CommonPage {
     @FindBy(xpath ="//a[text()='Login']")
     public WebElement loginButton_header;
 
-    @FindBy(xpath = "//button[@type='submit']")
-    public WebElement buttonn_login;
+    //@FindBy(xpath = "//button[@type='submit']")
+    //public WebElement buttonn_login;
+
     @FindBy(xpath ="//a[@title='click to change your delivery address']")
     public WebElement deliveryAddress_button;
 
