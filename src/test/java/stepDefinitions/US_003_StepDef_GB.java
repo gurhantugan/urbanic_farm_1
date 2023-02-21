@@ -17,5 +17,6 @@ public class US_003_StepDef_GB {
     public void theUserClicksOnBlogButton() {
         BrowserUtilities.waitFor(3);
         homePage.button_blog.click();
+        BrowserUtilities.switchToWindowWithIndex(1);
     }
 }

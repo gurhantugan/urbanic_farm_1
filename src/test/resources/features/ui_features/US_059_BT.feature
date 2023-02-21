@@ -18,4 +18,3 @@
    # When Yes option is selected, the product should be removed from the page.
    # As a result of the operation, the Address has been succesfully deleted alert should be displayed.
 
-    #  Given user
