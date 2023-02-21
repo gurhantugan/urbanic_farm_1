@@ -16,7 +16,7 @@ import utilities.JSUtils;
 
 import java.util.List;
 
-public class US_031StepDef_MY {
+public class US_031_StepDef_MY {
     RegisterPage registerPage = new RegisterPage();
     HomePage homePage= new HomePage();
     Actions action = new Actions(Driver.getDriver());

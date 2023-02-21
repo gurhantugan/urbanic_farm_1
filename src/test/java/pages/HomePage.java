@@ -49,14 +49,11 @@ public class HomePage extends CommonPage {
     @FindBy(id = "registration_form_confirmPassword")
     public WebElement box_regConfirmPassword;
 
-
-
     @FindBy(xpath = "(//a[text()='Logout'])[2]")
     public WebElement button_logout;
 
     @FindBy(xpath = "//div[@class='Navbar_linkContainer__2jWIM']//a[text()='About Us']")
     public WebElement link_aboutUs;
-
 
     @FindBy(xpath = "(//button[@class='section-2_shopButton__17T04'])[2]")
     public WebElement button_shellYourProduct;
@@ -133,7 +130,7 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//button[@class='section-9_gofunderButton__32gaj']")
     public WebElement button_wefunder;
 
-   @FindBy(xpath = "//div[@class='alert alert-warning ']/span")
+    @FindBy(xpath = "//div[@class='alert alert-warning ']/span")
     public WebElement adressMessageText;
 
     @FindBy(xpath = "//button[@class='Section11_shopButton__WbZY9']")
@@ -144,7 +141,6 @@ public class HomePage extends CommonPage {
 
     @FindBy(linkText = "here")
     public WebElement linkAdress;
-
 
     @FindBy(css = "[href*='facebook']")
     public WebElement btn_facebook;
@@ -157,11 +153,13 @@ public class HomePage extends CommonPage {
 
     @FindBy(xpath = "//a[@class=\"Navbar_textLink__f6_Al mr-4 ml-1\"][2]")
     public WebElement button_ContactUs;
-    @FindBy(xpath ="//a[text()='Login']")
-    public WebElement loginButton_header;
 
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement buttonn_login;
+
+    @FindBy(xpath ="//a[text()='Login']")
+    public WebElement loginButton_header;
+
     @FindBy(xpath ="//a[@title='click to change your delivery address']")
     public WebElement deliveryAddress_button;
 
@@ -180,7 +178,7 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement button_Submit;
 
-    @FindBy(xpath ="//*[@id=\"__next\"]/div[4]/div[3]/section[3]/div[2]" )
+    @FindBy(xpath = "//*[@id=\"__next\"]/div[4]/div[3]/section[3]/div[2]")
     public WebElement link_of_BackyardGardenersAndFarmersJoinTheMovementForFree;
 
     @FindBy(css = ".row[style^='box-shadow:']")
