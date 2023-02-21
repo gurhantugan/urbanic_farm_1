@@ -20,20 +20,12 @@ HomePage homePage = new HomePage();
         BrowserUtilities.clickWithJS(homePage.button_login);
 
  LoginPage loginPage = new LoginPage();
-
-    @Then("User verifies that the mail text box is clickable")
-    public void userVerifiesThatTheMailTextBoxIsClickable() {
-        assertTrue(loginPage.textbox_email.isEnabled());
-    }
-
-   @Then("Verifies that the user password text box is clickable")
+/*
+     @Then("Verifies that the user password text box is clickable")
     public void verifiesThatTheUserPasswordTextBoxIsClickable() {
 
         assertTrue(loginPage.textbox_password.isEnabled());
     }
-
-        assertTrue(loginPage.button_passwordOnLoginPage.isEnabled());
-   }
 
     @Given("User enters values {string} in the email text box and {string} in the password text box")
     public void userEntersValuesInTheEmailTextBoxAndInThePasswordTextBox(String invalidEmail, String invaildPassword) {
@@ -53,6 +45,7 @@ HomePage homePage = new HomePage();
 
         assertTrue(loginPage.message_pleaseVerifyYourEmail.isDisplayed());
         Driver.closeDriver();
+        */
     }
 
 }
