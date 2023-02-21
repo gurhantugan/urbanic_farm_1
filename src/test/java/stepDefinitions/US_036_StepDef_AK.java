@@ -72,7 +72,7 @@ public class US_036_StepDef_AK {
         BrowserUtilities.waitFor(10);
         Driver.closeDriver();
 
-    }*/
+    }
 
     @Then("Verifies that the user password text box is clickable")
     public void verifiesThatTheUserPasswordTextBoxIsClickable() {
