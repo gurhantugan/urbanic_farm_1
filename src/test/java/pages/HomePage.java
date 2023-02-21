@@ -151,7 +151,7 @@ public class HomePage extends CommonPage {
     @FindBy(css = ".h4")
     public WebElement sign_cancel;
 
-    @FindBy(css = "nav>a.Navbar_textLink__f6_Al[href^='/account/home']")
+    @FindBy(className ="Navbar_textLink__f6_Al cursor-pointer ml-4 mr-3 text-capitalize" )
     public WebElement button_account;
 
     @FindBy(xpath = "//a[@class=\"Navbar_textLink__f6_Al mr-4 ml-1\"][2]")

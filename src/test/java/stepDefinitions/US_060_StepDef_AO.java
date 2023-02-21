@@ -13,11 +13,13 @@ public class US_060_StepDef_AO {
 
     @And("user clicks on cristian button")
     public void userClicksOnCristianButton() {
+
         homePage.cristian_button.click();
     }
 
     @And("user clicks on Your products and services button")
     public void userClicksOnYourProductsAndServicesButton() {
+
         homePage.yourProductServices_button.click();
     }
 

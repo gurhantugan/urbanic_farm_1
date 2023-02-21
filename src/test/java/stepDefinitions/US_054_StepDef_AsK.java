@@ -3,8 +3,12 @@ package stepDefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import pages.DeliveryPickUpSettingsPage;
 import pages.HomePage;
+import utilities.BrowserUtilities;
+
+import javax.swing.text.Utilities;
 
 public class US_054_StepDef_AsK{
 
@@ -19,35 +23,57 @@ public class US_054_StepDef_AsK{
 
     @And("user click delivery and pick up setting")
     public void userClickDeliveryAndPickUpSetting() {
+
         deliveryPickUpSettingsPage.button_deliveryAndPickUp.click();
     }
 
     @Then("user picks up on the vine checkbox should be clickable")
     public void user_picks_up_on_the_vine_checkbox_should_be_clickable() {
-        deliveryPickUpSettingsPage.button_buyerPickUpOnTheVine.isSelected();
+        Assert.assertTrue(deliveryPickUpSettingsPage.button_buyerPickUpOnTheVine.isSelected());
 
     }
 
     @When("user while clicking picks up on the vine checkbox should show {string} menu functional and visible")
     public void user_while_clicking_picks_up_on_the_vine_checkbox_should_show_menu_functional_and_visible(String string) {
-        deliveryPickUpSettingsPage.button_yourAvailableHours.isEnabled();
-        deliveryPickUpSettingsPage.button_yourAvailableHours.isDisplayed();
+        Assert.assertTrue(deliveryPickUpSettingsPage.button_yourAvailableHours.isEnabled());
+        Assert.assertTrue(deliveryPickUpSettingsPage.button_yourAvailableHours.isDisplayed());
     }
 
 
     @When("user chose same hours and click update button")
     public void userChoseSameHoursAndClickUpdateButton() {
+        deliveryPickUpSettingsPage.startTime.sendKeys( "17:00" );
+        deliveryPickUpSettingsPage.endTime.sendKeys( "17:00" );
+        deliveryPickUpSettingsPage.button_update.click();
+
     }
 
     @Then("{string} alert massage should be visible")
-    public void alertMassageShouldBeVisible(String arg0) {
+    public void alertMassageShouldBeVisible(String expectedMessage) {
+
+        BrowserUtilities.waitFor( 3 );
+        String actualMessage = deliveryPickUpSettingsPage.validationMessage.getText();
+       Assert.assertEquals( expectedMessage,actualMessage );
+
+
+
+
     }
 
     @When("Your available hours is selected and click update button")
     public void yourAvailableHoursIsSelectedAndClickUpdateButton() {
+        BrowserUtilities.waitFor( 2 );
+        deliveryPickUpSettingsPage.startTime.sendKeys( "12:00" );
+        deliveryPickUpSettingsPage.endTime.sendKeys( "17:00" );
+        deliveryPickUpSettingsPage.button_update.click();
+
     }
 
     @Then("{string} alert message should be visible")
-    public void alertMessageShouldBeVisible(String arg0) {
+    public void alertMessageShouldBeVisible(String expectedAlert) {
+
+        String actualAlert= deliveryPickUpSettingsPage.validationAlert.getText();
+        Assert.assertEquals( expectedAlert,actualAlert );
+
     }
 }
