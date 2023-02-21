@@ -7,6 +7,11 @@ import java.util.List;
 
 public class YourProductsServicesPage extends CommonPage{
 
+    @FindBy(css = ".col-6.col-sm-4.text-center.mb-3.cursor-pointer.text-secondary")
+    public List<WebElement> links_allProducts;
+
+    @FindBy(css = ".GoBack_goback__6sa4O")
+    public WebElement button_goBack;
 
     @FindBy(xpath = "//*[@id='vegetables']")
     public WebElement vegetables;
@@ -52,4 +57,5 @@ public class YourProductsServicesPage extends CommonPage{
 
     @FindBy(xpath = "//*[text()='Yes']")
     public WebElement button_yes;
+
 }
