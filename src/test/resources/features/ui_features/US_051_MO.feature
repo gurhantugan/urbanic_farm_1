@@ -1,4 +1,6 @@
  @US_051
+   @smog
+   @regression
    Feature:Various actions in address section
      Background:
        Given user goes to "account/address" page after login
