@@ -4,3 +4,5 @@ Feature: Welcome Page-Cart Operations between Seller and Buyer
     Given user goes to "home" page after login as buyer
 
     And user goes to "account/sold-items" page after login
+
+    #When user clicks
