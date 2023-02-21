@@ -15,7 +15,7 @@ public class US_016_StepDef_AK<String> {
     @When("user clicks the blog button")
     public void userClicksTheBlogButton() {
         BrowserUtilities.scrollToElement(homePage.buttonFooterBlog);
-        clickWithJS(homePage.buttonFooterBlog);
+              clickWithJS(homePage.buttonFooterBlog);
         //homePage.buttonFooterBlog.click();
     }
     @Then("user verifies that the urbanicfarm.com blog is visible.")
