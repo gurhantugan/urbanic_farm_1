@@ -15,8 +15,8 @@ public class US_040_StepDef_SK extends HomePage {
         Driver.getDriver().get(ConfigurationReader.getProperty("baseUrl"));
         LoginPage lg=new LoginPage();
         loginButton.click();
-        box_email.sendKeys(ConfigurationReader.getProperty("Email"));
-        box_password.sendKeys(ConfigurationReader.getProperty("password"));
+        box_email.sendKeys(ConfigurationReader.getProperty("sellerEmail2"));
+        box_password.sendKeys(ConfigurationReader.getProperty("sellerPassword2"));
 
 
         //buttonn_login.click();
