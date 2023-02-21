@@ -14,10 +14,15 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "stepDefinitions",
+<<<<<<< HEAD
 
         tags = "@US_027",
        //tags = "@US_049-TC003",
         dryRun = false
+=======
+       tags = "@US63_TC001",
+       dryRun = false
+>>>>>>> 7fa3829865fceba5938f50d317456bad5f2de257
 )
 public class CukesRunner {
 }
