@@ -545,8 +545,8 @@ public class BrowserUtilities {
 
         String url = "https://test.urbanicfarm.com/";
 
-        String value2 = token;
-        String value1 = token.split("\\.")[1];
+        String value2 = ConfigurationReader.getProperty("tokenSellerUrl");
+        String value1 = ConfigurationReader.getProperty("tokenSellerUrl").split("\\.")[1];
         Driver.getDriver().get(url);
         localStorage.setItem(key1, value1);
         localStorage.setItem(key2, value2);
@@ -575,6 +575,12 @@ public class BrowserUtilities {
         waitForPageToLoad(10);
 
 
+    }
+    public static String giveMeRandomSelection(List<String> sels, String sel){
+        sels.remove(sel);
+        Random random = new Random();
+        int randomSel = random.nextInt(sels.size());
+        return sels.get(randomSel);
     }
 
 }
