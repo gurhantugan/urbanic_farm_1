@@ -5,21 +5,19 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.junit.Test;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import pages.HomePage;
 import pages.RegisterPage;
 import utilities.BrowserUtilities;
 import utilities.Driver;
-import utilities.JSUtils;
 
 import java.util.List;
 
 public class US_031_StepDef_MY {
     RegisterPage registerPage = new RegisterPage();
     HomePage homePage= new HomePage();
-    Actions action = new Actions(Driver.getDriver());
+    Actions action = new Actions(Driver.getDriver( "https://test.urbanicfarm.com/" ));
     Faker faker = new Faker();
 
     @When("user clicks on Register")

@@ -7,6 +7,7 @@ import org.junit.Assert;
 import pages.DeliveryPickUpSettingsPage;
 import pages.HomePage;
 import utilities.BrowserUtilities;
+import utilities.Driver;
 
 import javax.swing.text.Utilities;
 
@@ -23,7 +24,6 @@ public class US_054_StepDef_AsK{
 
     @And("user click delivery and pick up setting")
     public void userClickDeliveryAndPickUpSetting() {
-
         deliveryPickUpSettingsPage.button_deliveryAndPickUp.click();
     }
 
@@ -53,7 +53,7 @@ public class US_054_StepDef_AsK{
 
         BrowserUtilities.waitFor( 3 );
         String actualMessage = deliveryPickUpSettingsPage.validationMessage.getText();
-       Assert.assertEquals( expectedMessage,actualMessage );
+        Assert.assertEquals( expectedMessage,actualMessage );
 
 
 
@@ -75,5 +75,10 @@ public class US_054_StepDef_AsK{
         String actualAlert= deliveryPickUpSettingsPage.validationAlert.getText();
         Assert.assertEquals( expectedAlert,actualAlert );
 
+    }
+
+    @When("user navigates to homepage")
+    public void userNavigatesToHomepage() {
+        Driver.getDriver("https://test.urbanicfarm.com/");
     }
 }

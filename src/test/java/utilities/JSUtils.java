@@ -9,31 +9,31 @@ public class JSUtils {
     //This method will takes two parameter: WebElement, and WebDriver
     //When you pass the element, JS will click on that element
     public static void clickElementByJS(WebElement element) {
-        JavascriptExecutor jsexecutor = ((JavascriptExecutor) Driver.getDriver());
+        JavascriptExecutor jsexecutor = ((JavascriptExecutor) Driver.getDriver( "https://test.urbanicfarm.com/" ));
         jsexecutor.executeScript("arguments[0].click();", element);
     }
 
     //to get the page title with JS
     public static String getTitleByJS() {
-        JavascriptExecutor jsexecutor = ((JavascriptExecutor) Driver.getDriver());
+        JavascriptExecutor jsexecutor = ((JavascriptExecutor) Driver.getDriver( "https://test.urbanicfarm.com/" ));
         String title = jsexecutor.executeScript("return document.title;").toString();
         return title;
     }
 
     //Scrolling all the way down
     public static void scrollDownByJS() {
-        JavascriptExecutor jsexecutor = ((JavascriptExecutor) Driver.getDriver());
+        JavascriptExecutor jsexecutor = ((JavascriptExecutor) Driver.getDriver( "https://test.urbanicfarm.com/" ));
         jsexecutor.executeScript("window.scrollTo(0,document.body.scrollHeight)");
     }
 
     //Scroll into view with JS. THIS IS VERY USEFULL
     public static void scrollIntoViewJS(WebElement element) {
-        JavascriptExecutor jsexecutor = ((JavascriptExecutor) Driver.getDriver());
+        JavascriptExecutor jsexecutor = ((JavascriptExecutor) Driver.getDriver( "https://test.urbanicfarm.com/" ));
         jsexecutor.executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
     public static void changeColor(String color, WebElement element) {
-        JavascriptExecutor javascriptExecutor = ((JavascriptExecutor) Driver.getDriver());
+        JavascriptExecutor javascriptExecutor = ((JavascriptExecutor) Driver.getDriver( "https://test.urbanicfarm.com/" ));
         javascriptExecutor.executeScript("arguments[0].style.backgroundColor = '" + color + "'", element);
         try {
             Thread.sleep(5000);
@@ -51,7 +51,7 @@ public class JSUtils {
     }
     //this will generate an alert when needed
     public static void generateAlert(String message) throws InterruptedException {
-        JavascriptExecutor javascriptExecutor = ((JavascriptExecutor) Driver.getDriver());
+        JavascriptExecutor javascriptExecutor = ((JavascriptExecutor) Driver.getDriver( "https://test.urbanicfarm.com/" ));
         javascriptExecutor.executeScript("alert('" + message + "')");
         Thread.sleep(3000);
     }
@@ -60,7 +60,7 @@ public class JSUtils {
      * executes the given JavaScript command on given web element
      */
     public static void executeJScommand(WebElement element, String command) {
-        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
+        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver( "https://test.urbanicfarm.com/" );
         jse.executeScript(command, element);
     }
 
@@ -68,7 +68,7 @@ public class JSUtils {
      * executes the given JavaScript command on given web element
      */
     public static void executeJScommand(String command) {
-        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
+        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver( "https://test.urbanicfarm.com/" );
         jse.executeScript(command);
         System.out.println();
     }

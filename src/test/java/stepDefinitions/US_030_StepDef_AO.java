@@ -5,8 +5,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.interactions.Actions;
-import pages.HomePage;
 import pages.RegisterPage;
 import utilities.BrowserUtilities;
 import utilities.ConfigurationReader;
@@ -19,8 +17,8 @@ public class US_030_StepDef_AO {
 
     @Given("user on the Urbanic_Farm page {string}")
     public void userOnTheUrbanic_FarmPage(String arg0) {
-        Driver.getDriver().get(ConfigurationReader.getProperty("baseUrl"));
-        Driver.getDriver().manage().window().maximize();
+        Driver.getDriver( "https://test.urbanicfarm.com/" ).get(ConfigurationReader.getProperty("baseUrl"));
+        Driver.getDriver( "https://test.urbanicfarm.com/" ).manage().window().maximize();
     }
 
     @When("user click on register button")

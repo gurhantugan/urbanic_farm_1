@@ -1,7 +1,6 @@
 package stepDefinitions;
 
 
-import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
 import utilities.Driver;
 
@@ -17,7 +16,7 @@ public class Hooks {
 
     public void setup() {
 
-        driver = Driver.getDriver();
+        driver = Driver.getDriver( "https://test.urbanicfarm.com/" );
     }
 
 }

@@ -3,7 +3,6 @@ package stepDefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.HomePage;
 import utilities.BrowserUtilities;
@@ -15,8 +14,8 @@ public class US_010_StepDef_ED {
 
     @Given("User is on the Urbanic_Farm page")
     public void user_is_on_the_urbanic_farm_page() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("baseUrl"));
-        Driver.getDriver().manage().window().maximize();
+        Driver.getDriver( "https://test.urbanicfarm.com/" ).get(ConfigurationReader.getProperty("baseUrl"));
+        Driver.getDriver( "https://test.urbanicfarm.com/" ).manage().window().maximize();
     }
 
 
@@ -32,7 +31,7 @@ public class US_010_StepDef_ED {
     @Then("user verifies that relevant page contains {string}")
     public void userVerifiesThatRelevantPageContains(String expectedUrl) {
 
-        String currentUrl = Driver.getDriver().getCurrentUrl();
+        String currentUrl = Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl();
         Assert.assertTrue(currentUrl.contains(expectedUrl));
         BrowserUtilities.waitFor(5);
         Driver.closeDriver();

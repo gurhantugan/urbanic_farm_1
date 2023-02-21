@@ -24,7 +24,7 @@ public class US_028_StepDef_SG {
     @Then("LinkedIn page opens")
     public void linked_in_page_opens() {
         String actualUrl = "https://www.linkedin.com/company/urbanicfarm/";
-        String expectedUrl = Driver.getDriver().getCurrentUrl();
+        String expectedUrl = Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl();
         Assert.assertEquals(actualUrl,expectedUrl);
           
     }

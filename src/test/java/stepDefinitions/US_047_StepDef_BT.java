@@ -25,8 +25,8 @@ public class US_047_StepDef_BT {
 
     @Given("user login as Buyer")
     public void user_login_as_buyer() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("baseUrl"));
-        Driver.getDriver().manage().window().maximize();
+        Driver.getDriver( "https://test.urbanicfarm.com/" ).get(ConfigurationReader.getProperty("baseUrl"));
+        Driver.getDriver( "https://test.urbanicfarm.com/" ).manage().window().maximize();
         BrowserUtilities.clickWithJS(homePage.button_login);
         loginPage.textbox_email.sendKeys(ConfigurationReader.getProperty("buyerEmail"));
         loginPage.textbox_password.sendKeys(ConfigurationReader.getProperty("buyerPassword"));

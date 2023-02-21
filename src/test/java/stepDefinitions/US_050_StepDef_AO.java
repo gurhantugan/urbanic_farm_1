@@ -5,7 +5,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.junit.Test;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import pages.AddressPage;
@@ -15,7 +14,6 @@ import pages.RegisterPage;
 import utilities.BrowserUtilities;
 import utilities.ConfigurationReader;
 import utilities.Driver;
-import utilities.JSUtils;
 
 public class US_050_StepDef_AO {
 
@@ -23,12 +21,12 @@ public class US_050_StepDef_AO {
     HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();
     RegisterPage registerPage = new RegisterPage();
-    Actions actions = new Actions(Driver.getDriver());
+    Actions actions = new Actions(Driver.getDriver( "https://test.urbanicfarm.com/" ));
 
     @Given("user goes to Home Page")
     public void userGoesToRegisterPage() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("baseUrl"));
-        Driver.getDriver().manage().window().maximize();
+        Driver.getDriver( "https://test.urbanicfarm.com/" ).get(ConfigurationReader.getProperty("baseUrl"));
+        Driver.getDriver( "https://test.urbanicfarm.com/" ).manage().window().maximize();
     }
 
     @When("user clicks on login button header")
@@ -72,7 +70,7 @@ public class US_050_StepDef_AO {
     @Then("user should be able to on the Address page")
     public void userShouldBeAbleToOnTheAddressPage() {
         String expectedUrl = "https://test.urbanicfarm.com/account/address";
-        String actualUrl = Driver.getDriver().getCurrentUrl();
+        String actualUrl = Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl();
         Assert.assertEquals(expectedUrl, actualUrl);
     }
 
@@ -208,7 +206,7 @@ public class US_050_StepDef_AO {
     @When("user clicks on Yes button")
     public void user_clicks_on_yes_button() {
         BrowserUtilities.waitFor(1);
-        Driver.getDriver().navigate().refresh();
+        Driver.getDriver( "https://test.urbanicfarm.com/" ).navigate().refresh();
         BrowserUtilities.waitFor(2);
      addressPage.button_remove.click();
      BrowserUtilities.waitFor(3);

@@ -1,7 +1,7 @@
 Feature:US_054 Various actions in the Delivery & Pick up settings  section
 
   Scenario:As a user, after entering valid information,
-    Given user goes to Home Page
+   Given user goes to Home Page
     When user clicks on login button header
     And user enters valid email address
     And user enters valid password

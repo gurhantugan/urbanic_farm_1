@@ -1,7 +1,6 @@
 package stepDefinitions;
 
 import io.cucumber.java.en.*;
-import org.openqa.selenium.WebElement;
 import pages.HomePage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
@@ -10,7 +9,7 @@ public class US_007_StepDef_SK extends HomePage {
 
     @Given("user is on homepage")
     public void user_is_on_homepage() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("baseUrl"));
+        Driver.getDriver( "https://test.urbanicfarm.com/" ).get(ConfigurationReader.getProperty("baseUrl"));
 
     }
     @When("user enter the Login button")

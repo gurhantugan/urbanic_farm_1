@@ -14,9 +14,9 @@ public class US_023_StepDef_MY {
 
     @Given("user goes to bottom of the page")
     public void user_goes_to_bottom_of_the_page() {
-        Actions goBottom = new Actions(Driver.getDriver());
+        Actions goBottom = new Actions(Driver.getDriver( "https://test.urbanicfarm.com/" ));
         goBottom.sendKeys(Keys.END).perform();
-        Driver.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        Driver.getDriver( "https://test.urbanicfarm.com/" ).manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
     }
 

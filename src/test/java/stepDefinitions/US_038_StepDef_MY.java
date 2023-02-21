@@ -16,7 +16,7 @@ public class US_038_StepDef_MY {
     @Then("user clicks Sell-Share-Trade button and verifies the relevant page is opening")
     public void user_clicks_button_and_verifies_the_relevant_page_is_opening() {
        selfShareTradePage.button_Sell_Share_Trade.click();
-        String actualUrl = Driver.getDriver().getCurrentUrl();
+        String actualUrl = Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl();
         String expectedUrl="https://test.urbanicfarm.com/account/home";
         Assert.assertEquals("not same page",expectedUrl,actualUrl);
 

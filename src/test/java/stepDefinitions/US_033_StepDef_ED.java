@@ -9,7 +9,6 @@ import org.junit.Test;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import pages.RegisterPage;
-import utilities.BrowserUtilities;
 import utilities.Driver;
 
 import java.util.List;
@@ -86,7 +85,7 @@ public class US_033_StepDef_ED {
         List<String> invalidZipcodes = dataTable.column(0);
         for (int i = 0; i < dataTable.column(0).size(); i++) {
             registerPage.zipCodeBox.sendKeys(dataTable.column(0).get(i));
-            Actions actions = new Actions(Driver.getDriver());
+            Actions actions = new Actions(Driver.getDriver( "https://test.urbanicfarm.com/" ));
             actions.sendKeys(Keys.PAGE_DOWN);
             waitFor(2);
             registerPage.registerButton.click();

@@ -4,7 +4,6 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.WebElement;
 import pages.HomePage;
 import utilities.BrowserUtilities;
 import utilities.Driver;
@@ -34,9 +33,9 @@ public class US_012_StepDef_GT {
 
         for (int i = 0; i < dataTable.column(0).size(); i++) {
             JSUtils.clickElementByJS(homePage.links_sell_share_trade.get(i));
-            Assert.assertEquals(expectedData.get(i), Driver.getDriver().getCurrentUrl());
+            Assert.assertEquals(expectedData.get(i), Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl());
             BrowserUtilities.waitFor(1);
-            Driver.getDriver().navigate().back();
+            Driver.getDriver( "https://test.urbanicfarm.com/" ).navigate().back();
             BrowserUtilities.waitFor(1);
         }
         BrowserUtilities.waitFor(15);

@@ -21,7 +21,7 @@ public class US_016_StepDef_AK<String> {
     @Then("user verifies that the urbanicfarm.com blog is visible.")
     public void userVerifiesThatTheHttpsUrbanicfarmComBlogIsVisible() {
         BrowserUtilities.waitFor(3);
-        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("blog"));
+        Assert.assertTrue(Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl().contains("blog"));
         Driver.closeDriver();
     }
 

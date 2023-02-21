@@ -1,9 +1,5 @@
 package stepDefinitions;
 
-import io.cucumber.java.en.And;
-
-import io.cucumber.java.en.Given;
-
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -26,9 +22,9 @@ public class US_006_StepDef_AO {
     @Then("user verifies that relevant page is {string}")
     public void userVerifiesThatRelevantPageIs(String expectedUrl) {
 
-        String actualUrl=Driver.getDriver().getCurrentUrl();
-        System.out.println("Current Title: " + Driver.getDriver().getTitle());
-        System.out.println("Current Url : " + Driver.getDriver().getCurrentUrl());
+        String actualUrl=Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl();
+        System.out.println("Current Title: " + Driver.getDriver( "https://test.urbanicfarm.com/" ).getTitle());
+        System.out.println("Current Url : " + Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl());
 
         Assert.assertEquals("They are not equal",expectedUrl,actualUrl);
         BrowserUtilities.waitFor(3);

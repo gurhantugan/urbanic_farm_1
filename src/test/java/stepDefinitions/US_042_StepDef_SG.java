@@ -15,7 +15,7 @@ public class US_042_StepDef_SG extends CommonPage {
     RegisterPage registerPage = new RegisterPage();
     LoginPage loginPage = new LoginPage();
 
-    Actions actions = new Actions(Driver.getDriver());
+    Actions actions = new Actions(Driver.getDriver( "https://test.urbanicfarm.com/" ));
 
     @Then("User moves on to Events button")
     public void user_moves_on_to_events_button() {
