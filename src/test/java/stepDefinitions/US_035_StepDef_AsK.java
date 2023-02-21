@@ -3,6 +3,7 @@ package stepDefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pages.HomePage;
 import pages.LoginPage;
 import utilities.BrowserUtilities;
 import utilities.ConfigurationReader;
@@ -10,7 +11,7 @@ import utilities.ConfigurationReader;
 public class US_035_StepDef_AsK {
 
     LoginPage loginPage= new LoginPage();
-
+    HomePage homePage = new HomePage();
     @Then("user verifies email address button is visible")
     public void userVerifiesEmailAddressButtonIsVisible() {
 
@@ -28,16 +29,16 @@ public class US_035_StepDef_AsK {
 
         loginPage.textbox_email.sendKeys( "yusufberber@gmail.com");
         loginPage.textbox_password.sendKeys( "1619Yusufberber" );
-        BrowserUtilities.waitFor( 5 );
+        BrowserUtilities.waitFor( 2 );
     }
 
 
     @Then("user clicks login button")
     public void userClicksLoginButton() {
 
-        loginPage.loginButton.click();
+        homePage.button_login.click();
 
-        BrowserUtilities.waitFor( 10);
+        BrowserUtilities.waitFor( 2);
     }
 
     @And("user should be able to verify to login successfully")
