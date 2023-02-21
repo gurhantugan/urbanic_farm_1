@@ -13,7 +13,7 @@
       * Organic, trade buttons should be functional
       * Update-Delete buttons should be functional
       When update option is clicked
-      Then " has beensucceddfully updated" alert should be displayed
+      Then " has been successfully updated" alert should be displayed
       When delete button is clicked
       Then Yes No options should appear and One of the Yes No options should be selected.
       * No option should cancel the operation
