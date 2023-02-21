@@ -18,8 +18,9 @@ public class US_036_StepDef_AK {
     LoginPage loginPage = new LoginPage();
     HomePage homePage = new HomePage();
 
- LoginPage loginPage = new LoginPage();
-/*
+
+ /*LoginPage loginPage = new LoginPage();
+
      @Then("Verifies that the user password text box is clickable")
     public void verifiesThatTheUserPasswordTextBoxIsClickable() {
 
@@ -46,8 +47,8 @@ public class US_036_StepDef_AK {
         assertTrue(loginPage.message_pleaseVerifyYourEmail.isDisplayed());
         BrowserUtilities.waitFor(10);
         Driver.closeDriver();
-        */
-    }
+
+    }*/
     @Then("Verifies that the user password text box is clickable")
     public void verifiesThatTheUserPasswordTextBoxIsClickable() {
         assertTrue(loginPage.button_passwordOnLoginPage.isEnabled());
