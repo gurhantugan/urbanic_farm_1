@@ -1,3 +1,4 @@
+@regression
 @abd_36
 Feature:US_036
 
