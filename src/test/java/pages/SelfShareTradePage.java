@@ -41,4 +41,7 @@ public class SelfShareTradePage extends CommonPage{
     @FindBy(css = ".Notifications_notificationEmptyText__UyZF4")
     public WebElement icon_notificationsHeader;
 
+    @FindBy(xpath = "//button[text()='Add to Cart']")
+    public WebElement button_AddToCart;
+
 }
