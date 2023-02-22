@@ -26,8 +26,8 @@ public class US_059_StepDef_BT {
     YourProductsServicesPage ypsp = new YourProductsServicesPage();
     @Given("user login as Seller")
     public void user_login_as_seller() {
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).get(ConfigurationReader.getProperty("baseUrl"));
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).manage().window().maximize();
+        Driver.getDriver().get(ConfigurationReader.getProperty("baseUrl"));
+        Driver.getDriver().manage().window().maximize();
         BrowserUtilities.waitForVisibility(homePage.button_login,3);
         JSUtils.clickElementByJS(homePage.button_login);
         BrowserUtilities.waitForClickability(loginPage.button_forgotPassword, 3);
@@ -43,7 +43,7 @@ public class US_059_StepDef_BT {
         JSUtils.clickElementByJS(homePage.button_account);
         System.out.println(4);
         BrowserUtilities.waitFor(3);
-        Actions actions = new Actions(Driver.getDriver( "https://test.urbanicfarm.com/" ));
+        Actions actions = new Actions(Driver.getDriver());
         actions.dragAndDrop(ypsp.sideButton_account,ypsp.sideButton_yourProductsServices).perform();
         //System.out.println(ypsp.sideButton_yourProductsServices.getText());
     }
@@ -105,8 +105,8 @@ public class US_059_StepDef_BT {
          JSUtils.clickElementByJS(ypsp.checkBox_organic);
          JSUtils.clickElementByJS(ypsp.button_update);
          BrowserUtilities.waitFor(3);
-         String currentTitle = Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl();
-         Driver.getDriver( "https://test.urbanicfarm.com/" ).navigate().to("https://test.urbanicfarm.com/home");
+         String currentTitle = Driver.getDriver().getCurrentUrl();
+         Driver.getDriver().navigate().to("https://test.urbanicfarm.com/home");
          BrowserUtilities.switchToWindowWithIndex(2);
 
          for(WebElement el : homePage.products) {

@@ -65,12 +65,12 @@ public class BrowserUtilities {
     }
 
     public static WebElement waitForVisibility(WebElement element, int timeToWaitInSec) {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver( "https://test.urbanicfarm.com/" ), Duration.ofSeconds(timeToWaitInSec));
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeToWaitInSec));
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
 
     public static WebElement waitForVisibility(By locator, int timeout) {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver( "https://test.urbanicfarm.com/" ), Duration.ofSeconds(timeout));
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
@@ -81,7 +81,7 @@ public class BrowserUtilities {
             }
         };
         try {
-            WebDriverWait wait = new WebDriverWait(Driver.getDriver( "https://test.urbanicfarm.com/" ), Duration.ofSeconds(timeOutInSeconds));
+            WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeOutInSeconds));
             wait.until(expectation);
         } catch (Throwable error) {
             error.printStackTrace();
@@ -90,7 +90,7 @@ public class BrowserUtilities {
 
     public static void verifyElementDisplayed(By by) {
         try {
-            Assert.assertTrue("Element not visible: " + by, Driver.getDriver( "https://test.urbanicfarm.com/" ).findElement(by).isDisplayed());
+            Assert.assertTrue("Element not visible: " + by, Driver.getDriver().findElement(by).isDisplayed());
         } catch (NoSuchElementException e) {
             e.printStackTrace();
             Assert.fail("Element not found: " + by);
@@ -110,7 +110,7 @@ public class BrowserUtilities {
 
     public static void verifyElementNotDisplayed(By by) {
         try {
-            Assert.assertFalse("Element should not be visible: " + by, Driver.getDriver( "https://test.urbanicfarm.com/" ).findElement(by).isDisplayed());
+            Assert.assertFalse("Element should not be visible: " + by, Driver.getDriver().findElement(by).isDisplayed());
         } catch (NoSuchElementException e) {
             e.printStackTrace();
 
@@ -127,16 +127,16 @@ public class BrowserUtilities {
     }
 
     public static void clickWithJS(WebElement element) {
-        ((JavascriptExecutor) Driver.getDriver( "https://test.urbanicfarm.com/" )).executeScript("arguments[0].scrollIntoView(true);", element);
-        ((JavascriptExecutor) Driver.getDriver( "https://test.urbanicfarm.com/" )).executeScript("arguments[0].click();", element);
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
     }
 
     public static void scrollToElement(WebElement element) {
-        ((JavascriptExecutor) Driver.getDriver( "https://test.urbanicfarm.com/" )).executeScript("arguments[0].scrollIntoView(true);", element);
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
     public static void doubleClick(WebElement element) {
-        new Actions(Driver.getDriver( "https://test.urbanicfarm.com/" )).doubleClick(element).build().perform();
+        new Actions(Driver.getDriver()).doubleClick(element).build().perform();
     }
 
     public static void waitFor(int seconds) {
@@ -148,19 +148,19 @@ public class BrowserUtilities {
     }
 
     public static void switchToWindow(String targetTitle) {
-        String origin = Driver.getDriver( "https://test.urbanicfarm.com/" ).getWindowHandle();
-        for (String handle : Driver.getDriver( "https://test.urbanicfarm.com/" ).getWindowHandles()) {
-            Driver.getDriver( "https://test.urbanicfarm.com/" ).switchTo().window(handle);
-            if (Driver.getDriver( "https://test.urbanicfarm.com/" ).getTitle().equals(targetTitle)) {
+        String origin = Driver.getDriver().getWindowHandle();
+        for (String handle : Driver.getDriver().getWindowHandles()) {
+            Driver.getDriver().switchTo().window(handle);
+            if (Driver.getDriver().getTitle().equals(targetTitle)) {
                 return;
             }
         }
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).switchTo().window(origin);
+        Driver.getDriver().switchTo().window(origin);
     }
 
     public static List<String> getElementsText(By locator) {
 
-        List<WebElement> elems = Driver.getDriver( "https://test.urbanicfarm.com/" ).findElements(locator);
+        List<WebElement> elems = Driver.getDriver().findElements(locator);
         List<String> elemTexts = new ArrayList<>();
 
         for (WebElement el : elems) {
@@ -196,8 +196,8 @@ public class BrowserUtilities {
     }
 
     public static void switchToWindowWithIndex(int index) {
-        List<String> windowHandles = new ArrayList<>(Driver.getDriver( "https://test.urbanicfarm.com/" ).getWindowHandles());
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).switchTo().window(windowHandles.get(index));
+        List<String> windowHandles = new ArrayList<>(Driver.getDriver().getWindowHandles());
+        Driver.getDriver().switchTo().window(windowHandles.get(index));
     }
 
     public static void staleElementClick(WebElement element) {
@@ -213,14 +213,14 @@ public class BrowserUtilities {
     public static boolean isDisplayedElement(By element) {
         boolean elementExist = false;
         try {
-            Driver.getDriver( "https://test.urbanicfarm.com/" ).manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-            WebElement webElement = Driver.getDriver( "https://test.urbanicfarm.com/" ).findElement(element);
+            Driver.getDriver().manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+            WebElement webElement = Driver.getDriver().findElement(element);
             Assert.assertTrue(webElement.isDisplayed());
             elementExist = true;
         } catch (Exception e) {
             elementExist = false;
         }
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        Driver.getDriver().manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         System.out.println("Element Current Status is" + elementExist + "");
 
         return elementExist;
@@ -306,14 +306,14 @@ public class BrowserUtilities {
     public static boolean isDisplayedElement(WebElement element) {
         boolean elementExist = false;
         try {
-            Driver.getDriver( "https://test.urbanicfarm.com/" ).manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+            Driver.getDriver().manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
             //WebElement webElement = Driver.getDriver().findElement(element);
             Assert.assertTrue(element.isDisplayed());
             elementExist = true;
         } catch (Exception e) {
             elementExist = false;
         }
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        Driver.getDriver().manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         System.out.println("toast message is--->" + element.getText());
         System.out.println(" Current Element Status Is " + elementExist + ".");
 
@@ -324,18 +324,18 @@ public class BrowserUtilities {
     public static boolean isDisplayedText(String text) {
         boolean elementExist = false;
         try {
-            Driver.getDriver( "https://test.urbanicfarm.com/" ).manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+            Driver.getDriver().manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
             // WebElement webElement = driver.findElement(By.xpath("//*[text()[normalize-space() = '"+text+"']]"));
             // Assert.assertTrue(webElement.isDisplayed());
 
             By element = By.xpath("//*[text()[normalize-space() = '" + text + "']]");
-            Assert.assertTrue(Driver.getDriver( "https://test.urbanicfarm.com/" ).findElement(element).isDisplayed());
+            Assert.assertTrue(Driver.getDriver().findElement(element).isDisplayed());
 
             elementExist = true;
         } catch (Exception e) {
             elementExist = false;
         }
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        Driver.getDriver().manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         System.out.println(" Pop-up is returned " + text + "(" + elementExist + ").");
 
         return elementExist;
@@ -392,8 +392,8 @@ public class BrowserUtilities {
     }
 
     public static WebElement waitForClickability(WebElement element, int timeout) {
-        ((JavascriptExecutor) Driver.getDriver( "https://test.urbanicfarm.com/" )).executeScript("arguments[0].scrollIntoView(true);", element);
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver( "https://test.urbanicfarm.com/" ), Duration.ofSeconds(timeout));
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.elementToBeClickable(element));
 
 
@@ -539,7 +539,7 @@ public class BrowserUtilities {
      * @since 11.02.2023
      */
     public static void loginWithTokenSeller(String token, String web) {
-        LocalStorage localStorage = ((WebStorage) Driver.getDriver( "https://test.urbanicfarm.com/" )).getLocalStorage();
+        LocalStorage localStorage = ((WebStorage) Driver.getDriver()).getLocalStorage();
         String key1 = "a27c6fac85ae1295535e42c9d3e3f305";
         String key2 = "e3e1601fca9c429344c15527cd542142";
 
@@ -547,18 +547,18 @@ public class BrowserUtilities {
 
         String value2 = token;
         String value1 = token.split("\\.")[1];
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).get(url);
+        Driver.getDriver().get(url);
         localStorage.setItem(key1, value1);
         localStorage.setItem(key2, value2);
 
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).get(url + web);
+        Driver.getDriver().get(url + web);
 
         waitForPageToLoad(10);
 
 
     }
     public static void loginWithTokenBuyer(String token, String web) {
-        LocalStorage localStorage = ((WebStorage) Driver.getDriver( "https://test.urbanicfarm.com/" )).getLocalStorage();
+        LocalStorage localStorage = ((WebStorage) Driver.getDriver()).getLocalStorage();
         String key1 = "a27c6fac85ae1295535e42c9d3e3f305";
         String key2 = "e3e1601fca9c429344c15527cd542142";
 
@@ -566,11 +566,11 @@ public class BrowserUtilities {
 
         String value2 = token;
         String value1 = token.split("\\.")[1];
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).get(url);
+        Driver.getDriver().get(url);
         localStorage.setItem(key1, value1);
         localStorage.setItem(key2, value2);
 
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).get(url + web);
+        Driver.getDriver().get(url + web);
 
         waitForPageToLoad(10);
 

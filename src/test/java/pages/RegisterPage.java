@@ -12,7 +12,6 @@ public class RegisterPage extends CommonPage {
     @FindBy(css = "#registration_form_lastname")
     public WebElement lastName_registerForm;
 
-
     // 2. yol
     // public WebElement webElement = getDriver().findElement(By.cssSelector("#registration_form_firstname"));
 
@@ -99,6 +98,7 @@ public class RegisterPage extends CommonPage {
 
     @FindBy(xpath = "//a[@class='Navbar_textLink__f6_Al cursor-pointer ml-4 mr-3 text-capitalize']")
     public WebElement text_userName;
+
     @FindBy(id = "registration_form_firstname")
     public WebElement box_regFirstname;
 
@@ -126,14 +126,9 @@ public class RegisterPage extends CommonPage {
     @FindBy(xpath = "//*[@class='SocialLogins_login_btn__2b3rz']")
     public WebElement button_signInWithGoogle;
 
-
-
-
-
-
-@FindBy(css = ".btn")
+    @FindBy(css = ".btn")
     public WebElement button_register2;
-
-
-
 }
+
+
+
