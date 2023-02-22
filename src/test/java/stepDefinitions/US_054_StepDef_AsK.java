@@ -14,11 +14,13 @@ public class US_054_StepDef_AsK{
 
     @And("user click buyer name button and click")
     public void userClickBuyerNameButtonAndClick() {
+
         homePage.button_account.click();
     }
 
     @And("user click delivery and pick up setting")
     public void userClickDeliveryAndPickUpSetting() {
+
         deliveryPickUpSettingsPage.button_deliveryAndPickUp.click();
     }
 
@@ -31,7 +33,7 @@ public class US_054_StepDef_AsK{
     @When("user while clicking picks up on the vine checkbox should show {string} menu functional and visible")
     public void user_while_clicking_picks_up_on_the_vine_checkbox_should_show_menu_functional_and_visible(String string) {
         deliveryPickUpSettingsPage.button_yourAvailableHours.isEnabled();
-        deliveryPickUpSettingsPage.button_yourAvailableHours.isDisplayed();
+        deliveryPickUpSettingsPage.button_yourAvailableHours.isEnabled();
     }
 
 
