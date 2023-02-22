@@ -26,11 +26,11 @@ public class US_062_StepDef_SG {
     OrdersPage ordersPage = new OrdersPage();
     Actions actions = new Actions(Driver.getDriver());
 
-    @Given("user goes to {string} page after login as buyer")
-    public void userGoesToPageAfterLoginAsBuyer(String endPoint) {
-        BrowserUtilities.loginWithTokenBuyer(ConfigurationReader.getProperty("tokenBuyerUrl"), endPoint);
-        BrowserUtilities.waitFor(3);
-    }
+//    @Given("user goes to {string} page after login as buyer")
+//    public void userGoesToPageAfterLoginAsBuyer(String endPoint) {
+//        BrowserUtilities.loginWithTokenBuyer(ConfigurationReader.getProperty("tokenBuyerUrl"), endPoint);
+//        BrowserUtilities.waitFor(3);
+//    }
 
 
     @Then("user asserts orders button is clickable")
