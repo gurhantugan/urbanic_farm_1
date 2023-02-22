@@ -11,6 +11,7 @@ Feature: Orders
     Then seller page button should be functional and clickable
     When user click on seller adress button
     Then seller page should give correct result with view larger map
+    
 
 
 
