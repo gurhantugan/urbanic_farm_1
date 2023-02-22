@@ -44,6 +44,7 @@ public class AccountPage extends CommonPage{
     @FindBy(css = "img.rounded-circle")
     public WebElement picture;
 
-
+    @FindBy(css = "div.toastr_custom-toastr__iiU37")
+    public WebElement toastMessage;
 
 }
