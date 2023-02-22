@@ -161,5 +161,12 @@ public class AddressPage extends CommonPage{
     @FindBy(className = "AddAddressModal_inlineErrormsg__2Fw2s")
     public WebElement message_valid_zipcode;
 
+    @FindBy(xpath ="//button[@class='btn btn-outline-info']")
+    public WebElement delivery_button;
+
+    @FindBy(xpath = "//input[@id='addressTitle']")
+    public WebElement address_title;
+
+
 
 }
