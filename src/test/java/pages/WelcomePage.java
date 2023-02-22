@@ -45,6 +45,29 @@ public class WelcomePage extends CommonPage{
     @FindBy(xpath = "(//tbody/tr/th)[2]")
     public WebElement text_AddedProductNameUp;
 
+    @FindBy(xpath = "//div[@class='modal-body']")
+    public WebElement WelcomeToUrbanicForm;
+
+    @FindBy(id = "mapSearchBox")
+    public WebElement WhatAreYouLookingFor;
+
+    @FindBy(id = "location")
+    public WebElement SearchInMiles;
+
+    @FindBy(id = "allCategories")
+    public WebElement Categories;
+
+    @FindBy(xpath = "//span[@class='SearchBarOptions_slider__1xZ3L SearchBarOptions_round__3BMhA']")
+    public WebElement SearchOnlyInOrganic;
+
+    @FindBy(id = "searchMapButton")
+    public WebElement Search;
+
+    @FindBy(xpath = "//button[@class='close btn support_closeModalBtn__2jL-b']")
+    public WebElement closeMessage;
+
+
+
 
 
 
