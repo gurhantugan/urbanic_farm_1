@@ -43,3 +43,5 @@
 #denizli
 
 #besiktas
+
+  #Galatasaray
