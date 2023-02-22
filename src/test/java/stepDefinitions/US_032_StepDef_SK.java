@@ -3,8 +3,6 @@ package stepDefinitions;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
-import org.junit.Test;
-import pages.HomePage;
 import pages.RegisterPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;

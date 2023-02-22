@@ -9,7 +9,6 @@ import org.junit.Test;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import pages.RegisterPage;
-import utilities.BrowserUtilities;
 import utilities.Driver;
 
 import java.util.List;

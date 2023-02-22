@@ -15,6 +15,18 @@ public class US_060_StepDef_AO {
 YourProductsServicesPage ypsp = new YourProductsServicesPage();
 
 
+    @And("user clicks on cristian button")
+    public void userClicksOnCristianButton() {
+
+        homePage.cristian_button.click();
+    }
+
+    @And("user clicks on Your products and services button")
+    public void userClicksOnYourProductsAndServicesButton() {
+
+        homePage.yourProductServices_button.click();
+    }
+
     @Given("user is on Your products and services page")
     public void userIsOnYourProductsAndServicesPage() {
         Assert.assertTrue(homePage.ADD_button.isDisplayed());

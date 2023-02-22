@@ -1,8 +1,10 @@
 package stepDefinitions;
 
 
+
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+
 import org.openqa.selenium.WebDriver;
 
 import utilities.DatabaseUtilities;
@@ -20,7 +22,7 @@ public class Hooks {
 
     public void setup() {
 
-        driver = Driver.getDriver();
+        driver = Driver.getDriver( );
     }
     @Before("@DB")
     public void setupDatabase() {
