@@ -17,5 +17,8 @@ public class US_011_StepDef_AsK extends HomePage {
     @Then("user should able to click the {string} button")
     public void userShouldAbleToClickTheRegisterNowButton() {
        button_registerNow.click();
+
     }
+
+
 }
