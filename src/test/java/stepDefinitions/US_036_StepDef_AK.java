@@ -71,6 +71,7 @@ public class US_036_StepDef_AK {
         assertTrue(loginPage.message_pleaseVerifyYourEmail.isDisplayed());
         BrowserUtilities.waitFor(10);
         Driver.closeDriver();
+        //git
 
     }
 
