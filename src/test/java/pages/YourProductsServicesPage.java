@@ -12,8 +12,10 @@ public class YourProductsServicesPage extends CommonPage{
 
     @FindBy(css = ".GoBack_goback__6sa4O")
     public WebElement button_goBack;
+
     @FindBy(xpath = "//*[@id='vegetables']")
     public WebElement vegetables;
+
     @FindBy(css = ".Sidebar_section_btn__1sp6i[href='/account/address']")
     public WebElement sideButton_account;
 
