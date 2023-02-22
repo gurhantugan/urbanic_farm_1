@@ -14,6 +14,7 @@ import pages.RegisterPage;
 import utilities.BrowserUtilities;
 import utilities.ConfigurationReader;
 import utilities.Driver;
+import utilities.JSUtils;
 
 public class US_050_StepDef_AO {
 
@@ -21,12 +22,12 @@ public class US_050_StepDef_AO {
     HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();
     RegisterPage registerPage = new RegisterPage();
-    Actions actions = new Actions(Driver.getDriver( "https://test.urbanicfarm.com/" ));
+    Actions actions = new Actions(Driver.getDriver());
 
     @Given("user goes to Home Page")
     public void userGoesToRegisterPage() {
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).get(ConfigurationReader.getProperty("baseUrl"));
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).manage().window().maximize();
+        Driver.getDriver().get(ConfigurationReader.getProperty("baseUrl"));
+        Driver.getDriver().manage().window().maximize();
     }
 
     @When("user clicks on login button header")
@@ -57,7 +58,7 @@ public class US_050_StepDef_AO {
 //        String expectedUrl = "https://test.urbanicfarm.com/home";
 //        String actualUrl = Driver.getDriver().getCurrentUrl();
 //        Assert.assertEquals(expectedUrl,actualUrl);
-        Assert.assertTrue(homePage.button_logout.isDisplayed());
+          Assert.assertTrue(homePage.button_logout.isDisplayed());
     }
 
 //    @When("user clicks on Delivery Address link")
@@ -70,7 +71,7 @@ public class US_050_StepDef_AO {
     @Then("user should be able to on the Address page")
     public void userShouldBeAbleToOnTheAddressPage() {
         String expectedUrl = "https://test.urbanicfarm.com/account/address";
-        String actualUrl = Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl();
+        String actualUrl = Driver.getDriver().getCurrentUrl();
         Assert.assertEquals(expectedUrl, actualUrl);
     }
 
@@ -141,6 +142,8 @@ public class US_050_StepDef_AO {
 
     @When("user clicks on Edit button")
     public void user_clicks_on_edit_button() {
+        JSUtils.scrollIntoViewJS(addressPage.button_Edit);
+        BrowserUtilities.waitFor(2);
         addressPage.button_Edit.click();
 
     }
@@ -206,7 +209,7 @@ public class US_050_StepDef_AO {
     @When("user clicks on Yes button")
     public void user_clicks_on_yes_button() {
         BrowserUtilities.waitFor(1);
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).navigate().refresh();
+        Driver.getDriver().navigate().refresh();
         BrowserUtilities.waitFor(2);
      addressPage.button_remove.click();
      BrowserUtilities.waitFor(3);

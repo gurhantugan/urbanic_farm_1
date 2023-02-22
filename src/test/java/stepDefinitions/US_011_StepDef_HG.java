@@ -16,8 +16,8 @@ public class US_011_StepDef_HG {
     }
     @Then("user verifies that page is {string}")
     public void user_verifies_that_page_is(String expectedUrl) {
-        String actualUrl = Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl();
+        String actualUrl = Driver.getDriver().getCurrentUrl();
         Assert.assertEquals(expectedUrl, actualUrl);
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).close();
+        Driver.getDriver().close();
     }
 }

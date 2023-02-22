@@ -14,8 +14,8 @@ public class US_005_StepDef_MY {
 
     @Given("user is on the Urbanic_Farm page")
     public void user_is_on_the_urbanic_farm_page() {
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).get(ConfigurationReader.getProperty("baseUrl"));
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).manage().window().maximize();
+        Driver.getDriver().get(ConfigurationReader.getProperty("baseUrl"));
+        Driver.getDriver().manage().window().maximize();
 
     }
     @When("The user clicks on About us")
@@ -27,7 +27,7 @@ public class US_005_StepDef_MY {
     @Then("user should go to relevant page with {string}")
     public void userShouldGoToRelevantPageWith(String expectedUrl) {
         String currentUrl;
-        currentUrl = Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl();
+        currentUrl = Driver.getDriver().getCurrentUrl();
         Assert.assertEquals(expectedUrl,currentUrl);
     BrowserUtilities.waitFor(5);
     Driver.closeDriver();

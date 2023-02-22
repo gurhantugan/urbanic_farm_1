@@ -75,7 +75,7 @@ public class US_049_StepDef_SG {
 
         List<String> texts = dataTable.column(0);
         for (int i = 0; i < texts.size(); i++) {
-            WebElement element = Driver.getDriver( "https://test.urbanicfarm.com/" ).findElement(By.xpath("//*[text()='" + texts.get(i) + "']"));
+            WebElement element = Driver.getDriver().findElement(By.xpath("//*[text()='" + texts.get(i) + "']"));
             Assert.assertTrue(element.isDisplayed());
 
         }
@@ -100,7 +100,7 @@ public class US_049_StepDef_SG {
 
         List<String> texts = dataTable.column(0);
         for (int i = 0; i < texts.size(); i++) {
-            WebElement element = Driver.getDriver( "https://test.urbanicfarm.com/" ).findElement(By.xpath("//*[@id='" + texts.get(i) + "']"));
+            WebElement element = Driver.getDriver().findElement(By.xpath("//*[@id='" + texts.get(i) + "']"));
             //"//input[@id='addressTitle']"
             Assert.assertTrue(element.isDisplayed());
         }

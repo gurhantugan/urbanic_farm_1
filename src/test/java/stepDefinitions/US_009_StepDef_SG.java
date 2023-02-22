@@ -22,7 +22,7 @@ public class US_009_StepDef_SG {
     @Then("User asserts relevant page is open")
     public void user_asserts_relevant_page_is_open() {
         String actulaUrl = "https://test.urbanicfarm.com/explore";
-        String expectedUrl = Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl();
+        String expectedUrl = Driver.getDriver().getCurrentUrl();
         Assert.assertEquals(actulaUrl,expectedUrl);
 
     }

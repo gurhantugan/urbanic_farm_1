@@ -17,10 +17,10 @@ public class US_041_StepDef_SK {
     }
     @Then("user should go to relevant page  {string}")
     public void user_should_go_to_relevant_page(String expectedUrl) {
-        String actualUrl = Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl();
+        String actualUrl = Driver.getDriver().getCurrentUrl();
         System.out.println("-------" + expectedUrl);
         System.out.println("---------" + actualUrl);
         Assert.assertEquals(expectedUrl , actualUrl);
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).close();
+        Driver.getDriver().close();
     }
 }

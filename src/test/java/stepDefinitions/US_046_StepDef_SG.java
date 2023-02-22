@@ -53,7 +53,7 @@ public class US_046_StepDef_SG {
     @Then("Cart page opens")
     public void cart_page_opens() {
         String actualUrl = "https://test.urbanicfarm.com/basket";
-        String expectedUrl = Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl();
+        String expectedUrl = Driver.getDriver().getCurrentUrl();
         Assert.assertEquals(actualUrl, expectedUrl);
 
     }

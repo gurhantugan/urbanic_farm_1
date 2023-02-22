@@ -19,7 +19,7 @@ import java.util.Random;
 public class US_048_StepDef_MY {
     Random random=new Random();
     Faker faker=new Faker();
-    Actions action=new Actions(Driver.getDriver( "https://test.urbanicfarm.com/" ));
+    Actions action=new Actions(Driver.getDriver());
     LoginPage loginPage=new LoginPage();
     HomePage homePage=new HomePage();
     AddressPage addressPage= new AddressPage();
@@ -52,7 +52,7 @@ public class US_048_StepDef_MY {
 
     @And("the user is on the Adress page")
     public void theUserIsOnTheAdressPage() {
-        String actualUrl = Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl();
+        String actualUrl = Driver.getDriver().getCurrentUrl();
         String expectedUrl= "https://test.urbanicfarm.com/account/address";
      Assert.assertEquals("not matched",expectedUrl,actualUrl);
 
@@ -115,7 +115,7 @@ public class US_048_StepDef_MY {
     public void theUserClicksCancelAndReturnsToAdressPage() {
       addressPage.button_cancel.click();
       BrowserUtilities.waitFor(2);
-        String currentUrl = Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl();
+        String currentUrl = Driver.getDriver().getCurrentUrl();
         String expectedUrl="https://test.urbanicfarm.com/account/address";
         Assert.assertEquals("not on adress page",expectedUrl,currentUrl);
        addressPage.logout_button.click();

@@ -33,9 +33,9 @@ public class US_012_StepDef_GT {
 
         for (int i = 0; i < dataTable.column(0).size(); i++) {
             JSUtils.clickElementByJS(homePage.links_sell_share_trade.get(i));
-            Assert.assertEquals(expectedData.get(i), Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl());
+            Assert.assertEquals(expectedData.get(i), Driver.getDriver().getCurrentUrl());
             BrowserUtilities.waitFor(1);
-            Driver.getDriver( "https://test.urbanicfarm.com/" ).navigate().back();
+            Driver.getDriver().navigate().back();
             BrowserUtilities.waitFor(1);
         }
         BrowserUtilities.waitFor(15);

@@ -7,9 +7,9 @@ import org.junit.Assert;
 import pages.DeliveryPickUpSettingsPage;
 import pages.HomePage;
 import utilities.BrowserUtilities;
+import utilities.ConfigurationReader;
 import utilities.Driver;
 
-import javax.swing.text.Utilities;
 
 public class US_054_StepDef_AsK{
 
@@ -19,11 +19,13 @@ public class US_054_StepDef_AsK{
 
     @And("user click buyer name button and click")
     public void userClickBuyerNameButtonAndClick() {
+
         homePage.button_account.click();
     }
 
     @And("user click delivery and pick up setting")
     public void userClickDeliveryAndPickUpSetting() {
+
         deliveryPickUpSettingsPage.button_deliveryAndPickUp.click();
     }
 
@@ -35,8 +37,13 @@ public class US_054_StepDef_AsK{
 
     @When("user while clicking picks up on the vine checkbox should show {string} menu functional and visible")
     public void user_while_clicking_picks_up_on_the_vine_checkbox_should_show_menu_functional_and_visible(String string) {
+
         Assert.assertTrue(deliveryPickUpSettingsPage.button_yourAvailableHours.isEnabled());
         Assert.assertTrue(deliveryPickUpSettingsPage.button_yourAvailableHours.isDisplayed());
+
+        deliveryPickUpSettingsPage.button_yourAvailableHours.isEnabled();
+        deliveryPickUpSettingsPage.button_yourAvailableHours.isEnabled();
+
     }
 
 
@@ -79,6 +86,7 @@ public class US_054_StepDef_AsK{
 
     @When("user navigates to homepage")
     public void userNavigatesToHomepage() {
-        Driver.getDriver("https://test.urbanicfarm.com/");
+
+        Driver.getDriver().get(ConfigurationReader.getProperty("baseUrl"));
     }
 }

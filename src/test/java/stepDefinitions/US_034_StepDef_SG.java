@@ -21,7 +21,7 @@ import java.util.Random;
 public class US_034_StepDef_SG {
 
     Faker faker = new Faker();
-    Actions actions = new Actions(Driver.getDriver( "https://test.urbanicfarm.com/" ));
+    Actions actions = new Actions(Driver.getDriver());
     List<String> lastNames = new ArrayList<>(Arrays.asList("Apaydin", "Duyarer", "Siler", "Basar"));
     Random rand = new Random();
     
@@ -56,7 +56,7 @@ public class US_034_StepDef_SG {
         List<String> texts = dataTable.column(0);
 
         for (int i = 0; i < texts.size(); i++) {
-            WebElement element = Driver.getDriver( "https://test.urbanicfarm.com/" ).findElement(By.xpath("//*[text()='"+texts.get(i)+"']"));
+            WebElement element = Driver.getDriver().findElement(By.xpath("//*[text()='"+texts.get(i)+"']"));
             Assert.assertTrue(element.isDisplayed());
         }
 
@@ -67,7 +67,7 @@ public class US_034_StepDef_SG {
         List<String> texts = dataTable.column(0);
 
         for (int i = 0; i < texts.size(); i++) {
-            WebElement element = Driver.getDriver( "https://test.urbanicfarm.com/" ).findElement(By.xpath("//*[text()='"+texts.get(i)+"']"));
+            WebElement element = Driver.getDriver().findElement(By.xpath("//*[text()='"+texts.get(i)+"']"));
             Assert.assertTrue(element.isEnabled());
         }
     }

@@ -137,7 +137,7 @@ BrowserUtilities.waitFor(3);
     public void userVerifiesTheProductIsAddedToTheCart() {
 
         BrowserUtilities.waitFor(3);
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).navigate().refresh();
+        Driver.getDriver().navigate().refresh();
         BrowserUtilities.waitFor(3);
 
         String productNameDown=welcomePage.text_AllProductsNameDown.get(anyProduct).getText();

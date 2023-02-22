@@ -15,7 +15,7 @@ public class US_008_StepDef_SG {
 
     @Given("User is on home page")
     public void user_is_on_home_page() {
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).get(ConfigurationReader.getProperty("baseUrl"));
+        Driver.getDriver().get(ConfigurationReader.getProperty("baseUrl"));
         BrowserUtilities.waitFor(3);
 
     }
@@ -35,7 +35,7 @@ public class US_008_StepDef_SG {
     @Then("Relevant page opens")
     public void relevant_page_opens() {
         String actualUrl = "https://test.urbanicfarm.com/auth/register";
-        String expectedUrl = Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl();
+        String expectedUrl = Driver.getDriver().getCurrentUrl();
         Assert.assertEquals(expectedUrl, actualUrl);
 
     }

@@ -21,7 +21,7 @@ public class US_015_StepDef_GB {
     @Then("user should go to relevant page in the new window {string}")
     public void userShouldGoToRelevantPageInTheNewWindow(String expectedUrl) {
         BrowserUtilities.switchToWindowWithIndex(1);
-        String currentUrl = Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl();
+        String currentUrl = Driver.getDriver().getCurrentUrl();
         Assert.assertEquals(expectedUrl,currentUrl);
         BrowserUtilities.waitFor(5);
         Driver.closeDriver();

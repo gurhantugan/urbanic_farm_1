@@ -23,7 +23,7 @@ public class US_019_StepDef_GT {
         BrowserUtilities.masterClick(homePage.link_sellShareTrade);
         BrowserUtilities.waitFor(2);
         String expectedUrl="https://test.urbanicfarm.com/explore";
-        Assert.assertTrue(Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl().contains(expectedUrl));
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(expectedUrl));
 
     }
 }

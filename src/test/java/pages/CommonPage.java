@@ -7,7 +7,7 @@ import utilities.Driver;
 public class CommonPage {
 
     public CommonPage() {
-        PageFactory.initElements(Driver.getDriver( "https://test.urbanicfarm.com/" ), this);
+        PageFactory.initElements(Driver.getDriver(), this);
 
 }
 

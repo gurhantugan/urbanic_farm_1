@@ -85,7 +85,7 @@ public class US_033_StepDef_ED {
         List<String> invalidZipcodes = dataTable.column(0);
         for (int i = 0; i < dataTable.column(0).size(); i++) {
             registerPage.zipCodeBox.sendKeys(dataTable.column(0).get(i));
-            Actions actions = new Actions(Driver.getDriver( "https://test.urbanicfarm.com/" ));
+            Actions actions = new Actions(Driver.getDriver());
             actions.sendKeys(Keys.PAGE_DOWN);
             waitFor(2);
             registerPage.registerButton.click();

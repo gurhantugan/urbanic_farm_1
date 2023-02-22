@@ -19,8 +19,8 @@ public class US_039_StepDef_MO {
     @Then("User is on relevant page")
     public void user_is_on_relevant_page() {
         String expectedUrl = "https://test.urbanicfarm.com/about";
-        String actualUrl = Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl();
+        String actualUrl = Driver.getDriver().getCurrentUrl();
         Assert.assertEquals(expectedUrl,actualUrl);
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).close();
+        Driver.getDriver().close();
     }
 }

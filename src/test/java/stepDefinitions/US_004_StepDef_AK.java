@@ -15,8 +15,8 @@ public class US_004_StepDef_AK {
 
     @Given("user goes to url")
     public void userGoesToUrl() {
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).get(ConfigurationReader.getProperty("baseUrl"));
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).manage().window().maximize();
+        Driver.getDriver().get(ConfigurationReader.getProperty("baseUrl"));
+        Driver.getDriver().manage().window().maximize();
 
     }
 
@@ -27,8 +27,8 @@ public class US_004_StepDef_AK {
     @Then("user verifies that the urbanicfarm.com explore is visible")
     public void userVerifiesThatTheUrbanicfarmComExploreIsVisible() {
         BrowserUtilities.waitFor(3);
-        System.out.println(Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl());
-        Assert.assertTrue(Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl().contains("explore"));
+        System.out.println(Driver.getDriver().getCurrentUrl());
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("explore"));
 
         Driver.closeDriver();
 

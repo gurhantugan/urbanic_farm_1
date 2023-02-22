@@ -12,11 +12,11 @@ public class US_040_StepDef_SK extends HomePage {
 
     @Given("user is on the Sale Pay Trade Page")
     public void user_is_on_the_sale_pay_trade_page() {
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).get(ConfigurationReader.getProperty("baseUrl"));
+        Driver.getDriver().get(ConfigurationReader.getProperty("baseUrl"));
         LoginPage lg=new LoginPage();
         loginButton.click();
-        box_email.sendKeys(ConfigurationReader.getProperty("Email"));
-        box_password.sendKeys(ConfigurationReader.getProperty("password"));
+        box_email.sendKeys(ConfigurationReader.getProperty("sellerEmail2"));
+        box_password.sendKeys(ConfigurationReader.getProperty("sellerPassword2"));
 
 
         //buttonn_login.click();
@@ -31,7 +31,7 @@ public class US_040_StepDef_SK extends HomePage {
     }
     @Then("relevant page should be seen")
     public void relevant_page_should_be_seen() {
-        Assert.assertEquals("https://test.urbanicfarm.com/contact-us",Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl());
+        Assert.assertEquals("https://test.urbanicfarm.com/contact-us",Driver.getDriver().getCurrentUrl());
 
     }
 

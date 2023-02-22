@@ -17,7 +17,7 @@ public class US_032_StepDef_SK extends RegisterPage {
 
     @Given("user is on the Registration Page")
     public void user_is_on_the_registration_page() {
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).get(ConfigurationReader.getProperty("RegPageUrl"));
+        Driver.getDriver().get(ConfigurationReader.getProperty("RegPageUrl"));
 
     }
     @When("user enter the left blank in password")
@@ -27,6 +27,7 @@ public class US_032_StepDef_SK extends RegisterPage {
 
         Assert.assertEquals("red","red");
         box_regPassword.clear();
+        System.out.println(box_regPassword.getCssValue("color"));
 
         box_regPassword.sendKeys(dataTable.cell(1,0));
         Assert.assertEquals("red","red");
@@ -76,7 +77,7 @@ public class US_032_StepDef_SK extends RegisterPage {
     }
     @Then("user should not able to register")
     public void user_should_not_able_to_register() {
-        String klm=Driver.getDriver( "https://test.urbanicfarm.com/" ).getTitle();
+        String klm=Driver.getDriver().getTitle();
         Assert.assertEquals("Register and start selling your produce! | Urbanic Farm",klm);
 
         Driver.closeDriver();

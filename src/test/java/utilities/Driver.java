@@ -37,7 +37,7 @@ public class Driver {
     /*
     Creating re-usable utility method that will return same 'driver' instance everytime we call it.
      */
-    public static WebDriver getDriver(String s) {
+    public static WebDriver getDriver() {
 
         // isFullScreen = true;
         // isHeadless = true;
@@ -153,6 +153,4 @@ public class Driver {
             driverPool.remove();
         }
     }
-
-
 }

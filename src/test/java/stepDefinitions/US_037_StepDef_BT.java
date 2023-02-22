@@ -32,10 +32,10 @@ public class US_037_StepDef_BT {
 
     @Given("User is on the login page")
     public void userIsOnTheLoginPage() {
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).get(ConfigurationReader.getProperty("baseUrl"));
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).manage().window().maximize();
+        Driver.getDriver().get(ConfigurationReader.getProperty("baseUrl"));
+        Driver.getDriver().manage().window().maximize();
         homePage.button_login.click();
-        System.out.println(Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl());
+        System.out.println(Driver.getDriver().getCurrentUrl());
     }
 
     @When("Forgot Password button should be clickable and user presses the Forgot Password button")
@@ -81,39 +81,39 @@ public class US_037_StepDef_BT {
     //That's why I didn't create any page object under page classes
     @When("User comes to the mailbox")
     public void userComesToTheMailbox() {
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).get("https://yopmail.com/");
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).findElement(By.id("accept")).click();
+        Driver.getDriver().get("https://yopmail.com/");
+        Driver.getDriver().findElement(By.id("accept")).click();
         BrowserUtilities.waitFor(3);
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).findElement(By.cssSelector(".ycptinput")).sendKeys(email);
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).findElement(By.cssSelector("#refreshbut>.md>.material-icons-outlined")).click();
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).switchTo().frame("ifinbox");
-        List<WebElement> listOfMessage = Driver.getDriver( "https://test.urbanicfarm.com/" ).findElements(By.xpath("//*[@class='lmf']"));
+        Driver.getDriver().findElement(By.cssSelector(".ycptinput")).sendKeys(email);
+        Driver.getDriver().findElement(By.cssSelector("#refreshbut>.md>.material-icons-outlined")).click();
+        Driver.getDriver().switchTo().frame("ifinbox");
+        List<WebElement> listOfMessage = Driver.getDriver().findElements(By.xpath("//*[@class='lmf']"));
         listOfMessage.get(0).click();
         BrowserUtilities.waitFor(3);
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).switchTo().defaultContent();
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).switchTo().frame("ifmail");
+        Driver.getDriver().switchTo().defaultContent();
+        Driver.getDriver().switchTo().frame("ifmail");
 
     }
 
     @Then("User sees the password reset link in the mailbox and Reset Your Password button must be clickable")
     public void userSeesThePasswordResetLinkInTheMailboxAndResetYourPasswordButtonMustBeClickable() {
-        BrowserUtilities.waitForVisibility(Driver.getDriver( "https://test.urbanicfarm.com/" ).findElement(By.xpath("//span[text()='Reset Your Password']")), 5);
-        BrowserUtilities.verifyElementDisplayed(Driver.getDriver( "https://test.urbanicfarm.com/" ).findElement(By.xpath("//span[text()='Reset Your Password']")));
-        BrowserUtilities.verifyElementClickable(Driver.getDriver( "https://test.urbanicfarm.com/" ).findElement(By.xpath("//a[text()='Reset Your Password']")));
+        BrowserUtilities.waitForVisibility(Driver.getDriver().findElement(By.xpath("//span[text()='Reset Your Password']")), 5);
+        BrowserUtilities.verifyElementDisplayed(Driver.getDriver().findElement(By.xpath("//span[text()='Reset Your Password']")));
+        BrowserUtilities.verifyElementClickable(Driver.getDriver().findElement(By.xpath("//a[text()='Reset Your Password']")));
 
     }
 
 
     @When("User clicks on the Reset Your Password link")
     public void userClicksOnTheResetYourPasswordLink() {
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).findElement(By.xpath("//a[text()='Reset Your Password']")).click();
+        Driver.getDriver().findElement(By.xpath("//a[text()='Reset Your Password']")).click();
         BrowserUtilities.switchToWindowWithIndex(1);
 
     }
 
     @Then("Change Password screen and Confirm Password menus should appear")
     public void changePasswordScreenAndConfirmPasswordMenusShouldAppear() {
-        Assert.assertTrue(Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl().contains("https://test.urbanicfarm.com/reset-password"));
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("https://test.urbanicfarm.com/reset-password"));
         BrowserUtilities.isDisplayedText(loginPage.message_changePassword.getText());
     }
 
@@ -134,7 +134,7 @@ public class US_037_StepDef_BT {
     public void clickOnTheSubmitButtonWithValidAndNewCredentialsAndLoginPageShouldAppear() {
         loginPage.button_submitOfResetPage.click();
         BrowserUtilities.waitFor(3);
-        Assert.assertEquals(Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl(), "https://test.urbanicfarm.com/auth/login");
+        Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://test.urbanicfarm.com/auth/login");
     }
 
     @And("verify password is not the old one")

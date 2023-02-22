@@ -9,7 +9,7 @@ public class US_007_StepDef_SK extends HomePage {
 
     @Given("user is on homepage")
     public void user_is_on_homepage() {
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).get(ConfigurationReader.getProperty("baseUrl"));
+        Driver.getDriver().get(ConfigurationReader.getProperty("baseUrl"));
 
     }
     @When("user enter the Login button")

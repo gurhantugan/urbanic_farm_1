@@ -8,7 +8,7 @@ import utilities.Driver;
 public class MyStepdefs {
     @Given("User goes to Home Page")
     public void userGoesToHomePage() {
-        Driver.getDriver( "https://test.urbanicfarm.com/" ).get(ConfigurationReader.getProperty("baseUrl"));
+        Driver.getDriver().get(ConfigurationReader.getProperty("baseUrl"));
     }
 
     @Then("User Asserts accessibility")

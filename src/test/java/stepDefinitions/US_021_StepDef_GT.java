@@ -24,6 +24,6 @@ public class US_021_StepDef_GT {
         BrowserUtilities.masterClick(homePage.link_contactUsFooter);
         BrowserUtilities.waitFor(2);
         String expectedUrl="https://test.urbanicfarm.com/contact-us";
-        Assert.assertTrue(Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl().contains(expectedUrl));
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(expectedUrl));
     }
 }

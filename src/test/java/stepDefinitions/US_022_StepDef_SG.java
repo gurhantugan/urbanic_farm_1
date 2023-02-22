@@ -24,7 +24,7 @@ public class US_022_StepDef_SG {
     @Then("Privacy policy page opens")
     public void privacy_policy_page_opens() {
         String actualUrl = "https://test.urbanicfarm.com/privacy-policy";
-        String expectedUrl = Driver.getDriver( "https://test.urbanicfarm.com/" ).getCurrentUrl();
+        String expectedUrl = Driver.getDriver().getCurrentUrl();
         Assert.assertEquals(actualUrl,expectedUrl);
          
     }

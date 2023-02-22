@@ -16,7 +16,7 @@ import utilities.Driver;
 
 public class US_052_StepDefs_MY {
     AddressPage addressPage= new AddressPage();
-    Actions actions=new Actions(Driver.getDriver( "https://test.urbanicfarm.com/" ));
+    Actions actions=new Actions(Driver.getDriver());
     String ValidCode;
     @Given("user goes to {string} page after login")
     public void userGoesToPageAfterLogin(String endPoint) {
@@ -58,7 +58,7 @@ BrowserUtilities.waitFor(2);
         String expectedMessage = message_no_address;
         Assert.assertEquals("no message",expectedMessage,actualMessage);
         BrowserUtilities.waitFor(5);
-       Driver.getDriver( "https://test.urbanicfarm.com/" ).navigate().refresh();
+       Driver.getDriver().navigate().refresh();
 
 
         actions.sendKeys(Keys.PAGE_UP).perform();

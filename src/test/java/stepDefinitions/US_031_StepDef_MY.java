@@ -17,7 +17,7 @@ import java.util.List;
 public class US_031_StepDef_MY {
     RegisterPage registerPage = new RegisterPage();
     HomePage homePage= new HomePage();
-    Actions action = new Actions(Driver.getDriver( "https://test.urbanicfarm.com/" ));
+    Actions action = new Actions(Driver.getDriver());
     Faker faker = new Faker();
 
     @When("user clicks on Register")
