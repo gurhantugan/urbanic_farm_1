@@ -28,4 +28,5 @@ public class OrdersPage extends CommonPage {
 
     @FindBy(xpath = "(//span[text()='Reject all'])[1]")
     public WebElement button_rejectAll;
+
 }
