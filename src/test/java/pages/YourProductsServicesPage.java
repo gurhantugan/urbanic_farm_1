@@ -50,7 +50,7 @@ public class YourProductsServicesPage extends CommonPage{
     public WebElement button_update;
 
     @FindBy(xpath = "//*[text()='Delete']")
-    public WebElement button_cancel;
+    public WebElement button_delete;
 
     @FindBy(css = "#unitType")
     public WebElement dropDown_unit_edit;
@@ -66,6 +66,9 @@ public class YourProductsServicesPage extends CommonPage{
 
     @FindBy(css = "div[role='alert']")
     public WebElement alert;
+
+    @FindBy(css = "#c49tybhn0>div[role='alert']")
+    public WebElement alert2;
 
     @FindBy(xpath = "//*[text()='Yes']")
     public WebElement button_yes;
