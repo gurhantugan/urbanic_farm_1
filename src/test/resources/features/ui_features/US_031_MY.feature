@@ -1,7 +1,8 @@
 @regression @UI @US_031
 Feature: Check valid and invalid name, surname, email.
 Background:
-  Given user is on the Urbanic_Farm page
+  #Given user is on the Urbanic_Farm page
+  Given user on the Urbanic_Farm page "https://test.urbanicfarm.com/explore"
   When user clicks on Register
 
   Scenario:As a user, I should be able to check valid and invalid name, surname, email.
