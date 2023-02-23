@@ -7,9 +7,26 @@ import java.util.List;
 
 public class YourProductsServicesPage extends CommonPage{
 
+    @FindBy(css = ".col-6.col-sm-4.text-center.mb-3.cursor-pointer.text-secondary")
+    public List<WebElement> links_allProducts;
+
+    @FindBy(css = ".GoBack_goback__6sa4O")
+    public WebElement button_goBack;
 
     @FindBy(xpath = "//*[@id='vegetables']")
     public WebElement vegetables;
+
+    @FindBy(css = ".Sidebar_section_btn__1sp6i[href='/account/address']")
+    public WebElement sideButton_account;
+
+    @FindBy(css = ".Sidebar_section_btn__1sp6i[href='/account/hub']")
+    public WebElement sideButton_yourProductsServices;
+
+    @FindBy(css = ".col-6>svg")
+    public List<WebElement> variousProduct;
+
+    @FindBy(css = "[hubuniquename='VEGETABLES_AND_FRUITS_HUB']")
+    public WebElement button_vegetablesFruits;
 
     @FindBy(css = ".rounded[name='type']")
     public List<WebElement> rounded;
@@ -33,7 +50,7 @@ public class YourProductsServicesPage extends CommonPage{
     public WebElement button_update;
 
     @FindBy(xpath = "//*[text()='Delete']")
-    public WebElement button_cancel;
+    public WebElement button_delete;
 
     @FindBy(css = "#unitType")
     public WebElement dropDown_unit_edit;
@@ -50,6 +67,10 @@ public class YourProductsServicesPage extends CommonPage{
     @FindBy(css = "div[role='alert']")
     public WebElement alert;
 
+    @FindBy(css = "#c49tybhn0>div[role='alert']")
+    public WebElement alert2;
+
     @FindBy(xpath = "//*[text()='Yes']")
     public WebElement button_yes;
+
 }
