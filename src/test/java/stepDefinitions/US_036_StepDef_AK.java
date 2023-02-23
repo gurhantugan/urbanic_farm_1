@@ -57,6 +57,15 @@ public class US_036_StepDef_AK {
            Driver.closeDriver();
 
        }*/
+    @Then("User verifies that the mail text box is clickable")
+    public void userVerifiesThatTheMailTextBoxIsClickable() {
+        assertTrue(loginPage.box_email.isEnabled());
+    }
+    @Then("Verifies that the user password text box is clickable")
+    public void verifiesThatTheUserPasswordTextBoxIsClickable() {
+        assertTrue( loginPage.button_passwordOnLoginPage.isEnabled());
+
+    }
 
     @Given("User enters values {string} in the email text box and {string} in the password text box")
     public void userEntersValuesInTheEmailTextBoxAndInThePasswordTextBox(String invalidEmail, String invalidPassword) {
@@ -69,15 +78,7 @@ public class US_036_StepDef_AK {
         loginPage.button_forgotPassword.click();
         BrowserUtilities.waitFor(2);
         assertTrue(loginPage.message_pleaseVerifyYourEmail.isDisplayed());
-        BrowserUtilities.waitFor(10);
-        Driver.closeDriver();
-
-    }
-
-    @Then("Verifies that the user password text box is clickable")
-    public void verifiesThatTheUserPasswordTextBoxIsClickable() {
-        assertTrue(loginPage.button_passwordOnLoginPage.isEnabled());
-
+        BrowserUtilities.waitFor(3);
         Driver.closeDriver();
     }
 
