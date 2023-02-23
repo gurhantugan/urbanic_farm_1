@@ -102,6 +102,7 @@ public class US_58_StepDef_HA {
     @Then("user approves last added product from database")
     public void userApprovesLastAddedProductFromDatabase() {
         DatabaseUtilities.approveLastProduct();
+        BrowserUtilities.wait(3);
     }
 
     @Then("user verifies approved should be visible on the added product")

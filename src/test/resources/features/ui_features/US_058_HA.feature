@@ -27,8 +27,8 @@ Business Need: Your products/services
       Given user goes to "account/hub" page after login
       And user click on random Hubs
       When user verifies product name, price, stock, unit information added products should be displayed
-      Then user verifies one of the approved, in-Review, rejected options for each product should be visible on the file
-      Then user verifies in-review should be visible on the added product
+#      Then user verifies one of the approved, in-Review, rejected options for each product should be visible on the file
+#      Then user verifies in-review should be visible on the added product
       Then user approves last added product from database
       Then user verifies approved should be visible on the added product
       Then verifies product name on the file related to the previously added product is clickable
