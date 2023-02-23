@@ -17,7 +17,7 @@ Feature: US065
     Then User verifies the product is added to the cart.
 
 
-   A list of sellers should appear under the heading Local sellers near you.
+   #A list of sellers should appear under the heading Local sellers near you.
  # Any seller should be able to choose
  # Products should be seen listed in separate sections
  # Product quantity icons (+ -) must be functional
