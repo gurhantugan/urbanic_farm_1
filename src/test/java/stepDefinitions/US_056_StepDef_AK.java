@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 
 import pages.DeliveryPickUpSettingsPage;
 import utilities.BrowserUtilities;
+import utilities.Driver;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -112,8 +113,9 @@ public class US_056_StepDef_AK {
             System.out.println("hata mesaji goruldu");
         }
 
-
+        Driver.closeDriver();
     }
+
 
 
 }

@@ -40,6 +40,8 @@ public class US_036_StepDef_AK {
     @Then("Verifies that the user password text box is clickable")
     public void verifiesThatTheUserPasswordTextBoxIsClickable() {
         assertTrue(loginPage.button_passwordOnLoginPage.isEnabled());
+
+        Driver.closeDriver();
     }
 
 }
