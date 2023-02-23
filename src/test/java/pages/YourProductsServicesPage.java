@@ -33,15 +33,11 @@ public class YourProductsServicesPage extends CommonPage {
     public WebElement yes;
     @FindBy(xpath = "(//div[@class='text-center mb-2']/a)[2]")
     public WebElement no;
+
     public void clickAddedProduct(String productName) {
         BrowserUtilities.scrollAndClickWithJS(driver.findElement(By.xpath("//a[text()='" + productName + "']")));
     }
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
-import java.util.List;
-
-public class YourProductsServicesPage extends CommonPage{
 
     @FindBy(css = ".col-6.col-sm-4.text-center.mb-3.cursor-pointer.text-secondary")
     public List<WebElement> links_allProducts;
