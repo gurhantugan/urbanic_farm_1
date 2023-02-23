@@ -18,12 +18,3 @@ Feature: US065
 
 
 
-  # A list of sellers should appear under the heading Local sellers near you.
- #Welcome Page-Orders
- # A list of sellers should appear under the heading Local sellers near you.
- # Any seller should be able to choose
- # Products should be seen listed in separate sections
- # Product quantity icons (+ -) must be functional
- # Add to Cart button must be functional
-#the Add to Cart button is clicked, the product should be added to the cart.
-# ..... added to your basket! warning should appear
