@@ -45,10 +45,12 @@ public class WelcomePage extends CommonPage{
     @FindBy(xpath = "(//tbody/tr/th)[2]")
     public WebElement text_AddedProductNameUp;
 
+   @FindBy(xpath = "//p[@class='ProductCard_userName__MaY5h'][text()='Mathew']")
+    public List<WebElement> list_SellerName;
 
 
-
-
+ @FindBy(id = "productSortSelect")
+    public WebElement select_sort;
 
 
 
