@@ -27,4 +27,34 @@ public class CardAndBasketPage extends CommonPage{
 
     @FindBy(css = "//h5[contains(text(),'Are you sure you want to delete the product?')]")
     public WebElement text;
+
+    @FindBy(xpath = "(//tbody[@class='border-bottom']/tr/th)[1]")
+    public WebElement seller_name;
+
+    @FindBy(xpath = "(//tbody[@class='border-bottom']/tr/th)[2]")
+    public WebElement product_name;
+
+    @FindBy(xpath = "//button[@class='btn btn-block font-weight-bold Basket_checkOutBtn__1946L']")
+    public WebElement button_checkOut;
+
+    @FindBy(xpath = "//button[@class='proceed_btn__vZFGE'][text()='Next']")
+    public WebElement button_Next;
+
+    @FindBy(xpath = "//button[@class='proceed_btn__vZFGE'][text()='Go To Payment']")
+    public WebElement button_GoToPayment;
+
+    @FindBy(css=".css-ltr-1m7plzc-button-Button")
+    public WebElement button_paypalLogin;
+
+    @FindBy(css="#email")
+    public WebElement email_paypal;
+
+    @FindBy(css="#password")
+    public WebElement password_paypal;
+
+    @FindBy(css="#btnLogin")
+    public WebElement button_loginLast_paypal;
+
+    @FindBy(css="#payment-submit-btn")
+    public WebElement button_complete_purchase;
 }
