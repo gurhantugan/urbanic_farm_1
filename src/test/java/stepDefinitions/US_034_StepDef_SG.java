@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
-import static stepDefinitions.Hooks.driver;
 
 
 public class US_034_StepDef_SG {

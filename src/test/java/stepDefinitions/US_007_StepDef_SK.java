@@ -1,7 +1,6 @@
 package stepDefinitions;
 
 import io.cucumber.java.en.*;
-import org.openqa.selenium.WebElement;
 import pages.HomePage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
