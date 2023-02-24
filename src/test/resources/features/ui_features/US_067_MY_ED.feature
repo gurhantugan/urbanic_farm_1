@@ -12,5 +12,14 @@ Feature: Welcome Page-Cart Operations between Seller and Buyer
     Then user sees "Payment successful" message on the screen
     And user clicks on the notification bell to confirm orders
     And user clicks on the order link in notofications
+    And user clicks on the view order details to get orderID
     And user goes to "account/sold-items" page after login as Mathew
+    Then seller sees the same orderID on his account
+    When seller sees order and changes the status from in progress to on delivery
+    And user goes to "home" page after login as Mary
+    And user goes to account page and clicks on Orders
+    Then user sees the order status on delivery
+    And user clicks on the notification bell to confirm orders
+    And user clicks on the mark all read button
+    Then user sees "No unread notifications" in notifications box
    # And user clicks on logout button
