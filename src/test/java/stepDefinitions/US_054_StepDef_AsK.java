@@ -19,19 +19,23 @@ public class US_054_StepDef_AsK{
 
     @And("user click buyer name button and click")
     public void userClickBuyerNameButtonAndClick() {
-
+        BrowserUtilities.waitFor( 3 );
         homePage.button_account.click();
+        BrowserUtilities.waitFor( 3 );
+
+
     }
 
     @And("user click delivery and pick up setting")
     public void userClickDeliveryAndPickUpSetting() {
-
+         BrowserUtilities.waitFor( 3 );
         deliveryPickUpSettingsPage.button_deliveryAndPickUp.click();
     }
 
     @Then("user picks up on the vine checkbox should be clickable")
     public void user_picks_up_on_the_vine_checkbox_should_be_clickable() {
-        Assert.assertTrue(deliveryPickUpSettingsPage.button_buyerPickUpOnTheVine.isSelected());
+        BrowserUtilities.waitFor( 3 );
+        BrowserUtilities.verifyElementClickable(deliveryPickUpSettingsPage.button_buyerPickUpOnTheVine);
 
     }
 

@@ -10,7 +10,7 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//a[text()='Login']")
     public WebElement loginButton;
 
-    @FindBy(xpath = "//a[text()='Login']")
+    @FindBy(xpath = "//*[@class='btn alazea-btn']")
     public WebElement button_login;
 
     @FindBy(xpath = "//label[@for='allCategories']")
@@ -152,16 +152,15 @@ public class HomePage extends CommonPage {
     @FindBy(css = ".h4")
     public WebElement sign_cancel;
 
-    @FindBy(className ="Navbar_textLink__f6_Al cursor-pointer ml-4 mr-3 text-capitalize" )
+    @FindBy(xpath = "//*[@id=\"navbarElement\"]/nav/a[4]")
     public WebElement button_account;
 
     @FindBy(xpath = "//a[@class=\"Navbar_textLink__f6_Al mr-4 ml-1\"][2]")
     public WebElement button_ContactUs;
-    @FindBy(xpath ="//a[text()='Login']")
-    public WebElement loginButton_header;
 
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement buttonn_login;
+
     @FindBy(xpath ="//a[@title='click to change your delivery address']")
     public WebElement deliveryAddress_button;
 
