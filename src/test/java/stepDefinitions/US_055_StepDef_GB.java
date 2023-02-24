@@ -1,16 +1,22 @@
 package stepDefinitions;
 
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import pages.DeliveryPickUpSettingsPage;
 import utilities.BrowserUtilities;
 import utilities.ConfigurationReader;
 
 public class US_055_StepDef_GB {
-    @Given("user goes to welcome page after login")
-    public void userGoesToWelcomePageAfterLogin() {
-        BrowserUtilities.loginWithTokenBuyer(ConfigurationReader.getProperty("tokenBuyerUrl"));
+  DeliveryPickUpSettingsPage deliveryPickUpSettingsPage= new DeliveryPickUpSettingsPage();
+    @Then("user verifies all checkboxes are clickable")
+    public void userVerifiesAllCheckboxesAreClickable() {
+        BrowserUtilities.waitFor(3);
+      for (int i = 0; i < deliveryPickUpSettingsPage.checkbox_all.size() ; i++) {
+        deliveryPickUpSettingsPage.checkbox_all.get(i).click();
+        BrowserUtilities.waitFor(1);
+        deliveryPickUpSettingsPage.checkbox_all.get(i).click();
+        BrowserUtilities.waitFor(1);
+      }
+
     }
 }
-   /* @Given("user goes to {string} page after login")
-    public void userGoesToPageAfterLogin(String endPoint) {
-        BrowserUtilities.loginWithTokenSeller(ConfigurationReader.getProperty("tokenSellerUrl"),endPoint);
-        BrowserUtilities.waitFor(2);*/

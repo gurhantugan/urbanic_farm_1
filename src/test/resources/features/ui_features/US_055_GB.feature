@@ -5,4 +5,5 @@ Scenario: US_055 TC_001 As a user, after entering valid information, I should be
 
 
 
-Given user goes to "welcome" page after login
+  Given user goes to "account/delivery" page after login as a buyer
+  Then user verifies all checkboxes are clickable
