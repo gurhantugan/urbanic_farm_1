@@ -34,7 +34,7 @@ public class US_67_StepDef_MY_ED {
     @Given("user goes to {string} page after login as Mary")
     public void userGoesToPageAfterLoginAsMary(String endpoint) {
         BrowserUtilities.loginWithTokenBuyer(ConfigurationReader.getProperty("tokenMaryBuyer"), endpoint);
-        BrowserUtilities.waitFor(2);
+        BrowserUtilities.waitFor(4);
 
 
     }

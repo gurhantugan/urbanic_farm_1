@@ -22,4 +22,4 @@ Feature: Welcome Page-Cart Operations between Seller and Buyer
     And user clicks on the notification bell to confirm orders
     And user clicks on the mark all read button
     Then user sees "No unread notifications" in notifications box
-   # And user clicks on logout button
+    And user clicks on logout button
