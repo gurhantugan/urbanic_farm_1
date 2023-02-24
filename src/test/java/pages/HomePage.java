@@ -185,8 +185,11 @@ public class HomePage extends CommonPage {
     @FindBy(css = ".row[style^='box-shadow:']")
     public List<WebElement> products;
 
-    @FindBy(css = ".mb-3>ul>li>a")
-    public List<WebElement> pageNumber;
+    @FindBy(css = "#pagination>ul>li>a")
+    public List<WebElement> pageNumbers;
+
+    @FindBy(css = ".p-2>div>p")
+    public List<WebElement> productNames;
 
 
 }
