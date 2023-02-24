@@ -40,7 +40,6 @@ public class US_063_StepDef_GK {
     @Then("User click the login button")
     public void user_click_the_login_button() {
 
-
     }
 
     @Then("User see {string} message on screen")
