@@ -60,5 +60,8 @@ public class OrdersPage extends CommonPage{
     @FindBy(css = "iframe.d-block")
     public List<WebElement> iframe;
 
+    @FindBy(css = "span.text-uppercase.h6")
+    public List<WebElement> texts_orderCode;
+
 
 }
