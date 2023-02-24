@@ -1,5 +1,5 @@
 package pages;
-
+import enums.USERINFO;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -91,4 +91,15 @@ public class LoginPage extends CommonPage {
 
     @FindBy(xpath ="//button[text()='Login']")
     public WebElement loginButton_footer;
+    public void loginMethod(String email, String password) {
+        emailBox.sendKeys(email);
+        passwordBox.sendKeys(password);
+        button_login.click();
+    }
+
+    public void loginMethod(USERINFO user) {
+        emailBox.sendKeys(user.getEmail());
+        passwordBox.sendKeys(user.getPassword());
+        button_submit.click();
+    }
 }
