@@ -1,4 +1,4 @@
-git @US_007_SK
+@US_007_SK
 
 
 Feature: US_007_SK

@@ -34,4 +34,14 @@ public class DeliveryPickUpSettingsPage extends CommonPage{
         @FindBy(css = ".custom-control-input.DeliverySettings_regular-checkbox__1gkSd")
         public List<WebElement> checkbox_all;
 
+        @FindBy(name = "BUYER_PICKUP")
+        public WebElement checkbox_buyerPicksUp;
+
+        @FindBy(name = "SELLER_DELIVERY")
+        public WebElement checkbox_sellerDeliversTheProducts;
+
+        @FindBy(name = "SELLER_FLEXIBLE")
+        public WebElement checkbox_sellerFlexibleDelivery;
+
+
     }
