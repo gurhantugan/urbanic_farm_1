@@ -1,21 +1,14 @@
 package stepDefinitions;
 
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 
 import static org.junit.Assert.*;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.JavascriptExecutor;
 import pages.HomePage;
-
-import static utilities.BrowserUtilities.*;
 
 import utilities.Driver;
 
-import static utilities.BrowserUtilities.clickWithJS;
-
-public class US_025_StepDepf_AK {
+public class US_025_StepDef_AK {
     HomePage homePage = new HomePage();
 
     @Then("user verifies that the f button is visible.")
