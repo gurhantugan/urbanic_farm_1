@@ -12,7 +12,6 @@ import utilities.ConfigurationReader;
 import utilities.DatabaseUtilities;
 import utilities.Driver;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import java.util.Random;
@@ -20,7 +19,7 @@ import java.util.stream.Collectors;
 
 import static stepDefinitions.Hooks.driver;
 
-public class US_58_StepDef_HA {
+public class US_058_StepDef_HA {
     Random random = new Random();
     int randomHub;
     String addedProduct = "";
