@@ -57,4 +57,16 @@ public class CardAndBasketPage extends CommonPage{
 
     @FindBy(css="#payment-submit-btn")
     public WebElement button_complete_purchase;
+
+    @FindBy(css=".mt-2.font-weight-bold")
+    public WebElement text_payment_successful;
+
+    @FindBy(xpath = "//*[@font-size='1.3em']")
+    public WebElement notification_bell;
+
+    @FindBy(linkText = "Your Order is Placed")
+    public WebElement link_order_placed;
+
+    @FindBy(css=".Notifications_notificationDownContent__1R3pg>span")
+    public WebElement cross_close_notification;
 }

@@ -2,12 +2,14 @@ package stepDefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import pages.CardAndBasketPage;
+import pages.OrdersPage;
 import pages.SelfShareTradePage;
 import pages.WelcomePage;
 import utilities.BrowserUtilities;
@@ -23,6 +25,7 @@ public class US_67_StepDef_MY_ED {
      }*/
     CardAndBasketPage cardAndBasketPage=new CardAndBasketPage();
     WelcomePage welcomePage = new WelcomePage();
+    OrdersPage ordersPage=new OrdersPage();
     Actions actions = new Actions(Driver.getDriver());
    SelfShareTradePage selfShareTradePage=new SelfShareTradePage();
    String expectedProduct;
@@ -107,6 +110,36 @@ public class US_67_StepDef_MY_ED {
         cardAndBasketPage.button_loginLast_paypal.click();
         BrowserUtilities.waitFor(3);
         cardAndBasketPage.button_complete_purchase.click();
+        BrowserUtilities.waitFor(8);
+
+    }
+
+    @Then("user sees {string} message on the screen")
+    public void userSeesMessageOnTheScreen(String paymentMessage) {
+        BrowserUtilities.switchToWindowWithIndex(0);
+        BrowserUtilities.waitFor(3);
+        String actualText = cardAndBasketPage.text_payment_successful.getText();
+        Assert.assertEquals("payment not successful",paymentMessage,actualText);
+
+
+    }
+
+    @And("user clicks on the notification bell to confirm orders")
+    public void userClicksOnTheNotificationBellToConfirmOrders() {
+
+         cardAndBasketPage.notification_bell.click();
+          BrowserUtilities.waitFor(3);
+    }
+
+    @And("user clicks on the order link in notofications")
+    public void userClicksOnTheOrderLinkInNotofications() {
+        cardAndBasketPage.link_order_placed.click();
+        BrowserUtilities.waitFor(5);
+        cardAndBasketPage.cross_close_notification.click();
+
+        BrowserUtilities.waitFor(3);
+
+
 
     }
 }
