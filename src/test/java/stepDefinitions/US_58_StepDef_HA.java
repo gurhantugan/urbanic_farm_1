@@ -10,6 +10,7 @@ import pages.YourProductsServicesPage;
 import utilities.BrowserUtilities;
 import utilities.ConfigurationReader;
 import utilities.DatabaseUtilities;
+import utilities.Driver;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -101,12 +102,14 @@ public class US_58_StepDef_HA {
 
     @Then("user approves last added product from database")
     public void userApprovesLastAddedProductFromDatabase() {
+        BrowserUtilities.wait(3);
         DatabaseUtilities.approveLastProduct();
+        BrowserUtilities.wait(3);
     }
 
     @Then("user verifies approved should be visible on the added product")
     public void userVerifiesApprovedShouldBeVisibleOnTheAddedProduct() {
-        driver.navigate().back();
+        Driver.getDriver().navigate().back();
         BrowserUtilities.wait(2);
         yourProductsServicesPage.allhubs.get(randomHub).click();
         BrowserUtilities.wait(2);
