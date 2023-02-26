@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import pages.AccountPage;
@@ -133,7 +134,7 @@ public class US_059_StepDef_BT {
 
              }
 
-        WebElement product1 = Driver.getDriver().findElement(By.xpath("//p[text()='"+BrowserUtilities.readDataFromIdsFile("product")+"' and @class='m-0 mb-1 text-start text-white ProductCard_productTitle__3K4rg']/../../.."));
+        WebElement product1 = Driver.getDriver().findElement( By.xpath("//p[text()='"+BrowserUtilities.readDataFromIdsFile("product")+"' and @class='m-0 mb-1 text-start text-white ProductCard_productTitle__3K4rg']/../../.."));
          BrowserUtilities.verifyElementDisplayed(product1);
          Assert.assertTrue(product1.getDomProperty("textContent").contains(BrowserUtilities.readDataFromIdsFile("product")));
          WebElement product2 = Driver.getDriver().findElement(By.xpath("//*[text()='"+BrowserUtilities.readDataFromIdsFile("product")+"' and @class='ProductCard_productTitle__3K4rg']/../../div[@class='row d-flex justify-content-center']/button"));
