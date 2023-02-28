@@ -53,7 +53,6 @@ public class US_056_StepDef_AK {
     @And("user enters valid or invalid credentials to {string} menu")
     public void userEntersValidOrInvalidCredentialsToMenu(String time) {
         deliveryPickUpSettingsPage.textbox_EstimatedDeliveryTime.sendKeys(time);
-
     }
 
     @And("user enters valid or invalid credentials to {string} \\(mile) menu")
@@ -108,15 +107,12 @@ public class US_056_StepDef_AK {
         String actualMessage3 = deliveryPickUpSettingsPage.textbox_PerMileCost.getDomProperty("validationMessage");
         String actualMessage4 = deliveryPickUpSettingsPage.textbox_EstimatedDeliveryTime.getDomProperty("validationMessage");
         String actualMessage5 = deliveryPickUpSettingsPage.textbox_UpTo.getDomProperty("validationMessage");
-        if (errorMessage.contains(actualMessage1) || errorMessage.equals(actualMessage2) || errorMessage.equals(actualMessage3)
-                || errorMessage.equals(actualMessage4) || errorMessage.equals(actualMessage5)) {
+        if (actualMessage1.contains(errorMessage) || actualMessage2.contains(errorMessage) || actualMessage3.contains(errorMessage)
+                || actualMessage4.contains(errorMessage) || actualMessage5.contains(errorMessage)) {
             System.out.println("hata mesaji goruldu");
         }
 
         Driver.closeDriver();
     }
-
-
-
 }
 
