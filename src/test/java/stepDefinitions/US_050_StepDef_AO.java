@@ -32,7 +32,7 @@ public class US_050_StepDef_AO {
 
     @When("user clicks on login button header")
     public void userClicksOnLoginButtonHeader() {
-        homePage.loginButton_header.click();
+        homePage.loginButton.click();
 
     }
 

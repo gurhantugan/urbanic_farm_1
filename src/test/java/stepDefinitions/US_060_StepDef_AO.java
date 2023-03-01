@@ -18,7 +18,7 @@ YourProductsServicesPage ypsp = new YourProductsServicesPage();
     @And("user clicks on cristian button")
     public void userClicksOnCristianButton() {
 
-        homePage.cristian_button.click();
+        homePage.button_account.click();
     }
 
     @And("user clicks on Your products and services button")

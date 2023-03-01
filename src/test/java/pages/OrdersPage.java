@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class OrdersPage extends CommonPage{
+public class OrdersPage extends CommonPage {
 
     @FindBy(css = "a[href='/account/orders']")
     public WebElement button_orders;
@@ -34,7 +34,7 @@ public class OrdersPage extends CommonPage{
     @FindBy(xpath = "(//span[text()='Reject all'])[1]")
     public WebElement button_rejectAll;
 
-    @FindBy(css=".text-muted.OrderCard_order-detail__container__3kd-R>span")
+    @FindBy(css = ".text-muted.OrderCard_order-detail__container__3kd-R>span")
     public List<WebElement> idOfOrders;
     @FindBy(xpath = "//*[text()='View order details']")
     public List<WebElement> viewOrderDetails;
@@ -61,4 +61,18 @@ public class OrdersPage extends CommonPage{
     public List<WebElement> iframe;
 
 
+    @FindBy(xpath = "(//span[@class='font-weight-bold'])[2]")
+    public WebElement order_number;
+
+    @FindBy(xpath = "(//div[@class='list-group-item list-group-item-action  active'])[1]")
+    public WebElement order_status_buyer;
+
+    @FindBy(xpath = "//span[@class='Notifications_filterButton__3COw5'][text()='Mark all as read']")
+    public WebElement link_mark_all_as_read;
+
+    @FindBy(css = ".Notifications_emptyText__3BV2W")
+    public WebElement text_no_unread_notifications;
+
+    @FindBy(css=".Notifications_notificationEmptyIcon__39m7C")
+    public WebElement cross_notification;
 }

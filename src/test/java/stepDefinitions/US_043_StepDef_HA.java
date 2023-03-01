@@ -24,10 +24,12 @@ public class US_043_StepDef_HA {
     public void userEntersInPasswordFieldOnLoginPage(String arg0) {
         loginPage.button_passwordOnLoginPage.sendKeys("Apply1453#");
     }
+
     @Given("user clicks on login button")
     public void user_clicks_on_login_button() {
         loginPage.button_login.click();
     }
+
     @When("user clicks on sale-share-trade button")
     public void user_clicks_on_sale_share_trade_button() {
         BrowserUtilities.waitFor(3);
