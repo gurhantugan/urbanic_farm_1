@@ -30,6 +30,20 @@ Scenario: What are you looking for,,Search in miles,Categories,Search only organ
 
 
   @US63_TC003
+  Scenario Outline: What are you looking for,Search in miles, Categories, Search only in organic produce, Search menus should give correct results
+    Then User should choose valid credentials to '<What are you looking for>'
+    And User should choose valid credentials to '<Search in miles>'
+    And User should choose valid credentials to '<Categories>'
+    And User should choose the correct version  '<Search only in organic produce>'
+    And User should click "<Search menu>"
+
+    Examples:
+      | What are you looking for | Search in miles | Categories |
+      | Adriatic Figs            | Any             | Any        |
+      |                          |                 |            |
+
+
+
 
 
 

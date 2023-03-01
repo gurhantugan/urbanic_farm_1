@@ -7,7 +7,7 @@ import utilities.ConfigurationReader;
 public class US_055_StepDef_GB {
     @Given("user goes to welcome page after login")
     public void userGoesToWelcomePageAfterLogin() {
-        BrowserUtilities.loginWithTokenBuyer(ConfigurationReader.getProperty("tokenBuyerUrl"));
+        //BrowserUtilities.loginWithTokenBuyer(ConfigurationReader.getProperty("tokenBuyerUrl"));
     }
 }
    /* @Given("user goes to {string} page after login")
