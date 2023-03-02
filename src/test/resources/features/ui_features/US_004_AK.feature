@@ -1,4 +1,4 @@
-@regression
+@regression,@smoke
 @abd
   Feature:User should be able to perform various operations
     Scenario:Explore should be clickable and relevant page should be visible

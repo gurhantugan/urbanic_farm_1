@@ -1,3 +1,4 @@
+@regression,@smoke
 Feature: User should be able to perform various operations
 
   Scenario: Blog button should be clickable and relevant page should be visible

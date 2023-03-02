@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import org.openqa.selenium.WebElement;
 import pages.SelfShareTradePage;
 import utilities.BrowserUtilities;
+import utilities.Driver;
 
 public class US_044_StepDef_HA {
     SelfShareTradePage selfShareTradePage = new SelfShareTradePage();
@@ -16,6 +17,7 @@ public class US_044_StepDef_HA {
         BrowserUtilities.waitForVisibility(selfShareTradePage.button_logout, 10);
         BrowserUtilities.verifyElementClickable(selfShareTradePage.button_logout);
         selfShareTradePage.button_logout.click();
+
     }
 
 
