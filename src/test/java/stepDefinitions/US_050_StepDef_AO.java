@@ -5,7 +5,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.junit.Test;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import pages.AddressPage;
@@ -33,7 +32,7 @@ public class US_050_StepDef_AO {
 
     @When("user clicks on login button header")
     public void userClicksOnLoginButtonHeader() {
-        homePage.loginButton_header.click();
+        homePage.loginButton.click();
 
     }
 
@@ -59,7 +58,7 @@ public class US_050_StepDef_AO {
 //        String expectedUrl = "https://test.urbanicfarm.com/home";
 //        String actualUrl = Driver.getDriver().getCurrentUrl();
 //        Assert.assertEquals(expectedUrl,actualUrl);
-        Assert.assertTrue(homePage.button_logout.isDisplayed());
+          Assert.assertTrue(homePage.button_logout.isDisplayed());
     }
 
 //    @When("user clicks on Delivery Address link")
@@ -143,6 +142,8 @@ public class US_050_StepDef_AO {
 
     @When("user clicks on Edit button")
     public void user_clicks_on_edit_button() {
+        JSUtils.scrollIntoViewJS(addressPage.button_Edit);
+        BrowserUtilities.waitFor(2);
         addressPage.button_Edit.click();
 
     }

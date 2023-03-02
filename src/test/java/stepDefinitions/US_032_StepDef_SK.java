@@ -3,8 +3,6 @@ package stepDefinitions;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
-import org.junit.Test;
-import pages.HomePage;
 import pages.RegisterPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
@@ -29,6 +27,7 @@ public class US_032_StepDef_SK extends RegisterPage {
 
         Assert.assertEquals("red","red");
         box_regPassword.clear();
+        System.out.println(box_regPassword.getCssValue("color"));
 
         box_regPassword.sendKeys(dataTable.cell(1,0));
         Assert.assertEquals("red","red");

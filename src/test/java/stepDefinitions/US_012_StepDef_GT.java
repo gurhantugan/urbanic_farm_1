@@ -4,7 +4,6 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.WebElement;
 import pages.HomePage;
 import utilities.BrowserUtilities;
 import utilities.Driver;
@@ -43,4 +42,6 @@ public class US_012_StepDef_GT {
         Driver.closeDriver();
 
     }
+
+
 }

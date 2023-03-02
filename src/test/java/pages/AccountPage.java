@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class AccountPage extends CommonPage{
 
     @FindBy(xpath = "//a[text()='Address']")
@@ -43,6 +45,10 @@ public class AccountPage extends CommonPage{
 
     @FindBy(css = "img.rounded-circle")
     public WebElement picture;
+
+    @FindBy(css = "div.toastr_custom-toastr__iiU37")
+    public WebElement toastMessage;
+
 
 
 
