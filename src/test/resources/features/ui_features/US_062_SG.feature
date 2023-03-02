@@ -17,6 +17,18 @@ Feature: Orders
   #Seller address button should be functional
   #Seller page view should give correct result with larger map
 
+
+  # Orders
+ # Orders option should be clickable
+ # Clicking on Orders should display the Your Orders(Orders List) page.
+ # Any order must be selected
+ # Various content related to the order should be seen in the Order Quick Overview field.
+ # Product Name, Price, Stock, Unit, Image should be seen
+ # Rate the product icon must be functional
+ # Rate the product, Rate The Seller buttons should be clickable
+ # the Rate the product, Rate The Seller buttons are clicked, various actions should be performed on the screen that opens.
+
+
   Scenario: Orders Section
     Given User goes to Home Page
     When User clicks the login link

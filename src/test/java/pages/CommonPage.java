@@ -10,6 +10,8 @@ public abstract class CommonPage {
     public CommonPage() {
         PageFactory.initElements(Driver.getDriver(), this);
 
+
+
 }
 
     }
