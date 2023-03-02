@@ -117,9 +117,6 @@ public class AddressPage extends CommonPage{
 
 
 
-
-
-
     @FindBy(xpath = "//button[@name='delivery']")
     public WebElement button_deliveryAddress;
 
