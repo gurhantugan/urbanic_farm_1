@@ -6,6 +6,7 @@ import io.cucumber.java.en.When;
 
 import static org.junit.Assert.*;
 
+import pages.HomePage;
 import pages.LoginPage;
 import utilities.BrowserUtilities;
 import utilities.Driver;
