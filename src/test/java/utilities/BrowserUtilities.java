@@ -1,5 +1,7 @@
 package utilities;
 
+import enums.USERINFO;
+import io.cucumber.java.an.Y;
 import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
 import org.openqa.selenium.NoSuchElementException;
@@ -11,6 +13,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.AccountPage;
+import pages.LoginPage;
+import pages.YourProductsServicesPage;
 import ru.yandex.qatools.ashot.comparison.ImageDiff;
 import ru.yandex.qatools.ashot.comparison.ImageDiffer;
 
@@ -33,18 +38,25 @@ import static stepDefinitions.Hooks.driver;
 
 
 public class BrowserUtilities {
+    static AccountPage accountPage = new AccountPage();
+    static LoginPage loginPage = new LoginPage();
 
+    public static void loginMethod(USERINFO userinfo) {
+
+        driver.get("https://test.urbanicfarm.com/auth/login");
+        loginPage.loginMethod(userinfo);
+    }
+
+    public static void loginMethod(String userName, String password) {
+        driver.get("https://test.urbanicfarm.com/auth/login");
+        loginPage.loginMethod(userName, password);
+    }
 
     public static void writeDataToIdsFile(String tip, String id) { // room=123123
-
-
         try (OutputStream output = new FileOutputStream("ids.properties")) {
-
             Properties prop = new Properties();
             prop.setProperty(tip, id);
             prop.store(output, null);
-
-
         } catch (IOException io) {
             io.printStackTrace();
         }
@@ -296,11 +308,9 @@ public class BrowserUtilities {
 
     public static void masterClick(WebElement element) {
         BrowserUtilities.scrollToElement(element);
-        BrowserUtilities.waitForVisibility(element, 2);
-        BrowserUtilities.waitForClickability(element, 2);
-
+        BrowserUtilities.waitForVisibility(element, 3);
+        BrowserUtilities.waitForClickability(element, 3);
         element.click();
-
     }
 
     public static boolean isDisplayedElement(WebElement element) {
@@ -576,7 +586,32 @@ public class BrowserUtilities {
 
 
     }
+    public static void scrollAndClickWithJS(WebElement webElement) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true)", webElement);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click()", webElement);
+    }
 
+    public static String getStatusOfProduct(String productName) {
+        return driver.findElement(By.xpath("//a[@title='"+productName+"']/../../span")).getText();
+    }
+    public static void wait(int second) {
+        try {
+            Thread.sleep(second * 1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public static void toastMessageAssertion(String toastMessage) {
+        BrowserUtilities.waitForClickable(accountPage.toastMessage, 3);
+        String actualToastMessage = accountPage.toastMessage.getText();
+        String expectedToastMessage = toastMessage;
+        Assert.assertEquals(expectedToastMessage, actualToastMessage);
+    }
+    public static WebElement waitForClickable(WebElement element, int timeout) {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
+        return wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
 }
 
 

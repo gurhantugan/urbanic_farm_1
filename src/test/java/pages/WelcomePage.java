@@ -52,6 +52,7 @@ public class WelcomePage extends CommonPage{
  @FindBy(id = "productSortSelect")
     public WebElement select_sort;
 
-
+  @FindBy(css=".Navbar_textLink__f6_Al.cursor-pointer.ml-4.mr-3.text-capitalize")
+    public WebElement account_name;
 
 }

@@ -3,12 +3,14 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class DeliveryPickUpSettingsPage extends CommonPage{
 
         @FindBy(xpath = "//*[@id=\"__next\"]/div[4]/div[3]/div/div/div[1]/a[3]")
         public WebElement button_deliveryAndPickUp;
 
-        @FindBy(name = "deliveryType")
+        @FindBy(linkText = "Buyer picks up on the vine")
         public WebElement button_buyerPickUpOnTheVine;
 
         @FindBy(xpath = "//*[@class='col-md-2 col-sm-6 col-12']")
@@ -28,5 +30,18 @@ public class DeliveryPickUpSettingsPage extends CommonPage{
 
         @FindBy(xpath ="//*[@id=\"1siao9axx\"]/div[1]")
         public  WebElement validationAlert;
+
+        @FindBy(css = ".custom-control-input.DeliverySettings_regular-checkbox__1gkSd")
+        public List<WebElement> checkbox_all;
+
+        @FindBy(name = "BUYER_PICKUP")
+        public WebElement checkbox_buyerPicksUp;
+
+        @FindBy(name = "SELLER_DELIVERY")
+        public WebElement checkbox_sellerDeliversTheProducts;
+
+        @FindBy(name = "SELLER_FLEXIBLE")
+        public WebElement checkbox_sellerFlexibleDelivery;
+
 
     }
