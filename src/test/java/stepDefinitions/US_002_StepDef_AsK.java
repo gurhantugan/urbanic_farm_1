@@ -27,4 +27,6 @@ public class US_002_StepDef_AsK {
         Assert.assertTrue( homePage.link_blog.isDisplayed());
         Assert.assertTrue( homePage.link_explore.isDisplayed());
     }
+
+
 }

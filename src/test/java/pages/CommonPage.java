@@ -14,12 +14,21 @@ public class CommonPage {
         try {
             PageFactory.initElements(Driver.getDriver(), this);
 
+<<<<<<< HEAD
         }catch (Exception e){
             e.printStackTrace();
         }
+=======
+
+
+}
+>>>>>>> main
 
     }
 }
+
+
+
 
 
 
