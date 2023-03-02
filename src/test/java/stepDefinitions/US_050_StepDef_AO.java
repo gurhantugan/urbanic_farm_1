@@ -5,7 +5,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.junit.Test;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import pages.AddressPage;
@@ -33,7 +32,7 @@ public class US_050_StepDef_AO {
 
     @When("user clicks on login button header")
     public void userClicksOnLoginButtonHeader() {
-        homePage.loginButton_header.click();
+        homePage.loginButton.click();
 
     }
 

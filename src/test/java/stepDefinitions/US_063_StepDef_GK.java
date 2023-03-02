@@ -13,8 +13,8 @@ public class US_063_StepDef_GK {
 
     @Given("User enter to Home Page")
     public void user_enter_to_home_page() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("baseUrl"));
-        Driver.getDriver().manage().window().maximize();
+       // Driver.getDriver().get(ConfigurationReader.getProperty("baseUrl"));
+       // Driver.getDriver().manage().window().maximize();
 
     }
 
@@ -39,7 +39,6 @@ public class US_063_StepDef_GK {
 
     @Then("User click the login button")
     public void user_click_the_login_button() {
-
 
     }
 
