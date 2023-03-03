@@ -71,4 +71,10 @@ public class WelcomePage extends CommonPage{
     @FindBy(id = "searchMapButton")
     public WebElement Search;
 
+    @FindBy(xpath = "//div[@class='Navbar_support-container__2qv_z']")
+    public WebElement SupportTheLocalFoodMovement;
+
+    @FindBy(xpath = "//div[@class='Navbar_support-container__2qv_z p-2 cursor-pointer']")
+    public WebElement SupportTheLocalFoodMovement2;
+
 }
