@@ -9,8 +9,9 @@ import static stepDefinitions.Hooks.driver;
 public class CommonPage {
 
     public CommonPage() {
-        try{PageFactory.initElements(Driver.getDriver(), this);}
-        catch (Exception e){
+        try {
+            PageFactory.initElements(Driver.getDriver(), this);
+        } catch (Exception e) {
             e.printStackTrace();
         }
         try {
@@ -21,11 +22,11 @@ public class CommonPage {
             e.printStackTrace();
 
 
-}
 
     }
 }
 
+}
 
 
 
