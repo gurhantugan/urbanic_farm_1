@@ -9,6 +9,7 @@ import pages.*;
 import utilities.BrowserUtilities;
 import utilities.ConfigurationReader;
 import utilities.Driver;
+import utilities.JSUtils;
 
 public class US_081_StepDef_GK {
 
@@ -40,7 +41,8 @@ public class US_081_StepDef_GK {
     @Then("User close cookie part on website")
     public void user_close_cookie_part_on_website() {
         BrowserUtilities.waitFor(10);
-         weFunderPage.cookies.click();
+        // weFunderPage.cookies.click();
+        JSUtils.clickElementByJS(weFunderPage.cookies);
     }
     @Then("User click {string} on website")
     public void user_click_on_website(String string) {

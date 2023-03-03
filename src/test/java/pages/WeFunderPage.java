@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class WeFunderPage extends CommonPage {
-@FindBy(xpath= "/html/body/div[1]/div[2]/button")
+@FindBy(xpath= "(//div[@class='osano-cm-dialog__buttons osano-cm-buttons']/button)[2]")
     public WebElement cookies;
 
 @FindBy(xpath = "//h1[@class='text-base md:text-lg  text-coolgray-800 uppercase tracking-wider pr-1 sm:pr-0']")

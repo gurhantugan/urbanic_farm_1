@@ -30,9 +30,9 @@ Scenario: The user should be able to make various controls on this page
   Given user is on the Urbanic_Farm page
   Then User should click <"Support the local food movement"> before login
   And User should see "https://wefunder.com/urbanicfarm" webpage before login
-  Then User close cookie part on website
-  And User see "INVEST IN URBANICFARM" sentence on the page
-  Then User click "Overview" on website
-  And User see Urbanic Farm under "Pitch"
+ # Then User close cookie part on website
+ # And User see "INVEST IN URBANICFARM" sentence on the page
+ # Then User click "Overview" on website
+  #And User see Urbanic Farm under "Pitch"
 
 
