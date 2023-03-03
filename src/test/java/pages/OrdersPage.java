@@ -2,10 +2,19 @@ package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import java.util.List;
 
 public class OrdersPage extends CommonPage {
+
+
+    @FindBy(css = ".d-flex.flex-column:nth-child(3)")
+    public WebElement columnCard;
+
+    @FindBy(xpath = "(//span[@class='cursor-pointer text-success h6'])[1]")
+    public WebElement rateTheProduct;
+
+    @FindBy(css = ".btn.btn-outline-info.mt-2")
+    public WebElement rateTheProduct_submitButton;
 
     @FindBy(css = "a[href='/account/orders']")
     public WebElement button_orders;
@@ -36,6 +45,7 @@ public class OrdersPage extends CommonPage {
 
     @FindBy(css = ".text-muted.OrderCard_order-detail__container__3kd-R>span")
     public List<WebElement> idOfOrders;
+    
     @FindBy(xpath = "//*[text()='View order details']")
     public List<WebElement> viewOrderDetails;
 
@@ -60,7 +70,6 @@ public class OrdersPage extends CommonPage {
     @FindBy(css = "iframe.d-block")
     public List<WebElement> iframe;
 
-
     @FindBy(xpath = "(//span[@class='font-weight-bold'])[2]")
     public WebElement order_number;
 
@@ -75,4 +84,5 @@ public class OrdersPage extends CommonPage {
 
     @FindBy(css=".Notifications_notificationEmptyIcon__39m7C")
     public WebElement cross_notification;
+
 }
