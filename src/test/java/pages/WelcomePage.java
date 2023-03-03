@@ -55,4 +55,20 @@ public class WelcomePage extends CommonPage{
   @FindBy(css=".Navbar_textLink__f6_Al.cursor-pointer.ml-4.mr-3.text-capitalize")
     public WebElement account_name;
 
+
+    @FindBy(id = "mapSearchBox")
+    public WebElement WhatAreYouLookingFor;
+
+    @FindBy(id = "location")
+    public WebElement SearchInMiles;
+
+    @FindBy(id = "allCategories")
+    public WebElement Categories;
+
+    @FindBy(xpath = "//input[@type='checkbox']")
+    public WebElement SearchOnlyInOrganic;
+
+    @FindBy(id = "searchMapButton")
+    public WebElement Search;
+
 }
