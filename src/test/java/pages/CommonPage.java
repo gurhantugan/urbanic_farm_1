@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import static stepDefinitions.Hooks.driver;
+
 
 public class CommonPage {
 
@@ -12,7 +14,7 @@ public class CommonPage {
             e.printStackTrace();
         }
         try {
-            PageFactory.initElements(Driver.getDriver(), this);
+            PageFactory.initElements(driver, this);
 
 
         }catch (Exception e){
