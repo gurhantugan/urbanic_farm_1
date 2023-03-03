@@ -33,7 +33,7 @@ public class DeliveryPickUpSettingsPage extends CommonPage{
         @FindBy(xpath = "//button[.=\"Update\"]")
         public WebElement button_update;
 
-        @FindBy(className = "Toastify__toast-body toastr_custom-toastr__iiU37")
+        @FindBy(css = ".Toastify__toast-body.toastr_custom-toastr__iiU37")
         public  WebElement validationMessage;
 
         @FindBy(xpath ="//*[@id=\"1siao9axx\"]/div[1]")
