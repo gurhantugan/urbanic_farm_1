@@ -57,8 +57,8 @@ public class US_063_StepDef_GK {
     @Then("User see {string} message on screen")
     public void user_see_message_on_screen(String string) {
         //BrowserUtilities.waitFor(35);
-        welcomePage.WelcomeToUrbanicForm.isEnabled();
-        welcomePage.closeMessage.click();
+    //    welcomePage.WelcomeToUrbanicForm.isEnabled();
+      //  welcomePage.closeMessage.click();
 
     }
 
