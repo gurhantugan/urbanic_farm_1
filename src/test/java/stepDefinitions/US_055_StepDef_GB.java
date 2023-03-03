@@ -2,12 +2,15 @@ package stepDefinitions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import pages.DeliveryPickUpSettingsPage;
 import utilities.BrowserUtilities;
 import utilities.ConfigurationReader;
 import utilities.Driver;
+import utilities.JSUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,12 +35,32 @@ public class US_055_StepDef_GB {
             BrowserUtilities.waitFor(1);
         }
     BrowserUtilities.waitFor(3);
-    Driver.closeDriver();
+    //Driver.closeDriver();
 
 
+    }
 
+    @When("user clicks on the Buyer picks up checkbox")
+    public void userClicksOnTheBuyerPicksUpCheckbox() {
 
+    try{
+        if(deliveryPickUpSettingsPage.text_availableHours.isDisplayed()){
+           Assert.assertTrue( deliveryPickUpSettingsPage.pickUpStartTime.isEnabled());
+           Assert.assertTrue( deliveryPickUpSettingsPage.pickUpEndTime.isEnabled());
+        }
 
+    }catch (Exception e){
+        BrowserUtilities.waitFor(2);
+        deliveryPickUpSettingsPage.checkbox_buyerPicksUp.click();
+        //WebElement picUp = Driver.getDriver().findElement(By.cssSelector("#BUYER_PICKUP"));
+        //picUp.click();
+        BrowserUtilities.waitFor(2);
+        Assert.assertTrue( deliveryPickUpSettingsPage.pickUpStartTime.isEnabled());
+        Assert.assertTrue( deliveryPickUpSettingsPage.pickUpEndTime.isEnabled());
+    }
+    }
 
+    @Then("user verifies show Your available hours menu functional")
+    public void userVerifiesShowYourAvailableHoursMenuFunctional() {
     }
 }
