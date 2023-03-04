@@ -19,19 +19,39 @@ import static stepDefinitions.UI.Hooks.driver;
 public class US_075_StepDef_AK {
 
     EventsPage eventsPage = new EventsPage();
+    Random rand = new Random();
+    int sek;
 
     @When("user participates in any of the events")
     public void userParticipatesInAnyOfTheEvents() {
-       //List<WebElement> eleman = new ArrayList<>(eventsPage.button_register);
-        Random rand = new Random();
-        List<WebElement> eleman = eventsPage.button_register;
-        int sek = rand.nextInt(eleman.size());
-        System.out.println("sek = " + sek);
-        WebElement sEleman = eleman.remove(sek);
+        List<WebElement> eleman = new ArrayList<>(eventsPage.button_register);
+        List<Integer> index = new ArrayList<>();
+        int i =0;
+        sek = rand.nextInt(eleman.size());
+        BrowserUtilities.clickWithJS(eleman.get(sek));
+
+        while ( i<=eleman.size()) {
+
+        }
+            BrowserUtilities.clickWithJS(eleman.get(sek + 1));
+
+        // List<WebElement> eleman = eventsPage.button_register;
+
+      /*  List<WebElement> eleman=eventsPage.button_register;
+        int [] sek= new int [eleman.size()];
+        for (int i=;i<sek.length;i++){
+            do {sek [i]=rand.nextInt(eleman.size());
+            }while ( sek.equals(sek[i]));
+        }
+        for (int i=0;i<sek.length;i++){
+            System.out.println("sek = " + sek[i]);
+        }
         BrowserUtilities.waitFor(3);
         BrowserUtilities.clickWithJS(eleman.get(sek));
 
+       */
     }
+
     @And("A user fills in the {string} of participants")
     public void aUserFillsInTheOfParticipants(String number) {
         eventsPage.box_number.clear();

@@ -23,7 +23,8 @@ public class EventsPage extends CommonPage {
     @FindBy(css = "[class=\"eventRegister_approveBtn__1P-N2\"]")
     public WebElement button_approve;
 
-
+    @FindBy(css = "You've already registered this event. Please check 'Registered Events' tab.")
+    public WebElement yellowMesage;
 
 
 
