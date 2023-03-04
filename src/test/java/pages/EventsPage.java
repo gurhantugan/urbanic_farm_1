@@ -8,9 +8,6 @@ import java.util.List;
 
 public class EventsPage extends CommonPage {
 
-    @FindBy(xpath = "(//*[@href=\"/account/events\"])[2]")
-    public WebElement button_events;
-
     @FindBy(xpath = "//*[text()='Register']")
     public List<WebElement> button_register;
 
@@ -19,6 +16,9 @@ public class EventsPage extends CommonPage {
 
     @FindBy(css = "[type=\"number\"]")
     public WebElement box_number;
+
+    @FindBy(css = "[id=\"terms\"]")
+    public WebElement box_terms;
 
     @FindBy(css = "[class=\"eventRegister_approveBtn__1P-N2\"]")
     public WebElement button_approve;
