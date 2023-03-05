@@ -5,4 +5,4 @@ Feature: Welcome Page-Cart Operations between Seller and Buyer
 
     And user goes to "account/sold-items" page after login
 
-    #When user clicks
+    #When user click

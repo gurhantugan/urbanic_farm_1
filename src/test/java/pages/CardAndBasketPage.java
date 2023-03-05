@@ -22,9 +22,16 @@ public class CardAndBasketPage extends CommonPage{
     @FindBy(xpath = "(//tr/td)[3]")
     public WebElement price;
 
-    @FindBy(xpath = "//tbody[5]/tr[1]/td[5]//*[name()='svg']")
+    @FindBy(xpath = "(//td[@class='py-3 align-middle text-end'])[1]")
     public WebElement button_delete;
 
-    @FindBy(css = "//h5[contains(text(),'Are you sure you want to delete the product?')]")
+    @FindBy(xpath = "//h5")
     public WebElement text;
+
+//    @FindBy(xpath = "(//button[contains(text(),'Yes')])[1]")
+//    public WebElement buttonYes;
+//
+//    @FindBy(xpath = "(//button[contains(text(),'No')])[1]")
+//    public WebElement buttonNo;
+    
 }
