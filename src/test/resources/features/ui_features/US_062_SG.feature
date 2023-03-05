@@ -45,7 +45,7 @@ Feature: Orders
     #Then User enters valid password
     #Then User clicks the login button
     #Then User clicks the account home button
-    Given user goes to "account/home" page after login as buyer
+  #  Given user goes to "account/home" page after login as buyer
 
     Then user asserts orders button is clickable
     Then user clicks the orders button on left column

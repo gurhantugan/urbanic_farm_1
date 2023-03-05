@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import utilities.BrowserUtilities;
 import java.util.List;
-import static stepDefinitions.Hooks.driver;
+import static stepDefinitions.UI.Hooks.driver;
 public class YourProductsServicesPage extends CommonPage {
     @FindBy(xpath = "//div[@class='row m-0 p-2 align-items-center']/span")
     public List<WebElement> allhubs;

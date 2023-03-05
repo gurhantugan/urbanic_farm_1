@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.text.BreakIterator;
 import java.util.List;
 
 public class HomePage extends CommonPage {
@@ -192,5 +193,6 @@ public class HomePage extends CommonPage {
     public List<WebElement> productNames;
 
 
+    public WebElement go_to_cart_button;
 }
 

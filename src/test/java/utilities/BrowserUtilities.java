@@ -1,7 +1,6 @@
 package utilities;
 
 import enums.USERINFO;
-import io.cucumber.java.an.Y;
 import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
 import org.openqa.selenium.NoSuchElementException;
@@ -15,7 +14,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.AccountPage;
 import pages.LoginPage;
-import pages.YourProductsServicesPage;
 import ru.yandex.qatools.ashot.comparison.ImageDiff;
 import ru.yandex.qatools.ashot.comparison.ImageDiffer;
 
@@ -34,7 +32,7 @@ import java.util.List;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-import static stepDefinitions.Hooks.driver;
+import static stepDefinitions.UI.Hooks.driver;
 
 
 public class BrowserUtilities {
