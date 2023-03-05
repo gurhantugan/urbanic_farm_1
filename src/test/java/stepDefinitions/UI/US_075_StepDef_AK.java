@@ -14,8 +14,6 @@ import java.util.List;
 
 import java.util.Random;
 
-
-
 public class US_075_StepDef_AK {
 
     EventsPage eventsPage = new EventsPage();
@@ -73,7 +71,6 @@ BrowserUtilities.clickWithJS(eleman.get(sek[0]));
          */
 
     }
-
     @And("A user fills in the {string} of participants")
     public void aUserFillsInTheOfParticipants(String number) {
         eventsPage.box_number.clear();
