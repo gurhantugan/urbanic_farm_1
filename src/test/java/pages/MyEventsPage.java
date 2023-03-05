@@ -61,13 +61,33 @@ public class MyEventsPage extends CommonPage {
 @FindBy(css = ".btn.btn-outline-success.px-4")
     public WebElement button_createEventSubmit;
 
-    @FindBy(xpath = "//button[@class='btn btn-outline-warning p-1 col-lg-3 col-12 ScheduledEvents_btn__1gJt'D]")
+    @FindBy(xpath = "//button[text()='Cancel']")
     public WebElement button_cancel;
 
-    @FindBy(xpath = "//button[@class='btn btn-outline-primary p-1 col-lg-5 col-12 ScheduledEvents_btn__1gJtD']")
+    @FindBy(xpath = "//button[text()='Mark as Completed']")
     public WebElement button_mark_as_completed;
 
-    @FindBy(xpath = "//button[@class='btn btn-outline-info p-1 col-lg-4 col-12 ScheduledEvents_btn__1gJtD']")
+    @FindBy(xpath = "//button[text()='Copy Link']")
     public WebElement button_copy_link;
 
+    @FindBy(xpath = "(//button[@class='btn btn-primary mr-4'])[1]")
+    public WebElement button_Yes_cancel;
+
+    @FindBy(css = ".Toastify__toast-body.toastr_custom-toastr__iiU37")
+    public WebElement message_event_canceled;
+
+    @FindBy(css = ".Toastify__toast-body.toastr_custom-toastr__iiU37")
+    public WebElement message_event_completed;
+
+    @FindBy(css = ".Toastify__toast-body.toastr_custom-toastr__iiU37")
+    public WebElement message_event_copied;
+
+    @FindBy(xpath = "(//span[text()='CANCELED'])[1]")
+    public WebElement message_canceled;
+
+    @FindBy(xpath = "//button[text()='My Completed Events']")
+    public WebElement button_completed_events;
+
+    @FindBy(xpath = "(//span[text()='COMPLETED'])[1]")
+    public WebElement message_completed;
 }
