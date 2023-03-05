@@ -11,10 +11,10 @@ import utilities.BrowserUtilities;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+
 import java.util.Random;
 
-import static stepDefinitions.UI.Hooks.driver;
+
 
 public class US_075_StepDef_AK {
 
@@ -24,32 +24,54 @@ public class US_075_StepDef_AK {
 
     @When("user participates in any of the events")
     public void userParticipatesInAnyOfTheEvents() {
+
         List<WebElement> eleman = new ArrayList<>(eventsPage.button_register);
-        List<Integer> index = new ArrayList<>();
-        int i =0;
-        sek = rand.nextInt(eleman.size());
-        BrowserUtilities.clickWithJS(eleman.get(sek));
+        //List<Integer> index = new ArrayList<>();
 
-        while ( i<=eleman.size()) {
+       sek = rand.nextInt(eleman.size());
+      BrowserUtilities.clickWithJS(eleman.get(sek));
 
-        }
-            BrowserUtilities.clickWithJS(eleman.get(sek + 1));
+//
+//
+//        BrowserUtilities.clickWithJS(eleman.get(sek + 1));
 
         // List<WebElement> eleman = eventsPage.button_register;
 
-      /*  List<WebElement> eleman=eventsPage.button_register;
-        int [] sek= new int [eleman.size()];
-        for (int i=;i<sek.length;i++){
-            do {sek [i]=rand.nextInt(eleman.size());
-            }while ( sek.equals(sek[i]));
+
+        /*
+        int[] sek = new int[eleman.size()];
+
+        for (int i = 0; i < sek.length; i++) {
+
+            do {
+
+                sek[i] = rand.nextInt(eleman.size());
+            } while (sek.equals(sek[i]));
         }
-        for (int i=0;i<sek.length;i++){
+        for (int i = 0; i < sek.length; i++) {
             System.out.println("sek = " + sek[i]);
         }
         BrowserUtilities.waitFor(3);
         BrowserUtilities.clickWithJS(eleman.get(sek));
 
-       */
+
+         */
+
+        /*
+        List<WebElement> eleman = eventsPage.button_register;
+int[] sek = new int[eleman.size()];
+for (int i = 0; i < sek.length; i++) {
+    do {
+        sek[i] = rand.nextInt(eleman.size());
+    } while (Arrays.asList(sek).subList(0, i).contains(sek[i]));
+}
+for (int i = 0; i < sek.length; i++) {
+    System.out.println("sek[" + i + "] = " + sek[i]);
+}
+BrowserUtilities.waitFor(3);
+BrowserUtilities.clickWithJS(eleman.get(sek[0]));
+         */
+
     }
 
     @And("A user fills in the {string} of participants")

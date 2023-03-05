@@ -33,13 +33,12 @@ public class DeliveryPickUpSettingsPage extends CommonPage {
         @FindBy(xpath = "//button[.=\"Update\"]")
         public WebElement button_update;
 
-<<<<<<< HEAD
+
         @FindBy(className = "Toastify__toast-body toastr_custom-toastr__iiU37")
         public WebElement validationMessage;
-=======
+
         @FindBy(css = ".Toastify__toast-body.toastr_custom-toastr__iiU37")
-        public  WebElement validationMessage;
->>>>>>> main
+        public WebElement validationMessage1;
 
         @FindBy(xpath = "//*[@id=\"1siao9axx\"]/div[1]")
         public WebElement validationAlert;
@@ -92,13 +91,9 @@ public class DeliveryPickUpSettingsPage extends CommonPage {
         @FindBy(name = "SELLER_FLEXIBLE")
         public WebElement checkbox_sellerFlexibleDelivery;
 
-<<<<<<< HEAD
-}
-=======
+
         @FindBy(xpath = "(//span[.='Your available hours:'])[2]")
         public WebElement text_availableHours;
 
 
-
->>>>>>> main
-
+}
