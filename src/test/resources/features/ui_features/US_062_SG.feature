@@ -38,7 +38,7 @@ Feature: Orders
     Then User clicks the login button
     Then User clicks the account home button
 
-  Background:
+  #Background:
     #Given User goes to Home Page
     #When User clicks the login link
     #Then User enters valid email address
