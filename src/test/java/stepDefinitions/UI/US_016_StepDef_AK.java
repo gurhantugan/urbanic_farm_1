@@ -25,10 +25,5 @@ public class US_016_StepDef_AK<String> {
         Driver.closeDriver();
     }
 
-    //@Then("user verifies that the {string} is visible.")
-    //public void userVerifiesThatTheIsVisible(String url) {
-    //    BrowserUtilities.waitFor(3);
-    //    Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(url));
-    //    Driver.closeDriver();
 
 }
