@@ -17,8 +17,6 @@ Feature: Events
     And the user checks the terms and conditions box
     And user clicks confirmation button
     #Then Verifies that the user confirmation button is clickable
-    #And user fills in all required fields
-    #And   user logs activity
     #Then  user confirms activity is registered
 
 
