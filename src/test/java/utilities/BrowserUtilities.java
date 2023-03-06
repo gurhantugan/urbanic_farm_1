@@ -18,11 +18,11 @@ import ru.yandex.qatools.ashot.comparison.ImageDiff;
 import ru.yandex.qatools.ashot.comparison.ImageDiffer;
 
 import javax.annotation.Nullable;
-import javax.imageio.ImageIO;
-import java.awt.*;
-import java.awt.datatransfer.StringSelection;
-import java.awt.event.KeyEvent;
-import java.awt.image.BufferedImage;
+//import javax.imageio.ImageIO;
+//import java.awt.*;
+//import java.awt.datatransfer.StringSelection;
+//import java.awt.event.KeyEvent;
+//import java.awt.image.BufferedImage;
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
@@ -48,6 +48,14 @@ public class BrowserUtilities {
     public static void loginMethod(String userName, String password) {
         driver.get("https://test.urbanicfarm.com/auth/login");
         loginPage.loginMethod(userName, password);
+    }
+
+    public static void localClear() {
+        LocalStorage local = ((WebStorage) Driver.getDriver()).getLocalStorage();
+        local.clear();
+        Driver.getDriver().navigate().refresh();
+        waitForPageToLoad(10);
+
     }
 
     public static void writeDataToIdsFile(String tip, String id) { // room=123123
@@ -270,7 +278,7 @@ public class BrowserUtilities {
     }
 
 
-    public static void handlingNotification(WebElement element) throws AWTException, InterruptedException {
+    /*public static void handlingNotification(WebElement element) throws AWTException, InterruptedException {
         JSUtils.clickElementByJS(element);
 
         Robot robot = new Robot();
@@ -309,7 +317,7 @@ public class BrowserUtilities {
         BrowserUtilities.waitForVisibility(element, 3);
         BrowserUtilities.waitForClickability(element, 3);
         element.click();
-    }
+    }*/
 
     public static boolean isDisplayedElement(WebElement element) {
         boolean elementExist = false;
@@ -351,7 +359,7 @@ public class BrowserUtilities {
     }
 
 
-    public static void uploadFileWithRobot(WebElement element, String fileLocation) throws AWTException {
+    /*public static void uploadFileWithRobot(WebElement element, String fileLocation) throws AWTException {
 
         // Robot object creation
         Robot r = new Robot();
@@ -378,10 +386,10 @@ public class BrowserUtilities {
         //releasing enter
         r.keyRelease(KeyEvent.VK_ENTER);
 
-    }
+    }*/
 
 
-    public static void handlingNotification() throws AWTException, InterruptedException {
+    /*public static void handlingNotification() throws AWTException, InterruptedException {
 
         Robot robot = new Robot();
 
@@ -397,7 +405,7 @@ public class BrowserUtilities {
         // BrowserUtilities.waitFor(1);
 
 
-    }
+    }*/
 
     public static WebElement waitForClickability(WebElement element, int timeout) {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
@@ -525,7 +533,7 @@ public class BrowserUtilities {
         }
     }
 
-    public static boolean assertImageAreDifferent(String image1Path,String image2Path){
+    /*public static boolean assertImageAreDifferent(String image1Path,String image2Path){
         BufferedImage image1, image2;
         try{
             image1 = ImageIO.read(new File(image1Path));
@@ -537,7 +545,7 @@ public class BrowserUtilities {
         ImageDiff diff = imageDiffer.makeDiff(image1,image2);
 
         return diff.hasDiff();
-    }
+    }*/
     /**
      * method token kullanarak local storage i doldurup, login sayfasina gitmeden login yapmamizi sagliyor
      *
