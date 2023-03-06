@@ -29,8 +29,8 @@ public class US_075_StepDef_AK {
        sek = rand.nextInt(eleman.size());
       BrowserUtilities.clickWithJS(eleman.get(sek));
 
-//
-//
+
+
 //        BrowserUtilities.clickWithJS(eleman.get(sek + 1));
 
         // List<WebElement> eleman = eventsPage.button_register;
