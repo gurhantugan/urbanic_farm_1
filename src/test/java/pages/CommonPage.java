@@ -3,15 +3,25 @@ package pages;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import static stepDefinitions.Hooks.driver;
 
-public class CommonPage {
+
+public abstract class CommonPage {
 
     public CommonPage() {
-        PageFactory.initElements(Driver.getDriver(), this);
+        try {
+          PageFactory.initElements(Driver.getDriver(), this);
 
+        } catch (Exception e) {
+            System.out.println("test baslamadi");
+            e.printStackTrace();
+            System.out.println("test baslamadi");
+
+
+        }
+
+   }
 }
-
-    }
 
 
 

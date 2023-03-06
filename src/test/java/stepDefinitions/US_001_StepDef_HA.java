@@ -7,7 +7,7 @@ import utilities.Driver;
 public class US_001_StepDef_HA {
     @And("user closes browser")
     public void userClosesBrowser() {
-        BrowserUtilities.waitFor(7);
+        BrowserUtilities.waitFor(15);
         Driver.closeDriver();
     }
 }
