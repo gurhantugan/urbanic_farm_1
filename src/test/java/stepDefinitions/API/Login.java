@@ -1,4 +1,4 @@
-package stepDefinitions.apiStepDef;
+package stepDefinitions.API;
 
 import com.github.javafaker.Faker;
 import enums.USER;
@@ -7,13 +7,17 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 import org.junit.Assert;
+import org.junit.Test;
 import utilities.ApiUtilities;
-import static utilities.ApiUtilities.response;
 
 import java.util.List;
+import static utilities.ApiUtilities.response;
 
-public class Address {
+public class Login {
     Faker faker = new Faker();
     Integer id;
     public static List<Integer> addressIds;
@@ -21,7 +25,7 @@ public class Address {
 
     @Given("user logs in with api")
     public void userLogsInWithApi() {
-        token =ApiUtilities.loginWithAPI(USER.EZRA.getEmail(), USER.EZRA.getPassword());
+        token = ApiUtilities.loginWithAPI(USER.EZRA.getEmail(), USER.EZRA.getPassword());
 
 
     }
@@ -93,6 +97,28 @@ public class Address {
         for (int i = 0; i < expectedData.size(); i++) {
             Assert.assertEquals(expectedData.get(i), response.jsonPath().getString(paths.get(i)));
         }
+
+    }
+
+    public static class US_085_StepDef {
+
+
+
+        @Test
+        public void test(){
+
+    RestAssured.baseURI="https://test.urbanicfarm.com/";
+    RequestSpecification request = RestAssured.given();
+    Response response = request.when().post("https://test.urbanicfarm.com/api/account/change/phone").then().extract().response();
+    int statusCode = response.getStatusCode();
+            System.out.println(statusCode);
+
+
+
+        }
+
+
+
 
     }
 }

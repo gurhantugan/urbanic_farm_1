@@ -1,4 +1,4 @@
-package stepDefinitions.apiStepDef;
+package stepDefinitions.API;
 
 import com.github.javafaker.Faker;
 import enums.USER;
@@ -9,11 +9,11 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import utilities.ApiUtilities;
-
-import java.util.List;
 import static utilities.ApiUtilities.response;
 
-public class Login {
+import java.util.List;
+
+public class Address {
     Faker faker = new Faker();
     Integer id;
     public static List<Integer> addressIds;
@@ -21,7 +21,7 @@ public class Login {
 
     @Given("user logs in with api")
     public void userLogsInWithApi() {
-        token = ApiUtilities.loginWithAPI(USER.EZRA.getEmail(), USER.EZRA.getPassword());
+        token =ApiUtilities.loginWithAPI(USER.EZRA.getEmail(), USER.EZRA.getPassword());
 
 
     }
