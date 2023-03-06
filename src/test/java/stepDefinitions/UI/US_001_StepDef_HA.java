@@ -16,4 +16,6 @@ public class US_001_StepDef_HA {
     public void userOnTheUrbanicFarmPage() {
         Driver.getDriver().get(ConfigurationReader.getProperty("baseUrl"));
     }
+
+
 }
