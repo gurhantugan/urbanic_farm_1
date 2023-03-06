@@ -21,4 +21,12 @@ public class US_077_StepDef_NC {
     public void userShouldBeAbleToSeesingMessage(String str) {
         myEventsPage.message_event_deleted.isDisplayed();
     }
+
+
+
+    @And("user verify the event has been deleted")
+    public void userVerifyTheEventHasBeenDeleted() {
+        myEventsPage.message_canceled.isDisplayed();
+    }
 }
+
