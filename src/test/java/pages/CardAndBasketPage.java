@@ -69,4 +69,28 @@ public class CardAndBasketPage extends CommonPage{
 
     @FindBy(css=".Notifications_notificationDownContent__1R3pg>span")
     public WebElement cross_close_notification;
+
+
+    @FindBy(css = "td.align-middle.text-end svg")
+    public List<WebElement> removeProductFromCart;
+
+
+    @FindBy(css = "button.Basket_checkOutBtn__1946L")
+    public WebElement proceedToCheckOut;
+
+    @FindBy(css = "button.collapsible_toggle__1oudq")
+    public WebElement enterPromoCode_button;
+
+    @FindBy(css = "[placeholder='your promo code']")
+    public WebElement enterPromoCode_text;
+
+    @FindBy(id = "promo-code")
+    public WebElement enterPromoCode_apply;
+
+
+    @FindBy(xpath = "(//td[@class='text-end py-3'])[1]/p")
+    public WebElement cartTotal_subtotal;
+
+
+
 }
