@@ -12,6 +12,34 @@ public class MyEventsPage extends CommonPage {
     public WebElement button_Create_newEvents;
 
     @FindBy(css = "#title")
+    public WebElement box_Title;
+
+    @FindBy(css = "#address2")
+    public WebElement box_AdressFirst;
+
+
+    @FindBy(xpath = "//button[@class='btn btn-outline-success mb-1']")
+    public WebElement button_Add;
+
+    @FindBy(css = "#addressTitle")
+    public WebElement box_addressTitle;
+
+    @FindBy(css = "#address")
+    public WebElement box_addressSecond;
+
+    @FindBy(css = "#states")
+    public WebElement box_states;
+
+    @FindBy(css = "#cities")
+    public WebElement box_cities;
+
+    @FindBy(css = "#postal")
+    public WebElement box_postal;
+
+    @FindBy(xpath = "//button[@class='btn btn-outline-success ml-3']")
+    public WebElement button_submit;
+
+
     public WebElement textBox_title;
 
  @FindBy(css = ".btn.btn-outline-success.mb-1")
@@ -64,6 +92,9 @@ public class MyEventsPage extends CommonPage {
     @FindBy(xpath = "//button[text()='Cancel']")
     public WebElement button_cancel;
 
+    @FindBy(xpath = "//button[text()='Delete']")
+    public WebElement button_delete;
+
     @FindBy(xpath = "//button[text()='Mark as Completed']")
     public WebElement button_mark_as_completed;
 
@@ -75,6 +106,9 @@ public class MyEventsPage extends CommonPage {
 
     @FindBy(css = ".Toastify__toast-body.toastr_custom-toastr__iiU37")
     public WebElement message_event_canceled;
+
+    @FindBy(css = ".Toastify__toast-body.toastr_custom-toastr__iiU37")
+    public WebElement message_event_deleted;
 
     @FindBy(css = ".Toastify__toast-body.toastr_custom-toastr__iiU37")
     public WebElement message_event_completed;
