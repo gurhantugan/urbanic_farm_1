@@ -13,7 +13,12 @@ Feature: Events
       | number |
       | 1      |
       | -2     |
+<<<<<<< HEAD
+
+  Scenario:
+=======
     Scenario:
+>>>>>>> main
     And the user checks the terms and conditions box
     And user clicks confirmation button
     #Then Verifies that the user confirmation button is clickable
