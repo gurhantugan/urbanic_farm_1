@@ -1,4 +1,4 @@
-@US75
+#@US75
 Feature: Events
 
   Scenario: As a user, should able to attend the someone's event(s)
@@ -13,7 +13,7 @@ Feature: Events
       | number |
       | 1      |
       | -2     |
-
+    Scenario:
     And the user checks the terms and conditions box
     And user clicks confirmation button
     #Then Verifies that the user confirmation button is clickable

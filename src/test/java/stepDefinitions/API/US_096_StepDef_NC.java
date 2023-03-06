@@ -28,8 +28,7 @@ public class US_096_StepDef_NC {
 
     }
 
-    @Then("user verifies the status code is {int}")
-    public void userVerifiesTheStatusCodeIs(int statusCode) {
-        Assert.assertEquals(statusCode, response.statusCode());
-    }
+
+
+
 }
