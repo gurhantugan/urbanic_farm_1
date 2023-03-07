@@ -7,9 +7,13 @@ Feature: As a user, should able to cancel/completed/share the event(s)
     And   user goes to account page and clicks on My Events
 
   Scenario: As a user, should able to cancel/completed/share the event(s)
-    When   user click on cancel button
+    When   user click on cancel and yes button
     And    user should be able to sees "Event cancelled " message
+    And    user verify the event has been cancelled
     And    user click on Mark as completed button
     And    user should be able to see "Event marked as completed" message
     And    user click on copy link  button
     And    user should be able to seeing  "Event Link Copied Clipboard" message
+    And    user click on My Completed Events button
+    And    user verify the event has been completed
+
