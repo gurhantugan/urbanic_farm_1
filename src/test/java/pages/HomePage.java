@@ -1,8 +1,9 @@
 package pages;
 
-        import org.openqa.selenium.WebElement;
-        import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
+import java.text.BreakIterator;
 import java.util.List;
 
 public class HomePage extends CommonPage {
@@ -10,7 +11,7 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//a[text()='Login']")
     public WebElement loginButton;
 
-    @FindBy(xpath = "//a[text()='Login']")
+    @FindBy(xpath = "//*[@class='btn alazea-btn']")
     public WebElement button_login;
 
     @FindBy(xpath = "//label[@for='allCategories']")
@@ -28,6 +29,7 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//div/div/div/div/div//a[.='get the app']")
     public WebElement button_getApp;
 
+    //*[contains(text(),'get the app')]
     @FindBy(xpath = "//div/div//a[@href='https://apps.apple.com/tr/app/urbanicfarm/id1581829783']")
     public WebElement link_Apple;
 
@@ -48,6 +50,8 @@ public class HomePage extends CommonPage {
 
     @FindBy(id = "registration_form_confirmPassword")
     public WebElement box_regConfirmPassword;
+
+
 
     @FindBy(xpath = "(//a[text()='Logout'])[2]")
     public WebElement button_logout;
@@ -142,13 +146,14 @@ public class HomePage extends CommonPage {
     @FindBy(linkText = "here")
     public WebElement linkAdress;
 
+
     @FindBy(css = "[href*='facebook']")
     public WebElement btn_facebook;
 
     @FindBy(css = ".h4")
     public WebElement sign_cancel;
 
-    @FindBy(css = "nav>a.Navbar_textLink__f6_Al[href^='/account/home']")
+    @FindBy(xpath = "//*[@id=\"navbarElement\"]/nav/a[4]")
     public WebElement button_account;
 
     @FindBy(xpath = "//a[@class=\"Navbar_textLink__f6_Al mr-4 ml-1\"][2]")
@@ -156,9 +161,6 @@ public class HomePage extends CommonPage {
 
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement buttonn_login;
-
-    @FindBy(xpath ="//a[text()='Login']")
-    public WebElement loginButton_header;
 
     @FindBy(xpath ="//a[@title='click to change your delivery address']")
     public WebElement deliveryAddress_button;
@@ -175,7 +177,7 @@ public class HomePage extends CommonPage {
     @FindBy(xpath ="//a[@class='Navbar_textLink__f6_Al cursor-pointer ml-4 mr-3 text-capitalize']")
     public WebElement goBack_button;
 
-    @FindBy(xpath = "//button[@type='submit']")
+      @FindBy(xpath = "//button[@type='submit']")
     public WebElement button_Submit;
 
     @FindBy(xpath = "//*[@id=\"__next\"]/div[4]/div[3]/section[3]/div[2]")
@@ -184,9 +186,13 @@ public class HomePage extends CommonPage {
     @FindBy(css = ".row[style^='box-shadow:']")
     public List<WebElement> products;
 
-    @FindBy(css = ".mb-3>ul>li>a")
-    public List<WebElement> pageNumber;
+    @FindBy(css = "#pagination>ul>li>a")
+    public List<WebElement> pageNumbers;
+
+    @FindBy(css = ".p-2>div>p")
+    public List<WebElement> productNames;
 
 
+    public WebElement go_to_cart_button;
 }
 

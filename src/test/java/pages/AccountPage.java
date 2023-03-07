@@ -50,6 +50,8 @@ public class AccountPage extends CommonPage{
     public WebElement button_Contactus;
 
 
+    @FindBy(css = "div.toastr_custom-toastr__iiU37")
+    public WebElement toastMessage;
 
 
 

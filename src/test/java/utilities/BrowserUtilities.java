@@ -1,5 +1,6 @@
 package utilities;
 
+import enums.USERINFO;
 import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
 import org.openqa.selenium.NoSuchElementException;
@@ -11,14 +12,18 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.AccountPage;
+import pages.LoginPage;
 import ru.yandex.qatools.ashot.comparison.ImageDiff;
 import ru.yandex.qatools.ashot.comparison.ImageDiffer;
 
 import javax.annotation.Nullable;
 import javax.imageio.ImageIO;
-import java.awt.*;
-import java.awt.datatransfer.StringSelection;
-import java.awt.event.KeyEvent;
+//import javax.imageio.ImageIO;
+//import java.awt.*;
+//import java.awt.datatransfer.StringSelection;
+//import java.awt.event.KeyEvent;
+//import java.awt.image.BufferedImage;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.text.SimpleDateFormat;
@@ -29,22 +34,37 @@ import java.util.List;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-import static stepDefinitions.Hooks.driver;
+import static stepDefinitions.UI.Hooks.driver;
 
 
 public class BrowserUtilities {
+    static AccountPage accountPage = new AccountPage();
+    static LoginPage loginPage = new LoginPage();
 
+    public static void loginMethod(USERINFO userinfo) {
+
+        driver.get("https://test.urbanicfarm.com/auth/login");
+        loginPage.loginMethod(userinfo);
+    }
+
+    public static void loginMethod(String userName, String password) {
+        driver.get("https://test.urbanicfarm.com/auth/login");
+        loginPage.loginMethod(userName, password);
+    }
+
+    public static void localClear() {
+        LocalStorage local = ((WebStorage) Driver.getDriver()).getLocalStorage();
+        local.clear();
+        Driver.getDriver().navigate().refresh();
+        waitForPageToLoad(10);
+
+    }
 
     public static void writeDataToIdsFile(String tip, String id) { // room=123123
-
-
         try (OutputStream output = new FileOutputStream("ids.properties")) {
-
             Properties prop = new Properties();
             prop.setProperty(tip, id);
             prop.store(output, null);
-
-
         } catch (IOException io) {
             io.printStackTrace();
         }
@@ -260,7 +280,7 @@ public class BrowserUtilities {
     }
 
 
-    public static void handlingNotification(WebElement element) throws AWTException, InterruptedException {
+    /*public static void handlingNotification(WebElement element) throws AWTException, InterruptedException {
         JSUtils.clickElementByJS(element);
 
         Robot robot = new Robot();
@@ -294,14 +314,12 @@ public class BrowserUtilities {
         JSUtils.clickElementByJS(element);
     }
 
-    public static void masterClick(WebElement element) {
+      public static void masterClick(WebElement element) {
         BrowserUtilities.scrollToElement(element);
-        BrowserUtilities.waitForVisibility(element, 2);
-        BrowserUtilities.waitForClickability(element, 2);
-
+        BrowserUtilities.waitForVisibility(element, 3);
+        BrowserUtilities.waitForClickability(element, 3);
         element.click();
-
-    }
+    }*/
 
     public static boolean isDisplayedElement(WebElement element) {
         boolean elementExist = false;
@@ -343,7 +361,7 @@ public class BrowserUtilities {
     }
 
 
-    public static void uploadFileWithRobot(WebElement element, String fileLocation) throws AWTException {
+    /*public static void uploadFileWithRobot(WebElement element, String fileLocation) throws AWTException {
 
         // Robot object creation
         Robot r = new Robot();
@@ -370,10 +388,10 @@ public class BrowserUtilities {
         //releasing enter
         r.keyRelease(KeyEvent.VK_ENTER);
 
-    }
+    }*/
 
 
-    public static void handlingNotification() throws AWTException, InterruptedException {
+    /*public static void handlingNotification() throws AWTException, InterruptedException {
 
         Robot robot = new Robot();
 
@@ -389,7 +407,7 @@ public class BrowserUtilities {
         // BrowserUtilities.waitFor(1);
 
 
-    }
+    }*/
 
     public static WebElement waitForClickability(WebElement element, int timeout) {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
@@ -517,7 +535,7 @@ public class BrowserUtilities {
         }
     }
 
-    public static boolean assertImageAreDifferent(String image1Path,String image2Path){
+    /*public static boolean assertImageAreDifferent(String image1Path,String image2Path){
         BufferedImage image1, image2;
         try{
             image1 = ImageIO.read(new File(image1Path));
@@ -529,7 +547,7 @@ public class BrowserUtilities {
         ImageDiff diff = imageDiffer.makeDiff(image1,image2);
 
         return diff.hasDiff();
-    }
+    }*/
     /**
      * method token kullanarak local storage i doldurup, login sayfasina gitmeden login yapmamizi sagliyor
      *
@@ -545,8 +563,8 @@ public class BrowserUtilities {
 
         String url = "https://test.urbanicfarm.com/";
 
-        String value2 = ConfigurationReader.getProperty("tokenSellerUrl");
-        String value1 = ConfigurationReader.getProperty("tokenSellerUrl").split("\\.")[1];
+        String value2 = token;
+        String value1 = token.split("\\.")[1];
         Driver.getDriver().get(url);
         localStorage.setItem(key1, value1);
         localStorage.setItem(key2, value2);
@@ -557,6 +575,21 @@ public class BrowserUtilities {
 
 
     }
+    public static boolean assertImageAreDifferent(String image1Path,String image2Path){
+        BufferedImage image1, image2;
+        try{
+            image1 = ImageIO.read(new File(image1Path));
+            image2 = ImageIO.read(new File(image2Path));
+        }catch (IOException e){
+            throw new RuntimeException(e);
+        }
+        ImageDiffer imageDiffer = new ImageDiffer();
+        ImageDiff diff = imageDiffer.makeDiff(image1,image2);
+
+        return diff.hasDiff();
+    }
+
+
     public static void loginWithTokenBuyer(String token, String web) {
         LocalStorage localStorage = ((WebStorage) Driver.getDriver()).getLocalStorage();
         String key1 = "a27c6fac85ae1295535e42c9d3e3f305";
@@ -576,13 +609,41 @@ public class BrowserUtilities {
 
 
     }
-    public static String giveMeRandomSelection(List<String> sels, String sel){
-        sels.remove(sel);
-        Random random = new Random();
-        int randomSel = random.nextInt(sels.size());
-        return sels.get(randomSel);
+    public static void scrollAndClickWithJS(WebElement webElement) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true)", webElement);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click()", webElement);
     }
 
+    public static String getStatusOfProduct(String productName) {
+        return driver.findElement(By.xpath("//a[@title='"+productName+"']/../../span")).getText();
+    }
+    public static void wait(int second) {
+        try {
+            Thread.sleep(second * 1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public static void toastMessageAssertion(String toastMessage) {
+        BrowserUtilities.waitForClickable(accountPage.toastMessage, 3);
+        String actualToastMessage = accountPage.toastMessage.getText();
+        String expectedToastMessage = toastMessage;
+        Assert.assertEquals(expectedToastMessage, actualToastMessage);
+    }
+    public static WebElement waitForClickable(WebElement element, int timeout) {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
+        return wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public static void masterClick(WebElement element) {
+        BrowserUtilities.scrollToElement(element);
+        BrowserUtilities.waitForVisibility(element, 2);
+        BrowserUtilities.waitForClickability(element, 2);
+
+        element.click();
+
+    }
 }
 
 

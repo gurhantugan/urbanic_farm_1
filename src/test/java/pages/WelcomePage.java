@@ -45,9 +45,35 @@ public class WelcomePage extends CommonPage{
     @FindBy(xpath = "(//tbody/tr/th)[2]")
     public WebElement text_AddedProductNameUp;
 
+   @FindBy(xpath = "//p[@class='ProductCard_userName__MaY5h'][text()='Mathew']")
+    public List<WebElement> list_SellerName;
 
+ @FindBy(id = "productSortSelect")
+    public WebElement select_sort;
 
+  @FindBy(css=".Navbar_textLink__f6_Al.cursor-pointer.ml-4.mr-3.text-capitalize")
+    public WebElement account_name;
 
+    @FindBy(id = "mapSearchBox")
+    public WebElement WhatAreYouLookingFor;
+
+    @FindBy(id = "location")
+    public WebElement SearchInMiles;
+
+    @FindBy(id = "allCategories")
+    public WebElement Categories;
+
+    @FindBy(xpath = "//input[@type='checkbox']")
+    public WebElement SearchOnlyInOrganic;
+
+    @FindBy(id = "searchMapButton")
+    public WebElement Search;
+
+    @FindBy(xpath = "//div[@class='Navbar_support-container__2qv_z']")
+    public WebElement SupportTheLocalFoodMovement;
+
+    @FindBy(xpath = "//div[@class='Navbar_support-container__2qv_z p-2 cursor-pointer']")
+    public WebElement SupportTheLocalFoodMovement2;
 
 
 

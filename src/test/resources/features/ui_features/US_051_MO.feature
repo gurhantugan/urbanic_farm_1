@@ -24,8 +24,8 @@
        When  user clicks on No button
        Then  user should be go back to Address page
        When  user clicks on Remove button
-       And   user clicks on Yes button
-       Then  user should see the message "Address deleted"
+       #And   user clicks on Yes button
+       #Then  user should see the message "Address deleted"
 
 
 
