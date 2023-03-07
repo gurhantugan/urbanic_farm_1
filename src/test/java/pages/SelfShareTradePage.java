@@ -44,4 +44,9 @@ public class SelfShareTradePage extends CommonPage{
     @FindBy(xpath = "//button[text()='Add to Cart']")
     public WebElement button_AddToCart;
 
+
+
+    @FindBy(xpath="//span[@class='Point_hubTitle__3x_L8 pb-1 d-block h6 text-truncate']")
+    public WebElement product_inSeller;
+
 }

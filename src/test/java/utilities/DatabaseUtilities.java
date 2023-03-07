@@ -1,11 +1,7 @@
 package utilities;
-
-
 import java.sql.*;
 
 public class DatabaseUtilities {
-
-
     private static Connection connection;
     private static Statement statement;
     private static ResultSet resultSet;
@@ -57,7 +53,6 @@ public class DatabaseUtilities {
                 throw new RuntimeException(e);
             }
         }
-
     }
 
     /**
@@ -94,8 +89,5 @@ public class DatabaseUtilities {
      */
     public static void approveLastProduct() {
         updateQuerry("UPDATE `hub_product` SET `product_listing_state` = 'APPROVED' WHERE `product_listing_state` LIKE 'IN_REVIEW' order BY id DESC;");
-
     }
 }
-
-

@@ -11,7 +11,7 @@
 Feature: US_066 As a user, after entering valid information, I should be able to perform various actions in the Welcome Page
 
   Background: The user should be able to perform various operations in the basket.
-  Given user goes to "basket" page after login as a buyer
+    Given user goes to "basket" page after login as a buyer
 
   @US_066_TC_001
   Scenario: TC_001 Adding item to basket

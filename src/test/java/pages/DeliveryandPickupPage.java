@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class DeliveryandPickupPage extends CommonPage{
+
     @FindBy(css ="#SELLER_FLEXIBLE")
     public WebElement box_SellerFlexDel;
 
