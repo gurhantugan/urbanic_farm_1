@@ -46,6 +46,10 @@ public class AccountPage extends CommonPage{
     @FindBy(css = "img.rounded-circle")
     public WebElement picture;
 
+    @FindBy(xpath = "//a[contains(text(),'Contact us')]")
+    public WebElement button_Contactus;
+
+
     @FindBy(css = "div.toastr_custom-toastr__iiU37")
     public WebElement toastMessage;
 
