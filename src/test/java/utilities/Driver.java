@@ -16,7 +16,7 @@ import org.openqa.selenium.safari.SafariDriver;
 
 import java.time.Duration;
 
-import static stepDefinitions.Hooks.*;
+import static stepDefinitions.UI.Hooks.*;
 
 
 public class Driver {
