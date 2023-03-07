@@ -26,7 +26,4 @@ public class EventsPage extends CommonPage {
     @FindBy(css = "You've already registered this event. Please check 'Registered Events' tab.")
     public WebElement yellowMesage;
 
-
-
-
 }

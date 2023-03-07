@@ -1,4 +1,4 @@
-package stepDefinitions.apiStepDef;
+package stepDefinitions.API;
 
 import enums.USER;
 import io.cucumber.java.en.*;
@@ -28,8 +28,7 @@ public class US_096_StepDef_NC {
 
     }
 
-    @Then("user verifies the status code is {int}")
-    public void userVerifiesTheStatusCodeIs(int statusCode) {
-        Assert.assertEquals(statusCode, response.statusCode());
-    }
+
+
+
 }

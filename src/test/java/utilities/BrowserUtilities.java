@@ -18,11 +18,13 @@ import ru.yandex.qatools.ashot.comparison.ImageDiff;
 import ru.yandex.qatools.ashot.comparison.ImageDiffer;
 
 import javax.annotation.Nullable;
+import javax.imageio.ImageIO;
 //import javax.imageio.ImageIO;
 //import java.awt.*;
 //import java.awt.datatransfer.StringSelection;
 //import java.awt.event.KeyEvent;
 //import java.awt.image.BufferedImage;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
@@ -312,7 +314,7 @@ public class BrowserUtilities {
         JSUtils.clickElementByJS(element);
     }
 
-    public static void masterClick(WebElement element) {
+      public static void masterClick(WebElement element) {
         BrowserUtilities.scrollToElement(element);
         BrowserUtilities.waitForVisibility(element, 3);
         BrowserUtilities.waitForClickability(element, 3);
@@ -573,6 +575,21 @@ public class BrowserUtilities {
 
 
     }
+    public static boolean assertImageAreDifferent(String image1Path,String image2Path){
+        BufferedImage image1, image2;
+        try{
+            image1 = ImageIO.read(new File(image1Path));
+            image2 = ImageIO.read(new File(image2Path));
+        }catch (IOException e){
+            throw new RuntimeException(e);
+        }
+        ImageDiffer imageDiffer = new ImageDiffer();
+        ImageDiff diff = imageDiffer.makeDiff(image1,image2);
+
+        return diff.hasDiff();
+    }
+
+
     public static void loginWithTokenBuyer(String token, String web) {
         LocalStorage localStorage = ((WebStorage) Driver.getDriver()).getLocalStorage();
         String key1 = "a27c6fac85ae1295535e42c9d3e3f305";
@@ -617,6 +634,15 @@ public class BrowserUtilities {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public static void masterClick(WebElement element) {
+        BrowserUtilities.scrollToElement(element);
+        BrowserUtilities.waitForVisibility(element, 2);
+        BrowserUtilities.waitForClickability(element, 2);
+
+        element.click();
+
     }
 }
 
