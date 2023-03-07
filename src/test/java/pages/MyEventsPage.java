@@ -151,5 +151,8 @@ public class MyEventsPage extends CommonPage {
 
     public WebElement textBox_title;
 
+    @FindBy(xpath = "(//span[text()='COMPLETED'])[1]")
+    public WebElement message_completed;
+
 
 }
