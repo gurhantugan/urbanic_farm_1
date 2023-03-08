@@ -149,6 +149,7 @@ public class MyEventsPage extends CommonPage {
     @FindBy(xpath = "//button[text()='My Completed Events']")
     public WebElement button_completed_events;
 
+    @FindBy(css = "#title")
     public WebElement textBox_title;
 
     @FindBy(xpath = "(//span[text()='COMPLETED'])[1]")
