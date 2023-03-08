@@ -11,21 +11,10 @@ public class CommonPage {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        try {
-            PageFactory.initElements(Driver.getDriver(), this);
 
 
-        }catch (Exception e){
-            e.printStackTrace();
-
-
-
-    }
+        }
 }
-
-}
-
-
 
 
 

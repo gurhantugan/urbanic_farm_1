@@ -1,6 +1,5 @@
 
-@regression,@smoke @UI @US_005
-Feature: User should be able to perform various operations
+@regression @UI @US_005
 
 Feature: User should be able to perform various operations
 @wip
