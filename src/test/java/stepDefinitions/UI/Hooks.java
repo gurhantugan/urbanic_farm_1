@@ -65,7 +65,7 @@ public class Hooks {
 
     }
 
-    @After(value = "@UI")
+    /*@After(value = "@UI")
     public void tearDown(Scenario scenario) {
 
         if (scenario.isFailed()) {
@@ -75,7 +75,7 @@ public class Hooks {
         BrowserUtilities.localClear();
 
 
-    }
+    }*/
 
     @Before("@DB")
     public void setupDatabase() {
