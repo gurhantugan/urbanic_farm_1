@@ -1,5 +1,6 @@
 package stepDefinitions.API;
 
+import enums.USER;
 import io.cucumber.java.en.Then;
 
 import static io.restassured.RestAssured.given;
@@ -12,7 +13,7 @@ public class US_094_StepDef_AO {
     @Then("User gets all existing hubs' information")
     public void userGetsAllExistingHubsInformation() {
 
-        response = given().spec(requestSpecification(token)).post("account/hub/getMyHubs");
+        response = given().spec(requestSpecification(USER.SELLER.getToken())).post("account/hub/getMyHubs");
         response.prettyPrint();
     }
 }
