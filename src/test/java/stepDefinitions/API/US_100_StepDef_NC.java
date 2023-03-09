@@ -40,7 +40,7 @@ public class US_100_StepDef_NC {
         map.put("unit","Pack");
         response = given().contentType(ContentType.JSON).spec(requestSpecification(token))
                 .body(map).post("/account/hub/product/add");
-        response.prettyPrint();
+       // response.prettyPrint();
 
     }
 
