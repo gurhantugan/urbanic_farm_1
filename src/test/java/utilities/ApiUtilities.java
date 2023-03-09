@@ -27,6 +27,12 @@ public class ApiUtilities {
                 .build();
     }
 
+    public static RequestSpecification requestSpecification2() {
+        return specification = new RequestSpecBuilder()
+                .setRelaxedHTTPSValidation()
+                .build();
+    }
+
     public static RequestSpecification requestSpecification(USER user) {
         return specification = new RequestSpecBuilder()
                 .addHeader("Authorization", "Bearer " + user.getToken())
