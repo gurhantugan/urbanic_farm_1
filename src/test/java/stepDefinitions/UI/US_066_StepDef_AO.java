@@ -5,9 +5,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import pages.CardAndBasketPage;
 import utilities.BrowserUtilities;
 import utilities.ConfigurationReader;
+import utilities.Driver;
 import utilities.JSUtils;
 
 import java.util.Random;
@@ -21,6 +24,8 @@ public class US_066_StepDef_AO {
     double totalCostBefore;
     double totalCostAfter;
     double price;
+
+    Actions actions = new Actions(Driver.getDriver());
 
     @Given("user goes to {string} page after login as a buyer")
     public void userGoesToPageAfterLoginAsABuyer(String endpoint) {
@@ -75,23 +80,53 @@ public class US_066_StepDef_AO {
 
     @When("user clicks on delete button")
     public void userClicksOnDeleteButton() {
+        BrowserUtilities.waitForVisibility(cardAndBasketPage.button_delete,9);
         cardAndBasketPage.button_delete.click();
+        BrowserUtilities.waitFor(2);
     }
-
-    @Then("user should see message {string}")
-    public void userShouldSeeMessage(String arg0) {
-        Assert.assertTrue(cardAndBasketPage.text.isDisplayed());
-    }
-
-    @Then("user verifies the item deleted from cart")
-    public void userVerifiesTheItemDeletedFromCart() {
-    }
-
-    @Then("user should see Total change in product wraps")
-    public void userShouldSeeTotalChangeInProductWraps() {
+    @And("user clicks on delete No button")
+    public void userClicksOnDeleteNoButton() {
+        actions.sendKeys(Keys.TAB,Keys.TAB,Keys.ENTER).perform();
+        BrowserUtilities.waitFor(2);
     }
 
     @Then("user verifies the item does not delete from cart")
     public void userVerifiesTheItemDoesNotDeleteFromCart() {
     }
+
+    @Then("user should see message {string}")
+    public void userShouldSeeMessage(String arg0) {
+        Assert.assertTrue("Assert failed",cardAndBasketPage.text.isDisplayed());
+    }
+    @And("user clicks on delete Yes button")
+    public void userClicksOnDeleteYesButton() {
+        //cardAndBasketPage.buttonYes.click();
+        actions.sendKeys(Keys.TAB,Keys.ENTER).perform();
+        BrowserUtilities.waitFor(2);
+
+    }
+    @Then("user verifies the item deleted from cart")
+    public void userVerifiesTheItemDeletedFromCart() {
+        String expectedText = "//div[@class='Toastify__toast Toastify__toast--success']";
+        System.out.println("expectedText = " + expectedText);
+        String actualText = cardAndBasketPage.text.getText();
+        System.out.println("actualText = " + actualText);
+        Assert.assertEquals(expectedText,actualText);
+
+    }
+
+    @Then("user should see Total change in product wraps")
+    public void userShouldSeeTotalChangeInProductWraps() {
+        try {
+            Assert.assertTrue(totalCostBefore-price == totalCostAfter);
+        } catch (Exception exception){
+            System.out.println(totalCostBefore+"="+(totalCostAfter+price));
+            System.out.println("There is a mistake in assertion");
+        }
+    }
+
+
+
+
+
 }

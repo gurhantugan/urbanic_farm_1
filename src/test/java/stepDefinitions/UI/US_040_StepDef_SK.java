@@ -5,6 +5,7 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import pages.HomePage;
 import pages.LoginPage;
+import utilities.BrowserUtilities;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
@@ -17,6 +18,7 @@ public class US_040_StepDef_SK extends HomePage {
         loginButton.click();
         box_email.sendKeys(ConfigurationReader.getProperty("sellerEmail2"));
         box_password.sendKeys(ConfigurationReader.getProperty("sellerPassword2"));
+
 
 
         //buttonn_login.click();
