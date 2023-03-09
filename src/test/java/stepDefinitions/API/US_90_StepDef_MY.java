@@ -32,9 +32,9 @@ public class US_90_StepDef_MY {
     @When("user posts the request")
     public void userPostsTheRequest() {
         Map<String, Object> map = new HashMap<>();
-        String[] array= new String[]{"BUYER_PICKUP_FROM_BRANCH"};
+
         map.put("availabilityBranch", "03:00-21:00");
-        map.put("deliveryType", array);
+        map.put("deliveryType",new String[]{"BUYER_PICKUP_FROM_BRANCH"} );
 
         response = given().contentType(ContentType.JSON).spec(requestSpecification(token))
                 .body(map).post("/account/change/delivery");
