@@ -1,3 +1,4 @@
+@regression,@smoke
 Feature: The various titles on the homepage
   As a user I should be able to see the various titles when I enter the homepage
 
