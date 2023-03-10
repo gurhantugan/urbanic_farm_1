@@ -39,16 +39,17 @@ public class US_075_StepDef_AK {
     @And("user creates the event by filling in the required fields to create the event")
     public void userCreatesTheEventByFillingInTheRequiredFieldsToCreateTheEvent() {
         myEventsPage.button_Create_newEvents.click();
-        BrowserUtilities.waitFor(2);
+        BrowserUtilities.waitForVisibility(myEventsPage.box_title,20);
         myEventsPage.box_title.sendKeys("mahsul");
+        BrowserUtilities.waitFor(3);
         actions.moveToElement(myEventsPage.box_Address).sendKeys("Home").sendKeys(Keys.TAB).sendKeys(Keys.TAB)
                 .sendKeys("30").sendKeys(Keys.TAB).sendKeys("12").sendKeys(Keys.TAB).sendKeys("2023")
                 .sendKeys(Keys.TAB).sendKeys("17").sendKeys(Keys.TAB).sendKeys("00").sendKeys(Keys.TAB)
                 .sendKeys(Keys.TAB).sendKeys("120").sendKeys(Keys.TAB).sendKeys("40").sendKeys(Keys.TAB)
                 .sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys("misir , bugday").sendKeys(Keys.TAB)
                 .sendKeys(Keys.TAB).perform();
-        BrowserUtilities.waitFor(2);
-        myEventsPage.button_Submit.click();
+        BrowserUtilities.waitFor(5);
+        myEventsPage.button_submit.click();
     }
     @Given("user goes to {string} pageafter login")
     public void userGoesToPageafterLogin(String endPoint) {

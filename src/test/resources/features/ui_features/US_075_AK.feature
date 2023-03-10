@@ -1,4 +1,4 @@
-@US75
+@US075
 Feature: Events
   Scenario:
     Given user goes to "account/events-i-organize" page after login.
@@ -25,4 +25,4 @@ Feature: Events
 
   Scenario:
     Given user goes to "account/events-i-organize" pageafterlogin.
-    Given The user deletes the record he entered.
+    When The user deletes the record he entered.
