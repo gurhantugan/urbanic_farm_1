@@ -28,7 +28,7 @@ public class ApiUtilities {
     }
 
     public static RequestSpecification requestSpecification2() {
-        return specification = new RequestSpecBuilder()
+        return specification = new RequestSpecBuilder().setBaseUri("https://test.urbanicfarm.com/api")
                 .setRelaxedHTTPSValidation()
                 .build();
     }
@@ -48,7 +48,7 @@ public class ApiUtilities {
                 .formParams(payload)
                 .baseUri("https://test.urbanicfarm.com/api")
                 .post("/public/login");
-        response.prettyPrint();
+      //  response.prettyPrint();
         token = response.jsonPath().getString("token");
         return token;
     }
