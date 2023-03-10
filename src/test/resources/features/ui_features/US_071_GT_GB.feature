@@ -21,6 +21,7 @@
       Then user verifies "Event created" success message
       When user user click on events link
       Then user verifies created event with sign of NEW text is listed on events page
+      #gurhan
 
 
 
