@@ -1,5 +1,6 @@
 package stepDefinitions.UI;
 
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import pages.HomePage;
@@ -20,4 +21,6 @@ public class US_011_StepDef_HG {
         Assert.assertEquals(expectedUrl, actualUrl);
         Driver.getDriver().close();
     }
+
+
 }
