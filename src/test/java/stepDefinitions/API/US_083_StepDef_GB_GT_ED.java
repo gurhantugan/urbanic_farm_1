@@ -1,3 +1,5 @@
+package stepDefinitions.API;
+
 import io.cucumber.java.en.Given;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
