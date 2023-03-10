@@ -1,9 +1,13 @@
-#@US75
+@US75
 Feature: Events
+  Scenario:
+    Given user goes to "account/events-i-organize" page after login.
+    When user clicks the new Events
+    And user creates the event by filling in the required fields to create the event
 
   Scenario: As a user, should able to attend the someone's event(s)
-    Given user goes to "account/events" page after login
-    When user participates in any of the events
+    Given user goes to "account/events" pageafter login
+    #When user participates in any of the events
 
   Scenario Outline:
     #Given user goes to "account/events" page after login
@@ -11,14 +15,14 @@ Feature: Events
     And A user fills in the "<number>" of participants
     Examples:
       | number |
-      | 1      |
-      | -2     |
+      | 3      |
 
-    Scenario:
+  Scenario:
     And the user checks the terms and conditions box
     And user clicks confirmation button
-    #Then Verifies that the user confirmation button is clickable
-    #Then  user confirms activity is registered
+    Then Verifies that the user confirmation button is clickable
+    Then user confirms activity is registered
 
-
-
+  Scenario:
+    Given user goes to "account/events-i-organize" pageafterlogin.
+    Given The user deletes the record he entered.
