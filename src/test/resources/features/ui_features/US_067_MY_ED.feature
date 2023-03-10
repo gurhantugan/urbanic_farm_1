@@ -23,3 +23,7 @@ Feature: Welcome Page-Cart Operations between Seller and Buyer
     And user clicks on the mark all read button
     Then user sees "No unread notifications" in notifications box
     And user clicks on logout button
+
+    And user goes to "account/sold-items" page after login
+
+    #When user click

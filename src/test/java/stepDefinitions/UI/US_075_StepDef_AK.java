@@ -79,11 +79,13 @@ BrowserUtilities.clickWithJS(eleman.get(sek[0]));
 
     @And("the user checks the terms and conditions box")
     public void theUserChecksTheTermsAndConditionsBox() {
+        BrowserUtilities.waitFor(2);
         eventsPage.box_terms.click();
     }
 
     @And("user clicks confirmation button")
     public void userClicksConfirmationButton() {
+        BrowserUtilities.waitFor(2);
         eventsPage.button_approve.click();
     }
 }

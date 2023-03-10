@@ -22,10 +22,10 @@ public class CardAndBasketPage extends CommonPage{
     @FindBy(xpath = "(//tr/td)[3]")
     public WebElement price;
 
-    @FindBy(xpath = "//tbody[5]/tr[1]/td[5]//*[name()='svg']")
+    @FindBy(xpath = "(//td[@class='py-3 align-middle text-end'])[1]")
     public WebElement button_delete;
 
-    @FindBy(css = "//h5[contains(text(),'Are you sure you want to delete the product?')]")
+    @FindBy(xpath = "//h5")
     public WebElement text;
 
     @FindBy(xpath = "(//tbody[@class='border-bottom']/tr/th)[1]")
@@ -70,10 +70,8 @@ public class CardAndBasketPage extends CommonPage{
     @FindBy(css=".Notifications_notificationDownContent__1R3pg>span")
     public WebElement cross_close_notification;
 
-
     @FindBy(css = "td.align-middle.text-end svg")
     public List<WebElement> removeProductFromCart;
-
 
     @FindBy(css = "button.Basket_checkOutBtn__1946L")
     public WebElement proceedToCheckOut;
@@ -86,7 +84,6 @@ public class CardAndBasketPage extends CommonPage{
 
     @FindBy(id = "promo-code")
     public WebElement enterPromoCode_apply;
-
 
     @FindBy(xpath = "(//td[@class='text-end py-3'])[1]/p")
     public WebElement cartTotal_subtotal;
