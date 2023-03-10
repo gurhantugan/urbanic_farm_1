@@ -4,31 +4,31 @@ import enums.USER;
 import io.cucumber.java.en.Given;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 import utilities.ApiUtilities;
 
 import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.requestSpecification;
+import static utilities.ApiUtilities.requestSpecification;
 
 public class US_091_StepDef_NC {
-    String token = ApiUtilities.loginWithAPI(USER.BUYER2.getEmail(), USER.BUYER.getPassword());
+    String token ;
     Response response;
-    String endPoint;
+
 
     @Given("The user connects to the api")
     public void theUserConnectsToTheApi() {
-        endPoint = "https://test.urbanicfarm.com/api/account/change/delivery";
-        String body = "{\n" +
+
+        String map = "{\n" +
                 "  \"availability\": \"02:00-03:00\",\n" +
                 "  \"deliveryType\": [\n" +
                 "    \"BUYER_PICKUP\"\n" +
                 "  ]\n" +
                 "}";
         response = given()
-                .contentType(ContentType.JSON)
-                .when().auth().
-                oauth2(token)
-                .body(body)
-                .post(endPoint);
-
+                .contentType(ContentType.JSON).when().
+                auth().oauth2(token)
+                .body(map).post("/account/change/delivery");
 
 
         System.out.println("Status Code =" + response.getStatusCode());

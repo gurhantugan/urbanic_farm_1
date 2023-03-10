@@ -23,7 +23,7 @@ public class US_100_StepDef_NC {
 
     @Given("user logs in with api for product")
     public void userLogsInWithApiForProduct() {
-        token = ApiUtilities.loginWithAPI(USER.EZRA.getEmail(),USER.EZRA.getPassword());
+        token = ApiUtilities.loginWithAPI(USER.SELLER.getEmail(), USER.SELLER.getPassword());
 
     }
 
