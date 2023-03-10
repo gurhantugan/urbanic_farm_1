@@ -7,7 +7,10 @@ Feature: US_072
     And user enter "seller_urban1@yopmail.com" and "Seller1/" as login credentials and clicks login
     And user goes to account page and clicks on My Events
     And user clicks the new Events
+    And user clicks the add button next to address bar
+    And user fills the required information and clicks submit
     And user writes the required data to the boxes and gets the messages
+
 
       | Title    | Address | Date       | Time  | Duration | Attendee Limit | Terms and Conditions | expected message                         |
       | e        | 1       | 08/08/2023 | 15:00 | 300      | 50             | bring your card      | Please enter a valid title.              |
@@ -16,6 +19,7 @@ Feature: US_072
       | children | 1       | 08/08/2023 | 15:00 | null     | 50             | bring your card      | Please enter a valid duration.           |
       | children | 1       | 08/08/2023 | 15:00 | 300      | null           | bring your card      | Please enter a valid attendee limit.     |
       | children | 1       | 08/08/2023 | 15:00 | 300      | 50             | m                    | Please enter valid terms and conditions. |
+
 
 
 
