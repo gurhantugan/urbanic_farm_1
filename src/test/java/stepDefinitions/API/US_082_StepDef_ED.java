@@ -19,7 +19,7 @@ public class US_082_StepDef_ED {
         for (int i = 0; i < expectedData.size(); i++) {
 
             Assert.assertEquals(expectedData.get(i), response.jsonPath().getString(paths.get(i)));
-            System.out.println("Expected data = " + expectedData.get(i) + " - Actual Data = " + response.jsonPath().getString(paths.get(i)));
+            System.out.println("Expected data = " + expectedData.get(i) + " - Actual Data = " + response.jsonPath().getString(paths.get(i)).toString());
         }
 
 /*      // Bu methot dinamik olmadığı için çok tavsiye edilmez.
@@ -33,4 +33,4 @@ public class US_082_StepDef_ED {
     }
 
 
-}
+    }
