@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class MyEventsPage extends CommonPage {
 
     @FindBy(xpath = "//a[@class='Sidebar_section_btn__1sp6i h6 '][text()='My Events']")
@@ -160,7 +162,6 @@ public class MyEventsPage extends CommonPage {
 
     @FindBy(xpath = "(//span[text()='COMPLETED'])[1]")
     public WebElement message_completed;
-
 
 
 

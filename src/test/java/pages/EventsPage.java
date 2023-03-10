@@ -26,4 +26,29 @@ public class EventsPage extends CommonPage {
     @FindBy(css = "You've already registered this event. Please check 'Registered Events' tab.")
     public WebElement yellowMesage;
 
+    @FindBy(css = ".row.justify-content-center.text-warning")
+    public List<WebElement> events_all;
+
+    @FindBy(css = ".text-center.text-warning.mt-3")
+    public List<WebElement> events_scheduled;
+
+    @FindBy(xpath = "//*[.='Registered Events']")
+    public WebElement link_registeredEvent;
+
+    @FindBy(css = "You've already registered to this event")
+    public WebElement approve_mesage;
+
+    @FindBy(css = "(//*[@class=\"btn btn-outline-success p-1 col-lg-3 col-12 ScheduledEvents_btn__1gJtD\"])[30]")
+    public WebElement button_regesterMhsl;
+
+    @FindBy(xpath = "//*[@name=\"delete\"]")
+    public WebElement button_delete;
+
+    @FindBy(xpath = "(//*[@class=\"btn btn-primary mr-4\"])[1]")
+    public WebElement button_yes;
+
+
 }
+
+
+
