@@ -79,6 +79,8 @@ public class US_071_StepDef_GT_GB {
 
     @And("user enters fee for the event")
     public void userEntersFeeForTheEvent() {
+        String eventFee = String.valueOf(faker.number().numberBetween(1,1000));
+        myEventsPage.textBox_fee.sendKeys(eventFee);
     }
 
     @And("user enters duration of event")
