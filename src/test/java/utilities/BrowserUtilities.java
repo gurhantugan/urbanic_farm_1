@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
+import static stepDefinitions.UI.Hooks.actions;
 import static stepDefinitions.UI.Hooks.driver;
 
 
@@ -644,6 +645,22 @@ public class BrowserUtilities {
         element.click();
 
     }
+
+    public static void assertTextColor(String rgba, WebElement webElement) {
+        Assert.assertEquals(rgba, webElement.getCssValue("color"));
+    }
+
+    public static void cleanTextFromWebelemnt(WebElement webElement) {
+        // omer -> 4 -> 4 defa backspace
+        webElement.click();
+        // a -> 1
+        int valueLength = webElement.getAttribute("value").length();
+
+        for (int i = 0; i < valueLength; i++) {
+            actions.sendKeys(Keys.BACK_SPACE).perform();
+        }
+    }
+
 }
 
 
