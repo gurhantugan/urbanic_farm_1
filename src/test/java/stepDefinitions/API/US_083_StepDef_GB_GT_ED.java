@@ -1,3 +1,5 @@
+package stepDefinitions.API;
+
 import io.cucumber.java.en.Given;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -25,4 +27,4 @@ public class US_083_StepDef_GB_GT_ED<Datatable> {
         response.prettyPrint();
         System.out.println(response.getStatusCode());
     }
-    }
+}
