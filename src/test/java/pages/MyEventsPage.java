@@ -73,6 +73,7 @@ public class MyEventsPage extends CommonPage {
     @FindBy(xpath = "//button[@class='btn btn-outline-success ml-3']")
     public WebElement button_submit;
 
+
     @FindBy(css = ".btn.btn-outline-success.mb-1")
     public WebElement button_addAddress;
 
