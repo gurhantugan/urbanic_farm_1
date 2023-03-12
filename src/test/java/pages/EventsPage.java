@@ -14,9 +14,6 @@ public class EventsPage extends CommonPage {
     @FindBy (css = ".text-center.text-warning.mt-3")
     public List<WebElement> button_text;
 
-    @FindBy(css = "Registered Events")
-    public WebElement button_eventsRegistered;
-
     @FindBy(css = "[type=\"number\"]")
     public WebElement box_number;
 
@@ -25,18 +22,6 @@ public class EventsPage extends CommonPage {
 
     @FindBy(css = "[class=\"eventRegister_approveBtn__1P-N2\"]")
     public WebElement button_approve;
-
-    @FindBy(css = "You've already registered this event. Please check 'Registered Events' tab.")
-    public WebElement yellowMesage;
-
-    @FindBy(css = ".row.justify-content-center.text-warning")
-    public List<WebElement> events_all;
-
-    @FindBy(css = ".text-center.text-warning.mt-3")
-    public List<WebElement> events_scheduled;
-
-    @FindBy(xpath = "//*[.='Registered Events']")
-    public WebElement link_registeredEvent;
 
     @FindBy(xpath = "//*[.='You have now registered to this event']")
     public WebElement approve_mesage;
