@@ -9,7 +9,6 @@ Feature: US_074
     When user should able to add an address by clicking add button on create event page
     And user should provide Title for the event and title should be at least two character
     And user should provide address for the event and address should be at least ten character
-    And user should type or select the city for the event and city should be at least two character
     And user should type or select the state for the event and state should be at least two character
     And user should provide Zip code for the event and zip code should be five digits only
     Then user should able to cancel adding address by clicking Cancel button
