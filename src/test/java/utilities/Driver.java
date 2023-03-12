@@ -2,6 +2,7 @@ package utilities;
 
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.github.bonigarcia.wdm.webdriver.OptionsWithArguments;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
@@ -42,15 +43,19 @@ public class Driver {
         // isFullScreen = true;
         // isHeadless = true;
         // browserType = "chrome";
-        //  browserType = "firefox";
+          browserType = "firefox";
 
 //***********Burayi false yaparak browser i gorebiliriz*******************************************
        // isHeadless = false;
 
         //setting various capabilities for browsers
+
+
+
         ChromeOptions chromeOptions = new ChromeOptions();
         if (isHeadless) {
             chromeOptions.addArguments("use-fake-ui-for-media-stream");
+            chromeOptions.addArguments("--remote-allow-origins=*");
             chromeOptions.addArguments("--disable-gpu");
             chromeOptions.addArguments("--headless");
             chromeOptions.addArguments("--window-size=1920,1080");
@@ -76,7 +81,6 @@ public class Driver {
 
         }
 
-
         EdgeOptions edgeOptions = new EdgeOptions();
         edgeOptions.addArguments("use-fake-ui-for-media-stream");
 
@@ -96,14 +100,19 @@ public class Driver {
              */
                 switch (browserType) {
 
-                    case "chrome":
-                        WebDriverManager.chromedriver().setup();
-                        driverPool.set(new ChromeDriver(chromeOptions));
-                        break;
-
                     case "firefox":
                         WebDriverManager.firefoxdriver().setup();
                         driverPool.set(new FirefoxDriver(firefoxOptions));
+                        break;
+
+                    case "edge":
+                        WebDriverManager.edgedriver().setup();
+                        driverPool.set(new EdgeDriver());
+                        break;
+
+                    case "chrome":
+                        WebDriverManager.chromedriver().setup();
+                        driverPool.set(new ChromeDriver(chromeOptions));
                         break;
 
                     case "ie":
@@ -111,13 +120,6 @@ public class Driver {
                             throw new WebDriverException("Your OS doesn't support Internet Explorer");
                         WebDriverManager.iedriver().setup();
                         driverPool.set(new InternetExplorerDriver());
-                        break;
-
-                    case "edge":
-                        if (!System.getProperty("os.name").toLowerCase().contains("windows"))
-                            throw new WebDriverException("Your OS doesn't support Edge");
-                        WebDriverManager.edgedriver().setup();
-                        driverPool.set(new EdgeDriver());
                         break;
 
                     case "safari":

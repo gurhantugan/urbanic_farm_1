@@ -12,11 +12,9 @@ public class US_020_StepDef_ED {
 
     @And("User clickable the About Us button")
     public void userClickableTheAboutUsButton() {
-
         JSUtils.clickElementByJS(homePage.link_aboutUs_footer);
         BrowserUtilities.waitFor(3);
     }
-
 
 
 }
