@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class MyEventsPage extends CommonPage {
 
     @FindBy(xpath = "//a[@class='Sidebar_section_btn__1sp6i h6 '][text()='My Events']")
@@ -50,6 +52,9 @@ public class MyEventsPage extends CommonPage {
     @FindBy(css = "#addressTitle")
     public WebElement box_addressTitle;
 
+    @FindBy(xpath = "//*[@class='single-input rounded'][@value='California']")
+    public WebElement states_California;
+
     @FindBy(css = "#address")
     public WebElement box_addressSecond;
 
@@ -58,6 +63,9 @@ public class MyEventsPage extends CommonPage {
 
     @FindBy(css = "#cities")
     public WebElement box_cities;
+
+    @FindBy(xpath = "//datalist[@id='city']/option[@value='Alameda']")
+    public WebElement cities_Alameda;
 
     @FindBy(css = "#postal")
     public WebElement box_postal;
@@ -149,10 +157,12 @@ public class MyEventsPage extends CommonPage {
     @FindBy(xpath = "//button[text()='My Completed Events']")
     public WebElement button_completed_events;
 
+    @FindBy(css = "#title")
     public WebElement textBox_title;
 
     @FindBy(xpath = "(//span[text()='COMPLETED'])[1]")
     public WebElement message_completed;
+
 
 
 }
