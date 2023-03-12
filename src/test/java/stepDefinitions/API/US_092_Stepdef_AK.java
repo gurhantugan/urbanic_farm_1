@@ -38,7 +38,7 @@ public class US_092_Stepdef_AK {
         response = given()
                 .contentType(ContentType.JSON)
                 .auth()
-                .oauth2(USER.SELLER.getToken())
+                .oauth2(USER.ALI.getToken())
                 .body(body)
                 .post(endpoint);
 
@@ -69,7 +69,7 @@ public class US_092_Stepdef_AK {
         response = given()
                 .contentType(ContentType.JSON)
                 .auth()
-                .oauth2(USER.SELLER.getToken())
+                .oauth2(USER.ALI.getToken())
                 .body(body)
                 .post(endpoint);
 

@@ -24,6 +24,7 @@ import utilities.JSUtils;
 import java.util.ArrayList;
 import java.util.List;
 
+import java.util.Objects;
 import java.util.Random;
 
 import static org.openqa.selenium.devtools.v103.runtime.model.ConsoleAPICalled.Type.TABLE;
@@ -38,45 +39,39 @@ public class US_075_StepDef_AK {
     @Given("user goes to {string} page after login.")
     public void userGoesToPageAfterLogin(String endPoint) {
         BrowserUtilities.loginWithTokenSeller(ConfigurationReader.getProperty("tokenMyEven"), endPoint);
-        BrowserUtilities.waitFor(2);
+        BrowserUtilities.waitFor(5);
     }
 
     @And("user writes the required data to the boxes with followings")
     public void userWritesTheRequiredDataToTheBoxesWithFollowings(DataTable dataTable) {
-
+        BrowserUtilities.waitForVisibility(myEventsPage.box_Title,20);
         BrowserUtilities.clearAndSend(myEventsPage.box_title,dataTable.column(0).get(1));
         Select select = new Select(myEventsPage.box_Address);
         select.selectByIndex(Integer.parseInt(dataTable.column(1).get(1)));
-        BrowserUtilities.waitFor(2);
         BrowserUtilities.clearAndSend(myEventsPage.box_Date,dataTable.column(2).get(1));
-        BrowserUtilities.waitFor(2);
         BrowserUtilities.clearAndSend(myEventsPage.box_time,dataTable.column(3).get(1));
         BrowserUtilities.clearAndSend(myEventsPage.box_duration,dataTable.column(4).get(1));
         BrowserUtilities.clearAndSend(myEventsPage.box_attendeeLimit,dataTable.column(5).get(1));
         BrowserUtilities.clearAndSend(myEventsPage.box_TermsAndConditions,dataTable.column(6).get(1));
         BrowserUtilities.waitFor(2);
+//        myEventsPage.box_Date.sendKeys("08.12.2023");
+//        BrowserUtilities.waitFor(2);
         JSUtils.clickElementByJS(myEventsPage.button_Submit);
-        BrowserUtilities.waitFor(3);
+        BrowserUtilities.waitFor(1);
     }
-//    @And("user creates the event by filling in the required fields to create the event")
-//    public void userCreatesTheEventByFillingInTheRequiredFieldsToCreateTheEvent() {
-//        myEventsPage.box_title.sendKeys("mahsul");
-//        BrowserUtilities.waitFor(3);
-//
-//       actions.moveToElement(myEventsPage.box_Address).sendKeys(Keys.TAB).sendKeys(Keys.TAB)
-//                .sendKeys("30").sendKeys(Keys.TAB).sendKeys("12").sendKeys(Keys.TAB).sendKeys("2023")
-//                .sendKeys(Keys.TAB).sendKeys("17").sendKeys(Keys.TAB).sendKeys("00").sendKeys(Keys.TAB)
-//                .sendKeys(Keys.TAB).sendKeys("120").sendKeys(Keys.TAB).sendKeys("40").sendKeys(Keys.TAB)
-//                .sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys("misir , bugday").sendKeys(Keys.TAB)
-//                .sendKeys(Keys.TAB).perform();
-//        myEventsPage.button_submit.click();
-//    }
+
     @Given("user goes to {string} pageafter login")
     public void userGoesToPageafterLogin(String endPoint) {
-        BrowserUtilities.loginWithTokenSeller(ConfigurationReader.getProperty("tokenEven"), endPoint);
-        BrowserUtilities.waitFor(2);
-        BrowserUtilities.waitForVisibility(eventsPage.button_regesterMhsl,20);
-        eventsPage.button_regesterMhsl.click();
+        BrowserUtilities.loginWithTokenSeller(ConfigurationReader.getProperty("tokenEven"),endPoint);
+
+        for (int i = 0; i < eventsPage.button_text.size() ; i++) {
+
+            if(eventsPage.button_text.get(i).getText().equals("mahsul")){
+                BrowserUtilities.waitFor(1);
+                BrowserUtilities.clickWithJS(eventsPage.button_register.get(i));
+            }
+
+        }
 
     }
     @And("A user fills in the {string} of participants")
@@ -95,7 +90,7 @@ public class US_075_StepDef_AK {
     @And("user clicks confirmation button")
     public void userClicksConfirmationButton() {
         BrowserUtilities.waitFor(2);
-        eventsPage.button_approve.click();
+        BrowserUtilities.clickWithJS(eventsPage.button_approve);
     }
 
     @Then("Verifies that the user confirmation button is clickable")
@@ -106,21 +101,11 @@ public class US_075_StepDef_AK {
 
     @Then("user confirms activity is registered")
     public void userConfirmsActivityIsRegistered() {
-        String expectedMesage = "You've already registered to this event";
+        String expectedMesage = "You have now registered to this event";
         String actualMesage = eventsPage.approve_mesage.getText();
 
-        Assert.assertEquals("mesaj eslesmedi" + actualMesage, expectedMesage);
+        Assert.assertEquals("mesaj eslesmedi" + expectedMesage,actualMesage);
     }
-
-    @Given("The user deletes the record he entered.")
-    public void theUserDeletesTheRecordHeEntered() {
-        BrowserUtilities.waitFor(1);
-        eventsPage.button_delete.click();
-        BrowserUtilities.waitFor(1);
-        eventsPage.button_yes.click();
-
-    }
-
     @Given("user goes to {string} pageafterlogin.")
     public void userGoesToPageafterlogin(String endPoint) {
         BrowserUtilities.loginWithTokenSeller(ConfigurationReader.getProperty("tokenMyEven"), endPoint);
@@ -128,14 +113,51 @@ public class US_075_StepDef_AK {
     }
 
 
+    @Given("The user deletes the record he entered.")
+    public void theUserDeletesTheRecordHeEntered() {
+        BrowserUtilities.waitFor(1);
+        eventsPage.button_delete.click();
+        BrowserUtilities.waitFor(1);
+        eventsPage.button_yes.click();
+    }
 
+    @Given("After logging in, the user visits the {string} page.")
+    public void afterLoggingInTheUserVisitsThePage(String endPoint) {
 
-    //    @When("user participates in any of the events")
-//    public void userParticipatesInAnyOfTheEvents() {
-//        List<WebElement> eleman = new ArrayList<>(eventsPage.button_register);
-//       sek = rand.nextInt(eleman.size());
-//      BrowserUtilities.clickWithJS(eleman.get(sek));
-//}
+        BrowserUtilities.loginWithTokenSeller(ConfigurationReader.getProperty("tokenEven1"), endPoint);
+        BrowserUtilities.waitFor(2);
 
+    }
+    @And("A user enters {string} as the number of participants.")
+    public void aUserEntersAsTheNumberOfParticipants(String number) {
+        BrowserUtilities.waitFor(2);
+        BrowserUtilities.clearText(eventsPage.box_number);
+        eventsPage.box_number.sendKeys(number);
+    }
 
+    @And("The user clicks the {string} button.")
+    public void theUserClicksTheButton(String agree) {
+        BrowserUtilities.waitFor(2);
+        eventsPage.box_terms.click();
+    }
+
+    @And("The user then presses the confirmation button.")
+    public void theUserThenPressesTheConfirmationButton() {
+        BrowserUtilities.waitFor(2);
+        BrowserUtilities.clickWithJS(eventsPage.button_approve);
+    }
+
+    @And("then checks to see if the user confirmation button can be clicked.")
+    public void thenChecksToSeeIfTheUserConfirmationButtonCanBeClicked() {
+        BrowserUtilities.waitForVisibility(eventsPage.button_approve, 20);
+        Assert.assertTrue(eventsPage.button_approve.isEnabled());
+    }
+
+    @And("User then confirms that the activity was registered.")
+    public void userThenConfirmsThatTheActivityWasRegistered() {
+        String expectedMesage = "You have now registered to this event";
+        String actualMesage = eventsPage.approve_mesage.getText();
+
+        Assert.assertEquals("mesaj eslesmedi" + expectedMesage,actualMesage);
+    }
 }
