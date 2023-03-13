@@ -24,6 +24,29 @@ Feature: US_072
 
 
 
+    When user fills the required information to the event page and clicks go back
+
+      | Title    | Address | Date       | Time  | Duration | Attendee Limit | Terms and Conditions |
+      | children | Gallery | 08/08/2023 | 15:00 | 300      | 50             | bring your card      |
+
+    Then user clicks create new events and sees the boxes as  empty and gets the following messages
+
+      | expected message                         |
+      | Please select an address.                |
+      | Please fill this field                   |
+      | Please fill this field                   |
+      | Please enter a valid duration.           |
+      | Please enter a valid attendee limit.     |
+      | Please enter valid terms and conditions. |
+      | Please enter a valid title.              |
+
+
+
+
+
+
+
+
 
 
 
