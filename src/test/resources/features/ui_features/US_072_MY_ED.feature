@@ -13,12 +13,32 @@ Feature: US_072
 
 
       | Title    | Address | Date       | Time  | Duration | Attendee Limit | Terms and Conditions | expected message                         |
-      | e        | 1       | 08/08/2023 | 15:00 | 300      | 50             | bring your card      | Please enter a valid title.              |
-      | children | 1       | null       | 15:00 | 300      | 50             | bring your card      | Please fill this field                   |
-      | children | 1       | 08/08/2023 | null  | 300      | 50             | bring your card      | Please fill this field                   |
-      | children | 1       | 08/08/2023 | 15:00 | null     | 50             | bring your card      | Please enter a valid duration.           |
-      | children | 1       | 08/08/2023 | 15:00 | 300      | null           | bring your card      | Please enter a valid attendee limit.     |
-      | children | 1       | 08/08/2023 | 15:00 | 300      | 50             | m                    | Please enter valid terms and conditions. |
+      | children | Select  | 08/08/2023 | 15:00 | 300      | 50             | bring your card      | Please select an address.                |
+      | children | Gallery | null       | 15:00 | 300      | 50             | bring your card      | Please fill this field                   |
+      | children | Gallery | 08/08/2023 | null  | 300      | 50             | bring your card      | Please fill this field                   |
+      | children | Gallery | 08/08/2023 | 15:00 | null     | 50             | bring your card      | Please enter a valid duration.           |
+      | children | Gallery | 08/08/2023 | 15:00 | 300      | null           | bring your card      | Please enter a valid attendee limit.     |
+      | children | Gallery | 08/08/2023 | 15:00 | 300      | 50             | m                    | Please enter valid terms and conditions. |
+      | e        | Gallery | 08/08/2023 | 15:00 | 300      | 50             | bring your card      | Please enter a valid title.              |
+
+
+    When user fills the required information to the event page and clicks go back
+
+      | Title    | Address | Date       | Time  | Duration | Attendee Limit | Terms and Conditions |
+      | children | Gallery | 08/08/2023 | 15:00 | 300      | 50             | bring your card      |
+
+    Then user clicks create new events and sees the boxes as  empty and gets the following messages
+
+      | expected message                         |
+      | Please select an address.                |
+      | Please fill this field                   |
+      | Please fill this field                   |
+      | Please enter a valid duration.           |
+      | Please enter a valid attendee limit.     |
+      | Please enter valid terms and conditions. |
+      | Please enter a valid title.              |
+
+
 
 
 
