@@ -13,13 +13,13 @@ Feature: US_072
 
 
       | Title    | Address | Date       | Time  | Duration | Attendee Limit | Terms and Conditions | expected message                         |
-      | e        | 1       | 08/08/2023 | 15:00 | 300      | 50             | bring your card      | Please enter a valid title.              |
-      | children | 1       | null       | 15:00 | 300      | 50             | bring your card      | Please fill this field                   |
-      | children | 1       | 08/08/2023 | null  | 300      | 50             | bring your card      | Please fill this field                   |
-      | children | 1       | 08/08/2023 | 15:00 | null     | 50             | bring your card      | Please enter a valid duration.           |
-      | children | 1       | 08/08/2023 | 15:00 | 300      | null           | bring your card      | Please enter a valid attendee limit.     |
-      | children | 1       | 08/08/2023 | 15:00 | 300      | 50             | m                    | Please enter valid terms and conditions. |
-
+      | children | Select  | 08/08/2023 | 15:00 | 300      | 50             | bring your card      | Please select an address.                |
+      | children | Gallery | null       | 15:00 | 300      | 50             | bring your card      | Please fill this field                   |
+      | children | Gallery | 08/08/2023 | null  | 300      | 50             | bring your card      | Please fill this field                   |
+      | children | Gallery | 08/08/2023 | 15:00 | null     | 50             | bring your card      | Please enter a valid duration.           |
+      | children | Gallery | 08/08/2023 | 15:00 | 300      | null           | bring your card      | Please enter a valid attendee limit.     |
+      | children | Gallery | 08/08/2023 | 15:00 | 300      | 50             | m                    | Please enter valid terms and conditions. |
+      | e        | Gallery | 08/08/2023 | 15:00 | 300      | 50             | bring your card      | Please enter a valid title.              |
 
 
 

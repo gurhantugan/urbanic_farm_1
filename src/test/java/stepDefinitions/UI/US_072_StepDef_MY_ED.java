@@ -38,11 +38,13 @@ public class US_072_StepDef_MY_ED {
     @And("user writes the required data to the boxes and gets the messages")
     public void userWritesTheRequiredDataToTheBoxesAndGetsTheMessages(DataTable dataTable) {
 
-        for (int i = 1; i < 7; i++) {
+        for (int i = 1; i < dataTable.height(); i++) {
 
             BrowserUtilities.clearAndSend(myEventsPage.box_title,dataTable.column(0).get(i));
             Select select = new Select(myEventsPage.box_Address);
-            select.selectByIndex(Integer.parseInt(dataTable.column(1).get(i)));
+            //select.selectByIndex(Integer.parseInt(dataTable.column(1).get(i)));
+           // select.selectByValue(dataTable.column(1).get(i));
+            select.selectByVisibleText(dataTable.column(1).get(i));
             BrowserUtilities.clearAndSend(myEventsPage.box_Date,dataTable.column(2).get(i));
             BrowserUtilities.clearAndSend(myEventsPage.box_time,dataTable.column(3).get(i));
             BrowserUtilities.clearAndSend(myEventsPage.box_duration,dataTable.column(4).get(i));
@@ -73,11 +75,14 @@ public class US_072_StepDef_MY_ED {
         BrowserUtilities.waitFor(2);
         myEventsPage.box_states.click();
         BrowserUtilities.waitFor(2);
-        actions.moveToElement(myEventsPage.states_California).click().perform();
+        BrowserUtilities.clearAndSend(myEventsPage.box_states,"California");
+       // myEventsPage.states_inList.get(2).click();
+       // actions.moveToElement(myEventsPage.states_California).click().perform();
         BrowserUtilities.waitFor(2);
-        actions.moveToElement(myEventsPage.cities_Alameda).click().perform();
+        BrowserUtilities.clearAndSend(myEventsPage.box_cities,"Alameda");
+        //actions.moveToElement(myEventsPage.cities_Alameda).click().perform();
         actions.sendKeys(myEventsPage.box_postal,"45678").click().perform();
-        myEventsPage.button_Submit.click();
+        myEventsPage.button_addressSubmit.click();
 
 
 

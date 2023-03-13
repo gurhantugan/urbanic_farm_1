@@ -38,7 +38,7 @@ public class US_075_StepDef_AK {
     }
     @And("user creates the event by filling in the required fields to create the event")
     public void userCreatesTheEventByFillingInTheRequiredFieldsToCreateTheEvent() {
-        myEventsPage.button_Create_newEvents.click();
+
         BrowserUtilities.waitFor(2);
         myEventsPage.box_title.sendKeys("mahsul");
         actions.moveToElement(myEventsPage.box_Address).sendKeys("Home").sendKeys(Keys.TAB).sendKeys(Keys.TAB)

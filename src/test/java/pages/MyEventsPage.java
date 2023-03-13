@@ -163,6 +163,9 @@ public class MyEventsPage extends CommonPage {
     @FindBy(xpath = "(//span[text()='COMPLETED'])[1]")
     public WebElement message_completed;
 
+    @FindBy(className ="single-input rounded" )
+    public List<WebElement> states_inList;
+
 
 
 }
