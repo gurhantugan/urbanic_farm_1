@@ -16,18 +16,18 @@ public class US_083_StepDef_GB_GT_ED {
 
     Response response;
 
-    @Given("user connects to the {string} with payload")
-    public void userConnectsToTheWithPayload(String endpoint, DataTable dataTable) {
-
-        Map<String, String> git  = dataTable.asMap();
-
-        System.out.println("payload = " + payload);
-
-        response = given().contentType(ContentType.JSON).spec(requestSpecification2())
-                .body(payload).post(endpoint);
-        response.prettyPrint();
-        System.out.println(response.getStatusCode());
-    }
+//    @Given("user connects to the {string} with payload")
+//    public void userConnectsToTheWithPayload(String endpoint, DataTable dataTable) {
+//
+//        Map<String, String> git  = dataTable.asMap();
+//
+//        System.out.println("payload = " + payload);
+//
+//        response = given().contentType(ContentType.JSON).spec(requestSpecification2())
+//                .body(payload).post(endpoint);
+//        response.prettyPrint();
+//        System.out.println(response.getStatusCode());
+//    }
 
 
 

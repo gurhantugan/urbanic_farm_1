@@ -34,6 +34,7 @@ public class US_084_StepDef_HA_GB_GT {
         public void userVerifiesThatTheResponseIsExpected() {
 //        Assert.assertEquals(true, response.jsonPath().getString("success"));
             Integer rate = Integer.parseInt(response.jsonPath().getString("productFeedback[0].rate"));
+            System.out.println("rate = " + rate);
             Assert.assertEquals(Optional.of(5), rate);
 
 //        Assert.assertEquals(true, response.jsonPath().getString("success"));
