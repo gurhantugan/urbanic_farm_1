@@ -1,6 +1,7 @@
 package stepDefinitions.API;
 
 import enums.USER;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.restassured.http.ContentType;
@@ -8,16 +9,16 @@ import io.restassured.response.Response;
 import org.junit.Assert;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
 import static io.restassured.RestAssured.given;
 import static utilities.ApiUtilities.requestSpecification;
+import static utilities.ApiUtilities.response;
+
 
 public class US_084_StepDef_HA_GB_GT {
-
-
-    public class US_084_HA_GB_GT_StepDef {
         Response response;
         @Given("user connects to the {string} with payload and token")
         public void userConnectsToTheWithPayloadAndToken(String endpoint) {
@@ -31,24 +32,23 @@ public class US_084_StepDef_HA_GB_GT {
 
 
         @And("user verifies that the response is expected")
-        public void userVerifiesThatTheResponseIsExpected() {
-//        Assert.assertEquals(true, response.jsonPath().getString("success"));
-            Integer rate = Integer.parseInt(response.jsonPath().getString("productFeedback[0].rate"));
-            Assert.assertEquals(Optional.of(5), rate);
+        public void userVerifiesThatTheResponseIsExpected(DataTable dataTable) {
 
-//        Assert.assertEquals(true, response.jsonPath().getString("success"));
-//        Assert.assertEquals(true, response.jsonPath().getString("success"));
-//
-//
-//        System.out.println(response.jsonPath().getString("success"));
-            System.out.println(response.jsonPath().getString("productFeedback[0].rate"));
-//        System.out.println(response.jsonPath().getString("productFeedback.firstName"));
-//        System.out.println(response.jsonPath().getString("productFeedback.userEmail"));
+            List<String> paths = dataTable.column(0);
+            List<String> expectedData = dataTable.column(1);
+
+            for (int i = 0; i < expectedData.size() ; i++) {
+                Assert.assertEquals(expectedData.get(i), response.jsonPath().getString(paths.get(i)));
+                System.out.println("Expected data = " + expectedData.get(i) + " - Actual Data = " + response.jsonPath().getString(paths.get(i)).toString());
+
+            }
+
+
         }
     }
 
 
-    }
+
 
 
 
