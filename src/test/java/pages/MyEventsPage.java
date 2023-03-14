@@ -164,6 +164,11 @@ public class MyEventsPage extends CommonPage {
     @FindBy(xpath = "(//span[text()='COMPLETED'])[1]")
     public WebElement message_completed;
 
+    @FindBy(xpath = "//div[@class='d-flex flex-row-reverse mb-3']/button")
+    public WebElement button_goBack;
+
+
+
 
 
 }
