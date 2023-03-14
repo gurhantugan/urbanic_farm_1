@@ -25,7 +25,6 @@ public class Hooks {
 
     public static Faker faker;
     public static boolean isHeadless = false;
-
     public static String browserType = "chrome";
 
     public static boolean isFullScreen = true;
