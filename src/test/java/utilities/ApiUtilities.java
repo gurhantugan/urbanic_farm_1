@@ -5,6 +5,7 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import org.junit.Assert;
 
 import java.util.HashMap;
 import java.util.List;
@@ -28,7 +29,7 @@ public class ApiUtilities {
     }
 
     public static RequestSpecification requestSpecification2() {
-        return specification = new RequestSpecBuilder()
+        return specification = new RequestSpecBuilder().setBaseUri("https://test.urbanicfarm.com/api")
                 .setRelaxedHTTPSValidation()
                 .build();
     }
@@ -48,7 +49,7 @@ public class ApiUtilities {
                 .formParams(payload)
                 .baseUri("https://test.urbanicfarm.com/api")
                 .post("/public/login");
-        response.prettyPrint();
+      //  response.prettyPrint();
         token = response.jsonPath().getString("token");
         return token;
     }
@@ -185,5 +186,13 @@ public class ApiUtilities {
 
 
         }
+
+        public static void checkFieldsInObject(List<String> fields) {
+            for (String field : fields) {
+                Assert.assertNotNull(ApiUtilities.response.jsonPath().get(field));
+
+            }
+        }
+
     }
 }
