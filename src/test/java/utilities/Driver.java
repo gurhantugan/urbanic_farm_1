@@ -42,8 +42,8 @@ public class Driver {
 
         // isFullScreen = true;
         // isHeadless = true;
-        // browserType = "chrome";
-          browserType = "firefox";
+         browserType = "chrome";
+          //browserType = "firefox";
 
 //***********Burayi false yaparak browser i gorebiliriz*******************************************
        // isHeadless = false;
@@ -64,9 +64,10 @@ public class Driver {
 
         } else {
             chromeOptions.addArguments("use-fake-ui-for-media-stream");
+            chromeOptions.addArguments("--remote-allow-origins=*");
             chromeOptions.addArguments("--disable-gpu");
             chromeOptions.addArguments("--window-size=1920,1080");
-            chromeOptions.addArguments("--remote-allow-origins=*");
+
         }
 
         FirefoxOptions firefoxOptions = new FirefoxOptions();
