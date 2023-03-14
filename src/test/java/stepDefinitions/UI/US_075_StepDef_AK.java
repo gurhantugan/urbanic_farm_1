@@ -41,8 +41,11 @@ public class US_075_StepDef_AK {
         BrowserUtilities.loginWithTokenSeller(ConfigurationReader.getProperty("tokenMyEven"), endPoint);
         BrowserUtilities.waitFor(1);
     }
+    @And("user creates the event by filling in the required fields to create the event")
+    public void userCreatesTheEventByFillingInTheRequiredFieldsToCreateTheEvent() {
 
-    @And("user writes the required data to the boxes with followings")
+
+    }    @And("user writes the required data to the boxes with followings")
     public void userWritesTheRequiredDataToTheBoxesWithFollowings(DataTable dataTable) {
         BrowserUtilities.waitForVisibility(myEventsPage.box_Title, 20);
         BrowserUtilities.clearAndSend(myEventsPage.box_title, dataTable.column(0).get(1));
@@ -53,6 +56,7 @@ public class US_075_StepDef_AK {
         BrowserUtilities.clearAndSend(myEventsPage.box_duration, dataTable.column(4).get(1));
         BrowserUtilities.clearAndSend(myEventsPage.box_attendeeLimit, dataTable.column(5).get(1));
         BrowserUtilities.clearAndSend(myEventsPage.box_TermsAndConditions, dataTable.column(6).get(1));
+
         BrowserUtilities.waitFor(2);
 //        myEventsPage.box_Date.sendKeys("08.12.2023");
 //        BrowserUtilities.waitFor(2);

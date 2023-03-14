@@ -38,7 +38,7 @@ public class US_100_StepDef_NC {
         map.put("isOrganic",true);
         map.put("isTrade",true);
         map.put("unit","Pack");
-        response = given().contentType(ContentType.JSON).spec(requestSpecification(USER.EZRA.getToken()))
+        response = given().contentType(ContentType.JSON).spec(requestSpecification(USER.SELLER.getToken()))
                 .body(map).post("/account/hub/product/add");
         response.prettyPrint();
 

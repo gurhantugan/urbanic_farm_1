@@ -22,6 +22,8 @@ Feature: US_072
       | e        | Gallery | 08/08/2023 | 15:00 | 300      | 50             | bring your card      | Please enter a valid title.              |
 
 
+
+
     When user fills the required information to the event page and clicks go back
 
       | Title    | Address | Date       | Time  | Duration | Attendee Limit | Terms and Conditions |
@@ -37,6 +39,7 @@ Feature: US_072
       | Please enter a valid attendee limit.     |
       | Please enter valid terms and conditions. |
       | Please enter a valid title.              |
+
 
 
 

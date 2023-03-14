@@ -54,8 +54,8 @@ public class US_072_StepDef_MY_ED {
             BrowserUtilities.clearAndSend(myEventsPage.box_TermsAndConditions,dataTable.column(6).get(i));
             JSUtils.clickElementByJS(myEventsPage.button_Submit);
             BrowserUtilities.waitFor(3);
-           String expectedmessage = dataTable.column(7).get(i);
-           String actualmessage = Driver.getDriver().findElement(By.xpath("//div[@class='CreateEvents_inlineErrormsg__2AiUS'][text()='"+dataTable.column(7).get(i)+"']")).getText();
+            String expectedmessage = dataTable.column(7).get(i);
+            String actualmessage = Driver.getDriver().findElement(By.xpath("//div[@class='CreateEvents_inlineErrormsg__2AiUS'][text()='"+dataTable.column(7).get(i)+"']")).getText();
             Assert.assertEquals("test gecmedi",expectedmessage,actualmessage);
 
         }
@@ -77,10 +77,10 @@ public class US_072_StepDef_MY_ED {
         myEventsPage.box_states.click();
         BrowserUtilities.waitFor(2);
         BrowserUtilities.clearAndSend(myEventsPage.box_states,"California");
-       // actions.moveToElement(myEventsPage.states_California).click().perform();
+        // actions.moveToElement(myEventsPage.states_California).click().perform();
         BrowserUtilities.waitFor(2);
         BrowserUtilities.clearAndSend(myEventsPage.box_cities,"Alameda");
-       // actions.moveToElement(myEventsPage.cities_Alameda).click().perform();
+        // actions.moveToElement(myEventsPage.cities_Alameda).click().perform();
         actions.sendKeys(myEventsPage.box_postal,"45678").click().perform();
         myEventsPage.button_addressSubmit.click();
 
@@ -129,4 +129,3 @@ public class US_072_StepDef_MY_ED {
 
     }
 }
-
