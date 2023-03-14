@@ -166,11 +166,11 @@ public class MyEventsPage extends CommonPage {
     @FindBy(className ="single-input rounded" )
     public List<WebElement> states_inList;
 
-    @FindBy(xpath = "//div[@class='d-flex flex-row-reverse mb-3']/button")
+    @FindBy(xpath = "//button[@class='events-i-organize_btnCreate__2AWbt'][text()='Go Back']")
     public WebElement button_goBack;
 
 
-
+//div[@class='d-flex flex-row-reverse mb-3']/button
 
 
 }

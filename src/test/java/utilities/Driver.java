@@ -60,6 +60,7 @@ public class Driver {
             chromeOptions.addArguments("use-fake-ui-for-media-stream");
             chromeOptions.addArguments("--disable-gpu");
             chromeOptions.addArguments("--window-size=1920,1080");
+            chromeOptions.addArguments("--remote-allow-origins=*");
         }
 
         FirefoxOptions firefoxOptions = new FirefoxOptions();
