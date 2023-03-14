@@ -163,14 +163,11 @@ public class MyEventsPage extends CommonPage {
     @FindBy(xpath = "(//span[text()='COMPLETED'])[1]")
     public WebElement message_completed;
 
-    @FindBy(className ="single-input rounded" )
-    public List<WebElement> states_inList;
-
-    @FindBy(xpath = "//button[@class='events-i-organize_btnCreate__2AWbt'][text()='Go Back']")
+    @FindBy(xpath = "//div[@class='d-flex flex-row-reverse mb-3']/button")
     public WebElement button_goBack;
 
 
-//div[@class='d-flex flex-row-reverse mb-3']/button
+
 
 
 }
