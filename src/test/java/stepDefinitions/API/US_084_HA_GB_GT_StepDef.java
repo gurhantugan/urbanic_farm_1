@@ -26,8 +26,6 @@ public class US_084_HA_GB_GT_StepDef {
                 .body(payload).post(endpoint);
         response.prettyPrint();
     }
-
-
     @And("user verifies that the response is expected")
     public void userVerifiesThatTheResponseIsExpected() {
 //        Assert.assertEquals(true, response.jsonPath().getString("success"));
