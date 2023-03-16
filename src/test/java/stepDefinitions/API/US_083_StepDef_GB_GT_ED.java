@@ -16,19 +16,19 @@ public class US_083_StepDef_GB_GT_ED {
 
     Response response;
 
-    /* @Given("user connects to the {string} with payload")
+    @Given("user connects to the {string} with payload")
      public void userConnectsToTheWithPayload(String endpoint, DataTable dataTable) {
 
-         Map<String, String> payload = dataTable.asMaps().get(0);
+        Map<String, String> payload = dataTable.asMaps().get(0);
 
-         System.out.println("payload = " + payload);
+        System.out.println("payload = " + payload);
 
-         response = given().contentType(ContentType.JSON).spec(requestSpecification2())
-                  .body(payload).post(endpoint);
-         response.prettyPrint();
-          System.out.println(response.getStatusCode());
-     }*/
-    @Given("user connects to the {string} with payload")
+        response = given().contentType(ContentType.JSON).spec(requestSpecification2())
+                .body(payload).post(endpoint);
+        response.prettyPrint();
+        System.out.println(response.getStatusCode());
+    }
+    /*@Given("user connects to the {string} with payload")
     public void userConnectsToTheWithPayload(String endpoint) {
 
         Map<String, String> payload = new HashMap<>();
@@ -44,5 +44,5 @@ public class US_083_StepDef_GB_GT_ED {
         response.prettyPrint();
         System.out.println(response.getStatusCode());
     }
-
+*/
 }
