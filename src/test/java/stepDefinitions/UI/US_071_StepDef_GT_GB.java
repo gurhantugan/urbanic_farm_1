@@ -85,14 +85,19 @@ public class US_071_StepDef_GT_GB {
 
     @And("user enters duration of event")
     public void userEntersDurationOfEvent() {
+        String eventDuration = String.valueOf(faker.number().numberBetween(1,10));
+        myEventsPage.textBox_duration.sendKeys(eventDuration);
     }
 
     @And("user enters attendee limit for the event")
     public void userEntersAttendeeLimitForTheEvent() {
+        String eventAttendeeLimit = String.valueOf(faker.number().numberBetween(5,50));
+        myEventsPage.textBox_attendeeLimit.sendKeys(eventAttendeeLimit);
     }
 
     @And("user optionally enters schedule for the event")
     public void userOptionallyEntersScheduleForTheEvent() {
+        
     }
 
     @And("user optionally enters description for the event")
