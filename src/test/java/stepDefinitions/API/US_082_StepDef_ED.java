@@ -1,7 +1,11 @@
 package stepDefinitions.API;
 
 import io.cucumber.datatable.DataTable;
+
+import io.cucumber.java.en.And;
+
 import io.cucumber.java.en.Given;
+
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 
@@ -11,8 +15,8 @@ import static utilities.ApiUtilities.response;
 
 public class US_082_StepDef_ED {
 
-    @Then("user verifies that the response is as expected")
-    public void userVerifiesThatTheResponseIsAsExpected(DataTable dataTable) {
+    @Then("user verifies that the response is as expected in followings")
+    public void userVerifiesThatTheResponseIsAsExpectedInFollowings(DataTable dataTable) {
         List<String> paths = dataTable.column(0);
         List<String> expectedData = dataTable.column(1);
 
@@ -33,4 +37,8 @@ public class US_082_StepDef_ED {
     }
 
 
-    }
+
+}
+
+
+
