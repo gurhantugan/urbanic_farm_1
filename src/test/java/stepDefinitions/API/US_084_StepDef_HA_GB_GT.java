@@ -20,7 +20,7 @@ import static utilities.ApiUtilities.response;
 
 public class US_084_StepDef_HA_GB_GT {
         Response response;
-        @Given("user connects to the {string} with payload and token")
+       /* @Given("user connects to the {string} with payload and token")
         public void userConnectsToTheWithPayloadAndToken(String endpoint) {
             // Map<String, String> payload = table.asMap();
             Map<String, Integer> payload = new HashMap<String, Integer>();
@@ -28,7 +28,7 @@ public class US_084_StepDef_HA_GB_GT {
             response = given().contentType(ContentType.JSON).spec(requestSpecification(USER.SELLER.getToken()))
                     .body(payload).post(endpoint);
             response.prettyPrint();
-        }
+        }*/
 
 
         @And("user verifies that the response is expected")
