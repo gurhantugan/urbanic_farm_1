@@ -20,6 +20,7 @@ public class US_072_StepDef_MY_ED {
     MyEventsPage myEventsPage=new MyEventsPage();
     Actions actions=new Actions(Driver.getDriver());
 
+
     @And("user goes to account page and clicks on My Events")
     public void userGoesToAccountPageAndClicksOnMyEvents() {
         BrowserUtilities.waitFor(3);
@@ -56,8 +57,30 @@ public class US_072_StepDef_MY_ED {
 
         }
 
-    }
-
 
     }
+    @And("user clicks the add button next to address bar")
+    public void userClicksTheAddButtonNextToAddressBar() {
+
+        myEventsPage.button_Add.click();
+    }
+
+    @And("user fills the required information and clicks submit")
+    public void userFillsTheRequiredInformationAndClicksSubmit() {
+
+        actions.sendKeys(myEventsPage.box_addressTitle,"Gallery").click().perform();
+        actions.sendKeys(myEventsPage.box_addressSecond,"London Street").click().perform();
+        BrowserUtilities.waitFor(2);
+        myEventsPage.box_states.click();
+        BrowserUtilities.waitFor(2);
+        actions.moveToElement(myEventsPage.states_California).click().perform();
+        BrowserUtilities.waitFor(2);
+        actions.moveToElement(myEventsPage.cities_Alameda).click().perform();
+        actions.sendKeys(myEventsPage.box_postal,"45678").click().perform();
+        myEventsPage.button_Submit.click();
+
+
+
+    }
+}
 

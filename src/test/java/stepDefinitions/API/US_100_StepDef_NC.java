@@ -23,7 +23,7 @@ public class US_100_StepDef_NC {
 
     @Given("user logs in with api for product")
     public void userLogsInWithApiForProduct() {
-        token = ApiUtilities.loginWithAPI(USER.EZRA.getEmail(),USER.EZRA.getPassword());
+        token = ApiUtilities.loginWithAPI(USER.SELLER.getEmail(), USER.SELLER.getPassword());
 
     }
 
@@ -40,7 +40,7 @@ public class US_100_StepDef_NC {
         map.put("unit","Pack");
         response = given().contentType(ContentType.JSON).spec(requestSpecification(token))
                 .body(map).post("/account/hub/product/add");
-        response.prettyPrint();
+       // response.prettyPrint();
 
     }
 

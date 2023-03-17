@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class MyEventsPage extends CommonPage {
 
     @FindBy(xpath = "//a[@class='Sidebar_section_btn__1sp6i h6 '][text()='My Events']")
@@ -50,6 +52,9 @@ public class MyEventsPage extends CommonPage {
     @FindBy(css = "#addressTitle")
     public WebElement box_addressTitle;
 
+    @FindBy(xpath = "//*[@class='single-input rounded'][@value='California']")
+    public WebElement states_California;
+
     @FindBy(css = "#address")
     public WebElement box_addressSecond;
 
@@ -58,6 +63,9 @@ public class MyEventsPage extends CommonPage {
 
     @FindBy(css = "#cities")
     public WebElement box_cities;
+
+    @FindBy(xpath = "//datalist[@id='city']/option[@value='Alameda']")
+    public WebElement cities_Alameda;
 
     @FindBy(css = "#postal")
     public WebElement box_postal;
@@ -127,5 +135,34 @@ public class MyEventsPage extends CommonPage {
 
     @FindBy(xpath = "//button[text()='Copy Link']")
     public WebElement button_copy_link;
+
+    @FindBy(xpath = "(//button[@class='btn btn-primary mr-4'])[1]")
+    public WebElement button_Yes_cancel;
+
+    @FindBy(css = ".Toastify__toast-body.toastr_custom-toastr__iiU37")
+    public WebElement message_event_canceled;
+
+    @FindBy(css = ".Toastify__toast-body.toastr_custom-toastr__iiU37")
+    public WebElement message_event_deleted;
+
+    @FindBy(css = ".Toastify__toast-body.toastr_custom-toastr__iiU37")
+    public WebElement message_event_completed;
+
+    @FindBy(css = ".Toastify__toast-body.toastr_custom-toastr__iiU37")
+    public WebElement message_event_copied;
+
+    @FindBy(xpath = "(//span[text()='CANCELED'])[1]")
+    public WebElement message_canceled;
+
+    @FindBy(xpath = "//button[text()='My Completed Events']")
+    public WebElement button_completed_events;
+
+    @FindBy(css = "#title")
+    public WebElement textBox_title;
+
+    @FindBy(xpath = "(//span[text()='COMPLETED'])[1]")
+    public WebElement message_completed;
+
+
 
 }
