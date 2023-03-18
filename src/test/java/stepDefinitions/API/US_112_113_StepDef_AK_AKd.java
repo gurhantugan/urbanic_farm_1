@@ -13,10 +13,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.requestSpecification;
 import static utilities.ApiUtilities.requestSpecification;
 
-public class US_112_113_StepDef {
+public class US_112_113_StepDef_AK_AKd {
     Map<String, Object> body = new HashMap<>();
 
 
