@@ -40,8 +40,8 @@ public class US_114_StepDef_AKd {
 /*
 
     */
-    @And("user gets go to check order.")
-    public void userGetsGoToCheckOrder() {
+   @And("user checks order")
+   public void userChecksOrder() {
 
         body.put("orderId",orderId);
         response = given().contentType(ContentType.JSON).spec(requestSpecification(token)).
@@ -50,12 +50,13 @@ public class US_114_StepDef_AKd {
         response.prettyPrint();
     }
 
-    @Then("user verifies success message is true.")
-    public void userVerifiesSuccessMessageIsTrue() {
-    }
+//    @Then("user verifies success message is true")
+//    public void userVerifiesSuccessMessageIsTrue() {
+//    }
+//
+//    @Then("user verifies if status code is {int} on Event")
+//    public void userVerifiesIfStatusCodeIsOnEvent(int arg0) {
+//    }
 
-    @Then("user verifies if status code is {int} on Event.")
-    public void userVerifiesIfStatusCodeIsOnEvent(int arg0) {
-    }
 
 }
