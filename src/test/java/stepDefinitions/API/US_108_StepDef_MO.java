@@ -9,7 +9,7 @@ import static utilities.ApiUtilities.response;
 
 public class US_108_StepDef_MO {
 
-    String token;
+
 
     @Then("User get all events detail")
     public void user_get_all_events_detail() {
