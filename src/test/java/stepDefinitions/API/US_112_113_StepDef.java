@@ -89,11 +89,13 @@ public class US_112_113_StepDef {
 
     @Then("User verifies success message is true")
     public void userVerifiesSuccessMessageIsTrue() {
+
         Assert.assertTrue(response.jsonPath().getBoolean("success"));
     }
 
     @Then("User verifies if status code is {int} on Event")
     public void userVerifiesIfStatusCodeIsOnEvent(int arg0) {
+
         Assert.assertEquals(200, response.getStatusCode());
     }
 
