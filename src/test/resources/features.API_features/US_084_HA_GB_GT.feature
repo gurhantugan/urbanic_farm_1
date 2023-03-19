@@ -4,7 +4,7 @@ Feature: As a user, I should be able to get rates of the seller.
   User should be able to get rates of the seller.
   https://test.urbanicfarm.com/api/account/feedback/seller/getRates
   Details on the swagger document."
-   # Given user connects to the "account/feedback/seller/getRates" with payload and token
+    Given user connects to the "account/feedback/seller/getRates" with payload and token
     And user verifies that the response is expected
       | success                      | true                   |
       | productFeedback[0].rate      | 5                      |
