@@ -10,6 +10,9 @@ Feature: As a user, I should be able to add a product to the hub
 
 
 
+#    Then user verifies that the response is as expected
+#      | success            | true                               |
+#      | product            | VEGETABLES_AND_FRUITS_Basil |
 
 
 
