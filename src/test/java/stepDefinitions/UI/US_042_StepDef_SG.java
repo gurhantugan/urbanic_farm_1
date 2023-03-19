@@ -1,5 +1,6 @@
 package stepDefinitions.UI;
 
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.interactions.Actions;
@@ -28,5 +29,6 @@ public class US_042_StepDef_SG extends CommonPage {
         Assert.assertTrue(registerPage.button_eventRegister.isDisplayed());
 
     }
+
 
 }
