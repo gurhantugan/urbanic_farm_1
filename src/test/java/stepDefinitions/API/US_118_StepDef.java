@@ -78,4 +78,6 @@ public class US_118_StepDef {
     public void userLogsInAPIForDeleteEvent() {
         token = ApiUtilities.loginWithAPI(USER.BUYER2.getEmail(), USER.BUYER2.getPassword());
     }
+
+
 }
