@@ -2,11 +2,13 @@ package stepDefinitions.API;
 
 import enums.USER;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Assert;
+import utilities.ApiUtilities;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,6 +21,8 @@ public class US_118_StepDef {
 
     Map<String, Object> body = new HashMap<>();
 
+    String token;
+
     Response response;
     int addressId;
     int eventId;
@@ -26,26 +30,24 @@ public class US_118_StepDef {
 
     @And("User create Address")
     public void userCreateAddress() {
-        body.put("address", "City of London, London, Vereinigtes Königreich");
-        body.put("city", "London");
-        body.put("isDefault", false);
+        body.put("address", "Ankara");
+        body.put("city", "Bolu");
+        body.put("isDefault", true);
         body.put("isSellerAddress", false);
-        body.put("postal", "59300");
-        body.put("state", "Greater London");
-        body.put("title", "Home");
+        body.put("postal", "64200");
+        body.put("state", "Ege");
+        body.put("title", "Online");
         body.put("emptyBasket?", true);
-        response =given().contentType(ContentType.JSON).spec(requestSpecification(USER.SELLER.getToken())).
-                body(body).
-                post("/account/address/addAddress");
-        addressId = response.jsonPath().getInt("address.id");
+        response = given().contentType(ContentType.JSON).spec(requestSpecification(token)).body(body).post("/account/address/addAddress");
         response.prettyPrint();
+        addressId = response.jsonPath().getInt("address.id");
     }
 
 
     @When("User delete an event")
     public void userDeleteAnEvent() {
         body.put("eventId", eventId);
-        response = given().spec(requestSpecification(USER.SELLER.getToken())).post("/account/event/delete");
+        response = given().spec(requestSpecification(token)).post("/account/event/delete");
         response.prettyPrint();
     }
 
@@ -53,14 +55,14 @@ public class US_118_StepDef {
 
     @And("User creat Event")
     public void userCreatEvent() {
-        body.put("title", "ozbek");
-        body.put("date", "2023-03-21");
-        body.put("fee", 1);
-        body.put("duration", 50);
-        body.put("attendeeLimit", 15);
+        body.put("title", "meeting");
+        body.put("date", "2023-03-18T23:59");
+        body.put("fee", 35);
+        body.put("duration", 60);
+        body.put("attendeeLimit", 50);
         body.put("addressId", addressId);
-        body.put("tac", "bbb");
-        response = given().spec(requestSpecification(USER.SELLER.getToken())).post("/account/event/create");
+        body.put("tac", "engineer");
+        response = given().spec(requestSpecification(token)).formParams(body).post("/account/event/create");
         response.prettyPrint();
         eventId = response.jsonPath().getInt("event.id");
 
@@ -72,7 +74,8 @@ public class US_118_StepDef {
         Assert.assertEquals(200, response.getStatusCode());
     }
 
-    @And("User verifies success message is true delete")
-    public void userVerifiesSuccessMessageIsTrueDelete() {
+    @Given("User logs in API for delete event")
+    public void userLogsInAPIForDeleteEvent() {
+        token = ApiUtilities.loginWithAPI(USER.BUYER2.getEmail(), USER.BUYER2.getPassword());
     }
 }
