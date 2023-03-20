@@ -93,7 +93,7 @@ public class US_112_113_StepDef {
     }
 
     @Then("User verifies if status code is {int} on Event")
-    public void userVerifiesIfStatusCodeIsOnEvent(int arg0) {
+    public void userVerifiesIfStatusCodeIsOnEvent(int statusCode) {
 
         Assert.assertEquals(200, response.getStatusCode());
     }
