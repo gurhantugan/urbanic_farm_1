@@ -19,7 +19,7 @@ public class US_109_StepDef_AO_GT {
     @Given("user connects to the {string} with token")
     public void userConnectsToTheWithToken(String endpoint) {
        response= given().contentType(ContentType.JSON).spec(requestSpecification(SELLER.getToken())).post(endpoint);
-    //   response.prettyPrint();
+       response.prettyPrint();
 
 
     }
