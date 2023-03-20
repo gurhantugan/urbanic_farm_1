@@ -5,6 +5,7 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import org.junit.Assert;
 
 import java.util.HashMap;
 import java.util.List;
@@ -185,5 +186,13 @@ public class ApiUtilities {
 
 
         }
+
+        public static void checkFieldsInObject(List<String> fields) {
+            for (String field : fields) {
+                Assert.assertNotNull(ApiUtilities.response.jsonPath().get(field));
+
+            }
+        }
+
     }
 }
