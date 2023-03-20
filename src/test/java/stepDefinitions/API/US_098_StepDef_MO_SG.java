@@ -31,6 +31,8 @@ public class US_098_StepDef_MO_SG {
 
              Assert.assertEquals(expectedData.get(i), response.jsonPath().getString(paths.get(i)));
             System.out.println("Expected data = " + expectedData.get(i) + " -Actual Data = " + response.jsonPath().getString(paths.get(i)));
+
+
 //    @Then("user verifies that the response is as expected")
 //    public void userVerifiesThatTheResponseIsAsExpected(DataTable dataTable) {
 //        //Map<String,String> map = new HashMap<>();

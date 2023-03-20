@@ -9,6 +9,8 @@ import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
 import utilities.ApiUtilities;
+import utilities.BrowserUtilities;
+import utilities.JSUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;

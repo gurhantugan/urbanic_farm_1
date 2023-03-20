@@ -6,6 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.junit.Assert;
 import utilities.ApiUtilities;
 
 import java.util.HashMap;
@@ -20,14 +21,20 @@ public class US_114_StepDef_AKd {
  Map<String,Object> body = new HashMap<>();
     Response response;
     String token;
+
     int orderId;
 
+    String tokenBuyer;
 
 
-    @Given("user logs in with api.")
-    public void userLogsInWithApi() {
 
-        token = ApiUtilities.loginWithAPI(USER.BUYER.getEmail(), USER.BUYER.getPassword());
+
+
+
+    @Given("user logs in with api order..")
+    public void userLogsInWithApiOrder() {
+        token = ApiUtilities.loginWithAPI(USER.SELLER.getEmail(), USER.SELLER.getPassword());
+        tokenBuyer = ApiUtilities.loginWithAPI(USER.BUYER.getEmail(), USER.BUYER.getPassword());
     }
 
    /* @And("user creates Address.")
@@ -43,22 +50,24 @@ public class US_114_StepDef_AKd {
    @And("user checks order")
    public void userChecksOrder() {
 
-        body.put("orderId",orderId);
-        response = given().contentType(ContentType.JSON).spec(requestSpecification(token)).
-                body(body).
-                post("/account/event/attendance/checkOrder");
-        response.prettyPrint();
+       body.put("orderId","71M85562V4039514R");
+       response = given().spec(requestSpecification(tokenBuyer)).formParams(body).post("/account/event/attendance/checkOrder");
+       response.prettyPrint();
+      // orderId = response.jsonPath().getInt("order.id");
     }
 
 
 
-//    @Then("user verifies success message is true")
-//    public void userVerifiesSuccessMessageIsTrue() {
-//    }
-//
-//    @Then("user verifies if status code is {int} on Event")
-//    public void userVerifiesIfStatusCodeIsOnEvent(int arg0) {
-//    }
+
+   @Then("user verifies success message is true")
+    public void userVerifiesSuccessMessageIsTrue() {
+       Assert.assertTrue(response.jsonPath().getBoolean("success"));
+    }
+
+   @Then("user verifies if status code is {int} on Event")
+    public void userVerifiesIfStatusCodeIsOnEvent(int str) {
+       Assert.assertEquals(200, response.getStatusCode());
+   }
 
 
 }

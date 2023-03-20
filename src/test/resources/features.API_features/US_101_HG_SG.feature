@@ -1,8 +1,12 @@
 Feature: As a user, I should be able to request a new product.
 
   Scenario:
-    Given user connects to "account/hub/getHubDetails/TREES_HUB" with payload and token
-      | description | relatedHub | title          |
-      |             | TREES_HUB  | Christmas Tree |
-   # Then user asserts that the response is as expected
+    Given User logs in with API for new Product request
+    Then User can request for a new product
+
+      | description | YAZ URUNLERI              |
+      | relatedHub  | VEGETABLES_AND_FRUITS_HUB |
+      | title       | ADORATION TOMATO          |
+    And User verifies the request product success code is 200
+    And User verifies the request product response
 
