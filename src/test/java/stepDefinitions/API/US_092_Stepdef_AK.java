@@ -2,12 +2,15 @@ package stepDefinitions.API;
 
 import enums.USER;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
 import utilities.ApiUtilities;
+import utilities.BrowserUtilities;
+import utilities.JSUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -59,15 +62,12 @@ public class US_092_Stepdef_AK {
 
     }
 
-    @When("user verifies the product add status code is {int}.")
+    @Then("user verifies the product add status code is {int}.")
     public void userVerifiesTheProductAddStatusCodeIs(int statusCode) {
 
         Assert.assertEquals(statusCode,response.getStatusCode());
         System.out.println(response.statusCode());
     }
-
-
-
 
 //    @Test
 //    public void stringBody() {
