@@ -2,6 +2,7 @@ package stepDefinitions.API;
 
 import enums.USER;
 import io.cucumber.java.en.Then;
+import utilities.BrowserUtilities;
 
 import static io.restassured.RestAssured.given;
 import static utilities.ApiUtilities.requestSpecification;
@@ -15,5 +16,9 @@ public class US_094_StepDef_AO {
 
         response = given().spec(requestSpecification(USER.SELLER.getToken())).post("account/hub/getMyHubs");
         response.prettyPrint();
+
+
     }
+
+
 }

@@ -6,11 +6,12 @@ Feature: user should be able to contact to Urbanic Farm
     Given user connects to the "account/event/getMyEvents" with token
     Then user verifies the success message
     Then user verifies all titles are as follows
-      | Matisse |
-      | Bernini |
-      | Seurat  |
-      | Bernini |
-      | ozbek   |
+      | Pissarro  |
+      | Vettriano |
+      | Matisse   |
+      | Vincent   |
+      | Durer     |
+
 
     Then user verifies attendee limit for each event are as follows
       | 15 |
