@@ -20,8 +20,8 @@ import static utilities.ApiUtilities.response;
 
 public class US_084_StepDef_HA_GB_GT {
         Response response;
-        @Given("user connects to the {string} with payload and token")
-        public void userConnectsToTheWithPayloadAndToken(String endpoint) {
+        @Given("user connects to the {string} with payload and token2")
+        public void userConnectsToTheWithPayloadAndToken2(String endpoint) {
             // Map<String, String> payload = table.asMap();
             Map<String, Integer> payload = new HashMap<String, Integer>();
             payload.put("sellerId", 1484);

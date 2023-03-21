@@ -7,8 +7,8 @@ Feature: user should be able to contact to Urbanic Farm
 
    #  | email       | message     | name       | subject |
     # | abc@def.com | Hello world | John Smith | Tomato  |
-    Then user verifies that the response is as expected
-      | success | true |
+    Then user verifies that the response is expectedd
+
 
 
   Scenario:TC-002
