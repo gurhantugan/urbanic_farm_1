@@ -10,9 +10,10 @@ import utilities.ApiUtilities;
 import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.requestSpecification;
 import static utilities.ApiUtilities.requestSpecification;
+import static utilities.ApiUtilities.requestSpecification2;
 
 public class US_091_StepDef_NC {
-    String token ;
+
     Response response;
 
 
@@ -26,8 +27,7 @@ public class US_091_StepDef_NC {
                 "  ]\n" +
                 "}";
         response = given()
-                .contentType(ContentType.JSON).when().
-                auth().oauth2(token)
+                .contentType(ContentType.JSON).spec(requestSpecification2())
                 .body(map).post("/account/change/delivery");
 
 
