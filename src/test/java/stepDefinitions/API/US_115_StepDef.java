@@ -18,13 +18,12 @@ public class US_115_StepDef {
         Assert.assertEquals("200", response.getStatusCode());
         // System.out.println(response.getStatusCode());
     }
-    @And("user fills the required information to create an event")
-    public void userFillsTheRequiredInformationToCreateAnEvent() {
-    }
-    @And("user creates the event")
-    public void userCreatesTheEvent() {
+    @Given("user logs in by token and goes {string} with payload")
+    public void userLogsInByTokenAndGoesWithPayload(String endPoint) {
+        
     }
     @And("user verifies that the event was created successfully with the correct parameters")
     public void userVerifiesThatTheEventWasCreatedSuccessfullyWithTheCorrectParameters() {
     }
+
 }
