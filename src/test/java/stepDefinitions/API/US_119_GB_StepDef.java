@@ -15,7 +15,6 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 import static utilities.ApiUtilities.requestSpecification;
-import static utilities.ApiUtilities.requestSpecification2;
 
 public class US_119_GB_StepDef {
     Response response;

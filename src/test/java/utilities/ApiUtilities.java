@@ -25,7 +25,7 @@ public class ApiUtilities {
                 .build();
     }
 
-    public static RequestSpecification requestSpecification2() {
+    public static RequestSpecification requestSpecificationWithoutToken() {
         return specification = new RequestSpecBuilder()
                 .setRelaxedHTTPSValidation()
                 .build();
