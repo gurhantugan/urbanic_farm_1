@@ -55,7 +55,7 @@ payload1.put("title","mesut3");
 
 
 
-         response = given().contentType(ContentType.JSON).spec(ApiUtilities.requestSpecification(USER.SELLER)).body(payload1).post("/account/weeklyorder/createWeeklyOrder");
+         response = given().contentType(ContentType.JSON).spec(ApiUtilities.requestSpecification(USER.SELLER_1_TOKEN)).body(payload1).post("/account/weeklyorder/createWeeklyOrder");
          response.prettyPrint();
         //   response = ApiUtilities.requestSpecification(USER.SELLER_1).contentType(ContentType.JSON).body(payload).post("/account/weeklyorder/createWeeklyOrder");
       //   response.prettyPrint();
