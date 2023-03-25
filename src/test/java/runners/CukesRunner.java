@@ -16,14 +16,15 @@ import org.junit.runner.RunWith;
         glue = "stepDefinitions",
 
         dryRun = false,
-        tags = "@US_094"
+        tags = "@DB"
 
 
  
-
 
 
 )
 
 public class CukesRunner {
 }
+
+

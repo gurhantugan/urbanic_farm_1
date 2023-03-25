@@ -5,7 +5,6 @@ import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
@@ -13,7 +12,7 @@ import static utilities.ApiUtilities.*;
 
 import io.cucumber.datatable.DataTable;
 import org.junit.Assert;
-
+import utilities.ApiUtilities;
 public class US_083_StepDef_GB_GT_ED {
 
     Response response;
@@ -25,7 +24,7 @@ public class US_083_StepDef_GB_GT_ED {
 
         System.out.println("payload = " + payload);
 
-        response = given().contentType(ContentType.JSON).spec(requestSpecification2())
+        response = given().contentType(ContentType.JSON).spec(ApiUtilities.requestSpecificationWithoutToken())
                 .body(payload).post(endpoint);
         response.prettyPrint();
         System.out.println(response.getStatusCode());

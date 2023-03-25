@@ -1,18 +1,15 @@
 package stepDefinitions.API;
 
-import enums.USER;
 import io.cucumber.java.en.Given;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
-import utilities.ApiUtilities;
 
 import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.requestSpecification;
 import static utilities.ApiUtilities.requestSpecification;
+import static utilities.ApiUtilities.requestSpecificationWithoutToken;
 
 public class US_091_StepDef_NC {
-    String token ;
+
     Response response;
 
 
@@ -26,8 +23,7 @@ public class US_091_StepDef_NC {
                 "  ]\n" +
                 "}";
         response = given()
-                .contentType(ContentType.JSON).when().
-                auth().oauth2(token)
+                .contentType(ContentType.JSON).spec(requestSpecificationWithoutToken())
                 .body(map).post("/account/change/delivery");
 
 
