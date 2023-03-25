@@ -7,10 +7,10 @@ Feature: US123
   #@UI
   @DB
   Scenario: TC001
-   # Given user is on the Urbanic_Farm page
-   #When user clicks on Register
-    #And user fills out the registration form
-    #And user clicks on Register button'
+   Given user is on the Urbanic_Farm page
+    When user clicks on Register
+    And user fills out the registration form
+    And user clicks on Register button
     Then user verifies following column names are present in "user"
       | email      |
       | first_name |
