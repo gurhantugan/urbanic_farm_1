@@ -53,7 +53,7 @@ public class US_123_StepDef{
 
     @And("user verifies the added user exists")
     public void userVerifiesTheAddedUserExists() throws SQLException {
-        DatabaseUtilities.executeQuery("SELECT * FROM user WHERE first_name='" + registerPage.firstname + "' AND email='" + registerPage.email + "'");
+        DatabaseUtilities.executeQuery("SELECT * FROM user WHERE first_name='" + US_034_StepDef_SG.firstname + "' AND email='" + US_034_StepDef_SG.email + "'");
         if (resultSet.next()) {
             System.out.println("Kullanici bulundu");
         } else {
@@ -64,7 +64,7 @@ public class US_123_StepDef{
         while (resultSet.next()){
             String email = resultSet.getString("email");
             String firstName= resultSet.getString("first_name");
-            if(email.equals(registerPage.email)&& firstName.equals(registerPage.firstname)){
+            if(email.equals(US_034_StepDef_SG.email)&& firstName.equals(US_034_StepDef_SG.firstname)){
                 System.out.println("Kullanici eklenmis");
                 break;
             }

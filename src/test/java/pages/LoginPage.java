@@ -4,6 +4,9 @@ import enums.USERINFO;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.security.PublicKey;
+import java.util.List;
+
 public class LoginPage extends CommonPage {
 
     @FindBy(css = "[name='email']")
@@ -91,6 +94,22 @@ public class LoginPage extends CommonPage {
 
     @FindBy(xpath ="//button[text()='Login']")
     public WebElement loginButton_footer;
+    @FindBy(css = ".Notifications_notificationNavContent__2SCct")
+    public WebElement notifications_viewAll;
+    @FindBy(css = ".Notifications_notificationCardContainer__3dNQI")
+    public List<WebElement> notificationsCardContainer;
+    @FindBy(xpath = "//span[text()='View all']")
+    public WebElement viewAll;
+    @FindBy(xpath = "//span[text()='Filter by unread']")
+    public WebElement filterByUnread;
+    @FindBy(xpath = "//span[text()='Mark all as read']")
+    public WebElement markAllAsRead;
+    @FindBy(xpath = "//input[@name='Read']")
+    public List<WebElement> checkbox_markedRead;
+    @FindBy(xpath = "//input[@name='Unread']")
+    public List<WebElement> checkbox_markedUnread;
+    @FindBy(xpath = "//p[text()='No unread notifications']")
+    public WebElement noUnreadNotifications;
     public void loginMethod(String email, String password) {
         emailBox.sendKeys(email);
         passwordBox.sendKeys(password);
