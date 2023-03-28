@@ -19,7 +19,7 @@ public class US_109_StepDef_AO_GT {
     @Given("user connects to the {string} with token")
     public void userConnectsToTheWithToken(String endpoint) {
        response= given().contentType(ContentType.JSON).spec(requestSpecification(SELLER.getToken())).post(endpoint);
-       response.prettyPrint();
+     //  response.prettyPrint();
 
 
     }
@@ -27,13 +27,16 @@ public class US_109_StepDef_AO_GT {
 
     @Then("user verifies the success message")
     public void userVerifiesTheSuccessMessage() {
-        Boolean actualResultSuccess=response.jsonPath().getBoolean("success");
-        Boolean expectedResultSuccess=true;
+//        Boolean actualResultSuccess=response.jsonPath().getBoolean("success");
+//        Boolean expectedResultSuccess=true;
+//
+//        System.out.println("actualResultSuccess = " + actualResultSuccess);
+//        System.out.println("expectedResultSuccess = " + expectedResultSuccess);
+//
+//        Assert.assertEquals(expectedResultSuccess,actualResultSuccess);
 
-        System.out.println("actualResultSuccess = " + actualResultSuccess);
-        System.out.println("expectedResultSuccess = " + expectedResultSuccess);
-
-        Assert.assertEquals(expectedResultSuccess,actualResultSuccess);
+        //2. yol
+        Assert.assertTrue(response.jsonPath().getBoolean("success"));
 
     }
 

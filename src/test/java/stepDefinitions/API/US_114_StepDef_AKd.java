@@ -56,16 +56,20 @@ public class US_114_StepDef_AKd {
       // orderId = response.jsonPath().getInt("order.id");
     }
 
-   @Then("user verifies success message is true")
-    public void userVerifiesSuccessMessageIsTrue() {
-       Assert.assertTrue(response.jsonPath().getBoolean("success"));
-    }
-
    @Then("user verifies if status code is {int} on Event")
     public void userVerifiesIfStatusCodeIsOnEvent(int str) {
 
-       Assert.assertEquals(200, response.getStatusCode());
    }
 
 
+    @Then("User verifies success message is true abd")
+    public void userVerifiesSuccessMessageIsTrueAbd() {
+        Assert.assertTrue(response.jsonPath().getBoolean("success"));
+    }
+
+    @Then("User verifies if status code is {int} on Event abd")
+    public void userVerifiesIfStatusCodeIsOnEventAbd(int stcd) {
+
+        Assert.assertEquals(stcd, response.getStatusCode());
+    }
 }
