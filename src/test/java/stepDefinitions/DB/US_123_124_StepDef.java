@@ -37,7 +37,7 @@ public class US_123_124_StepDef {
     Faker faker = new Faker();
     AddressPage addressPage = new AddressPage();
     Actions actions = new Actions(Driver.getDriver());
-    String actualAddress;
+    String addressFromUI;
 
     @Then("user verifies following column names are present in user")
     public void userVerifiesFollowingColumnNamesArePresentInUser(DataTable dataTable) throws SQLException {
@@ -144,9 +144,7 @@ public class US_123_124_StepDef {
 
 
 
-    @When("user closes connection to database")
-    public void userClosesConnectionToDatabase() {
-    }
+
 
 
     @And("user clicks on user button")
@@ -167,17 +165,17 @@ public class US_123_124_StepDef {
         addressPage.textBox_searchPlaces.sendKeys(zipCode);
         BrowserUtilities.waitFor(2);
         actions.sendKeys(Keys.ARROW_DOWN,Keys.ENTER).perform();
-        actualAddress = addressPage.textBox_address.getText();
+        addressFromUI = addressPage.textBox_address.getAttribute("value");
         addressPage.button_submit.click();
+        BrowserUtilities.waitFor(5);
 
 
     }
 
     @And("user verifies user address in UI and user address in DB is same")
     public void userVerifiesUserAddressInUIAndUserAddressInDBIsSame() throws SQLException {
-        System.out.println("actualAddress = " + actualAddress);
-        DatabaseUtilities.executeQuery("SELECT `user`.`first_name`, `user`.`last_name`, `user`.`email`, `address`.`address` " +
-                                " FROM `user` u LEFT JOIN `address` a ON `address`.`owner_id` = `user`.`id` WHERE u.email ="+email+" ");
+        System.out.println("actualAddress = " + addressFromUI);
+        DatabaseUtilities.executeQuery("SELECT u.first_name, u.last_name, u.email, a.address FROM user u LEFT JOIN address a ON a.owner_id = u.id WHERE u.email='" + email + "'");
         List <Map<String,String>> userList = new ArrayList<>();
         while (resultSet.next()){
                 ResultSetMetaData rsmd = resultSet.getMetaData();
@@ -190,10 +188,18 @@ public class US_123_124_StepDef {
             System.out.println("userList = " + userList);
 
         }
-
+        String addressFromDB = userList.get(0).get("address");
+        Assert.assertEquals(addressFromUI,addressFromDB);
 /*
 SELECT * FROM address order by owner_id desc limit 1;
  */
+
+    }
+
+    @And("user logs out and closes the browser")
+    public void userLogsOutAndClosesTheBrowser() {
+        BrowserUtilities.clickWithJS(homePage.logoutButton);
+        Driver.closeDriver();
 
     }
 }

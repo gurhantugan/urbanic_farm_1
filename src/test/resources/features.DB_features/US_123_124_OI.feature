@@ -4,7 +4,7 @@
 #	I should see user informations in the correct columns, eg : email.
 
 Feature: US123_124
-  #@UI
+  @UI
   @DB
   Scenario: TC001
     Given user is on the Urbanic_Farm page
@@ -22,5 +22,5 @@ Feature: US123_124
     And user goes to relavent url "https://test.urbanicfarm.com/account/address"
     And user clicks on Add New Address button
     And user enters new zipcode for address and selects the first one
+    And user logs out and closes the browser
     And user verifies user address in UI and user address in DB is same
-    When user closes connection to database
