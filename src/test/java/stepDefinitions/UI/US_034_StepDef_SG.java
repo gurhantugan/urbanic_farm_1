@@ -12,6 +12,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import utilities.BrowserUtilities;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -20,22 +21,25 @@ import java.util.Random;
 
 public class US_034_StepDef_SG {
 
-    Faker faker = new Faker();
+    static Faker faker = new Faker();
     Actions actions = new Actions(Driver.getDriver());
-    List<String> lastNames = new ArrayList<>(Arrays.asList("Apaydin", "Duyarer", "Siler", "Basar"));
-    Random rand = new Random();
-    
+    static List<String> lastNames = new ArrayList<>(Arrays.asList("Apaydin", "Duyarer", "Siler", "Basar"));
+    static Random rand = new Random();
     RegisterPage registerPage = new RegisterPage();
+    public static String firstname = faker.name().firstName();
+    public static String middleName = faker.name().firstName();
+    public static String lastName = lastNames.get(rand.nextInt(4));
+    public static String email = faker.internet().emailAddress().toLowerCase();
+   public static String password = faker.internet().password(8, 30, true, true, true);
 
     @And("user fills out the registration form")
     public void userFillsOutTheRegistrationForm() {
 //        registerPage.firstname.sendKeys(new Faker().name().firstName());
-        registerPage.firstname.sendKeys(faker.name().firstName());
-        registerPage.middleName.sendKeys(faker.name().firstName());
+        registerPage.firstname.sendKeys(firstname);
+        registerPage.middleName.sendKeys(middleName);
 //        registerPage.lastName.sendKeys(faker.name().lastName());
-        registerPage.lastName.sendKeys(lastNames.get(rand.nextInt(4)));
-        registerPage.email.sendKeys(faker.internet().emailAddress().toLowerCase());
-        String password = faker.internet().password(8, 30, true, true, true);
+        registerPage.lastName.sendKeys(lastName);
+        registerPage.email.sendKeys(email);
         registerPage.password.sendKeys(password);
         registerPage.confirmPassword.sendKeys(password);
         registerPage.zipCode.sendKeys(faker.address().zipCode(), Keys.TAB);
@@ -56,7 +60,7 @@ public class US_034_StepDef_SG {
         List<String> texts = dataTable.column(0);
 
         for (int i = 0; i < texts.size(); i++) {
-            WebElement element = Driver.getDriver().findElement(By.xpath("//*[text()='"+texts.get(i)+"']"));
+            WebElement element = Driver.getDriver().findElement(By.xpath("//*[text()='" + texts.get(i) + "']"));
             Assert.assertTrue(element.isDisplayed());
         }
 
@@ -67,7 +71,7 @@ public class US_034_StepDef_SG {
         List<String> texts = dataTable.column(0);
 
         for (int i = 0; i < texts.size(); i++) {
-            WebElement element = Driver.getDriver().findElement(By.xpath("//*[text()='"+texts.get(i)+"']"));
+            WebElement element = Driver.getDriver().findElement(By.xpath("//*[text()='" + texts.get(i) + "']"));
             Assert.assertTrue(element.isEnabled());
         }
     }
