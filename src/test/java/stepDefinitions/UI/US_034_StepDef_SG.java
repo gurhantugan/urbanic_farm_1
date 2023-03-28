@@ -30,7 +30,7 @@ public class US_034_StepDef_SG {
     public static String middleName = faker.name().firstName();
     public static String lastName = lastNames.get(rand.nextInt(4));
     public static String email = faker.internet().emailAddress().toLowerCase();
-
+   public static String password = faker.internet().password(8, 30, true, true, true);
 
     @And("user fills out the registration form")
     public void userFillsOutTheRegistrationForm() {
@@ -40,7 +40,6 @@ public class US_034_StepDef_SG {
 //        registerPage.lastName.sendKeys(faker.name().lastName());
         registerPage.lastName.sendKeys(lastName);
         registerPage.email.sendKeys(email);
-        String password = faker.internet().password(8, 30, true, true, true);
         registerPage.password.sendKeys(password);
         registerPage.confirmPassword.sendKeys(password);
         registerPage.zipCode.sendKeys(faker.address().zipCode(), Keys.TAB);

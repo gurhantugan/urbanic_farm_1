@@ -11,6 +11,9 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//a[text()='Login']")
     public WebElement loginButton;
 
+    @FindBy(xpath = "//a[text()='Logout']")
+    public WebElement logoutButton;
+
     @FindBy(xpath = "//*[@class='btn alazea-btn']")
     public WebElement button_login;
 
